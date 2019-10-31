@@ -1,6 +1,3 @@
-#ifndef __MESIN_KATA__
-#define __MESIN_KATA__
-
 #include "mesin_kar.h"
 
 #define NMax 50
@@ -27,7 +24,7 @@ void STARTKATA(char* filename);
 {        atau EndKata = false, CKata adalah kata yang sudah diakuisisi,
          CC karakter pertama sesudah karakter terakhir kata }*/
 void ADVKATA();
-/*{ I.S. : EndKata = false; CC adalah karakter sesudah karakter terakhir
+/*{ I.S. : EndKata = false; CC adalah karakter sesudah karakter terakhir 
          dari kata yg sudah diakuisisi }
 { F.S. : Jika CC = MARK, maka EndKata = true
          atau EndKata = false, CKata adalah kata terakhir yang sudah diakuisisi;
@@ -35,8 +32,6 @@ void ADVKATA();
 void SalinKata();
 /*{ Mengakuisisi kata, menyimpan dalam CKata }
 { I.S. : CC adalah karakter pertama dari kata }
-{ F.S. : CKata berisi kata yang sudah diakuisisi, jika karakternya melebihi
-         NMax, sisa "kata" dibuang; CC = BLANK atau CC = MARK; CC adalah
+{ F.S. : CKata berisi kata yang sudah diakuisisi, jika karakternya melebihi 
+         NMax, sisa "kata" dibuang; CC = BLANK atau CC = MARK; CC adalah 
          karakter sesudah karakter terakhir yang diakuisisi }*/
-
-#endif

@@ -1,39 +1,53 @@
 #include "stack.h"
-#include "stdio.h"
-#include "stdlib.h"
 
-void CreateEmpty(Stack *S){
-    (*S).TOP = Nil;
+/* ********* Prototype ********* */
+
+/* *** Konstruktor/Kreator *** */
+void CreateEmpty(Stack *S) {
+  /* Kamus Lokal */
+
+  /* Algoritma */
+  Top(*S) = Nil;
 }
-/* I.S. Sembarang */
-/* F.S. Membuat sebuah stack S yang kosong berkapasitas MaxEl */
-/* Ciri stack kosong : TOP bernilai Nil */
+/* I.S. Sembarang
+   F.S. Membuat sebuah stack S yang kosong berkapasitas MaxEl
+   jadi indeksnya antara 1..MaxEl
+   Ciri stack kosong : TOP bernilai Nil */
 
 /* ********* Predikat Untuk test keadaan KOLEKSI ********* */
-bool IsEmpty(Stack S){
-    return ((S).TOP == Nil);
+boolean IsEmpty(Stack S) {
+  /* Kamus Lokal */
+
+  /* Algoritma */
+  return (Top(S) == Nil);
 }
-/* Mengirim true jika Stack kosong*/
-/* Ciri stack kosong : TOP bernilai Nil */
-bool IsFull(Stack S){
-    return (S.TOP == MaxEl);
+/* Mengirim true jika Stack kosong: lihat definisi di atas */
+boolean IsFull(Stack S) {
+  /* Kamus Lokal */
+
+  /* Algoritma */
+  return (Top(S) == MaxEl);
 }
-/* Mengirim true jika stack S penuh */
-/* Ciri stack penuh : TOP bernilai MaxEl */
+/* Mengirim true jika tabel penampung nilai elemen stack penuh */
 
 /* ********** Operator Dasar Stack ********* */
-void Push(Stack *S, infotype X){
-    (*S).TOP++;
-    (*S).T[(*S).TOP-1] =  X;
-}
-/* Menambahkan X sebagai elemen Stack S. */
-/* I.S. S mungkin kosong, S tidak penuh */
-/*F.S. X menjadi element TOP yang baru, TOP bertambah 1 */
-void Pop (Stack *S, infotype *X){
-    *X = (*S).T[(*S).TOP-1];
-    (*S).TOP--;
-}
-/* Menghapus X dari Stack S. */
-/* I.S. S tidak kosong */
-/* F.S. X adalah nilai elemen TOP yang lama, TOP berkurang 1 */
+void Push(Stack *S, infotype X) {
+  /* Kamus Lokal */
 
+  /* Algoritma */
+  Top(*S)++;
+  InfoTop(*S) = X;
+}
+/* Menambahkan X sebagai elemen Stack S.
+   I.S. S mungkin kosong, tabel penampung elemen stack TIDAK penuh
+   F.S. X menjadi TOP yang baru, TOP bertambah 1 */
+void Pop(Stack *S, infotype *X) {
+  /* Kamus Lokal */
+
+  /* Algoritma */
+  *X = InfoTop(*S);
+  Top(*S)--;
+}
+/* Menghapus X dari Stack S.
+   I.S. S tidak kosong
+   F.S. X adalah nilai elemen TOP yang lama, TOP berkurang 1 */

@@ -1,9 +1,3 @@
-/* File : queue.c */
-/* Nama : Ariq Radhitama A*/
-/* NIM : 18217038 */
-/* Tanggal : 18 Oktober 2018 */
-/* Deskripsi : Berisi implementasi dari file Header queue.h */
-
 #include "queue.h"
 
 /******** IMPLEMENTASI ********/

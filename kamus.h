@@ -9,7 +9,6 @@
 #include <string.h>
 
 #include "./ADT/boolean.h"
-#include "./ADT/jam.h"
 #include "./ADT/array.h"
 #include "./ADT/point.h"
 #include "./ADT/listlinier.h"

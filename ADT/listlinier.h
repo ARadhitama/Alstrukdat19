@@ -6,9 +6,9 @@
 #ifndef listlinier_H
 #define listlinier_H
 
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "stddef.h"
+#include "stdio.h"
+#include "stdlib.h"
 #include "boolean.h"
 
 #define Nil NULL

@@ -18,4 +18,21 @@
 #include "./ADT/matriks.h"
 #include "./ADT/mesin_kata.h"
 
+typedef struct {
+    char name;
+    Point Position;
+} Bidak;
+
 /**** UI FUNCTION ***/
+
+void Map(MATRIKS *M);
+void AssignMatriks (Bidak B, Point P);
+
+/**** MOVE FUNCTION ****/
+
+Queue MoveRook(Bidak B);
+Queue MoveKnight(Bidak B);
+Queue MoveBishop(Bidak B);
+Queue MoveQueen(Bidak B);
+Queue MoveKing(Bidak B);
+Queue MovePion(Bidak B);

@@ -4,12 +4,13 @@
 #define _QUEUELIST_H
 #include "boolean.h"
 #include <stdlib.h>
+#include "point.h"
 
 /* Konstanta */
 #define Nil NULL
 
 /* Deklarasi infotype */
-typedef int infotype;
+typedef POINT infotype;
 
 /* Queue dengan representasi berkait dengan pointer */
 typedef struct tElmtQueue * address;

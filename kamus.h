@@ -20,7 +20,7 @@
 
 typedef struct {
     char name;
-    Point Position;
+    POINT Position;
 } Bidak;
 
 /**** UI FUNCTION ***/

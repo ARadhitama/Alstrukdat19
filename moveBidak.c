@@ -1,7 +1,7 @@
 #include "kamus.h"
 
 Queue MoveRook(Bidak B){
-
+    
 }
 
 Queue MoveKnight(Bidak B){

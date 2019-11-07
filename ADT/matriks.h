@@ -4,6 +4,7 @@
 #define MATRIKS_H
 
 #include "boolean.h"
+#include "point.h"
 
 /* Ukuran minimum dan maksimum baris dan kolom */
 #define BrsMin 1
@@ -12,7 +13,7 @@
 #define KolMax 8
 
 typedef int indeks; /* indeks baris, kolom */
-typedef int ElTypeM; 
+typedef char ElTypeM; 
 typedef struct { 
 	ElTypeM Mem[BrsMax+1][KolMax+1];
     int NBrsEff; /* banyaknya/ukuran baris yg terdefinisi */

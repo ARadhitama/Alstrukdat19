@@ -27,6 +27,7 @@ typedef struct {
 
 void Map(MATRIKS *M);
 void AssignMatriks (Bidak B, Point P);
+void printCommand();
 
 /**** MOVE FUNCTION ****/
 
@@ -36,3 +37,7 @@ Queue MoveBishop(Bidak B);
 Queue MoveQueen(Bidak B);
 Queue MoveKing(Bidak B);
 Queue MovePion(Bidak B);
+
+/**** GAME FUNCTION ****/
+
+void New(MATRIKS *M)

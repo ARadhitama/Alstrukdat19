@@ -73,3 +73,11 @@ void AssignMatriks (Bidak B, POINT P) {
     B.Position.X = P.X;
     B.Position.Y = P.Y;
 }
+
+void printCommand() {
+    printf("1. MOVE\n");
+    printf("2. SPECIAL MOVE\n");
+    printf("3. UNDO \n");
+    printf("4. SAVE\n");
+    printf("5. EXIT\n");
+}

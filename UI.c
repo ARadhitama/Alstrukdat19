@@ -69,7 +69,7 @@ void Map(MATRIKS *M) {
     printf("    a   b   c   d   e   f   g   h\n");
 }
 
-void AssignMatriks (Bidak B, Point P) {
+void AssignMatriks (Bidak B, POINT P) {
     B.Position.X = P.X;
     B.Position.Y = P.Y;
 }

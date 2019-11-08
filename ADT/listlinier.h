@@ -10,10 +10,11 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "boolean.h"
+#include "../kamus.h"
 
 #define Nil NULL
 
-typedef int infotype;
+typedef Bidak infotype;
 typedef struct tElmtlist *address;
 typedef struct tElmtlist { 
 	infotype info;

@@ -1,11 +1,12 @@
 #ifndef __STACK_H__
 #define __STACK_H__
 #include "boolean.h"
+#include "../kamus.h"
 
 #define Nil 0 /* Nil adalah stack dengan elemen kosong */
 #define MaxEl 100
 
-typedef int infotype;
+typedef Bidak infotype;
 typedef int address; /* indeks tabel */
 
 /* Versi I : dengan menyimpan tabel dan alamat top secara eksplisit */

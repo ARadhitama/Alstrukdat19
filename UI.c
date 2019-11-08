@@ -81,3 +81,9 @@ void printCommand() {
     printf("4. SAVE\n");
     printf("5. EXIT\n");
 }
+
+void printMainMenu() {
+    printf("1. NEW GAME\n");
+    printf("2. LOAD GAME\n");
+    printf("3. LEADERBOARD\n");
+}

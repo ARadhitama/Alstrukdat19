@@ -23,20 +23,25 @@ typedef struct {
     POINT Position;
 } Bidak;
 
+typedef struct {
+    int turn;
+    boolean whiteTurn
+} States;
 /**** UI FUNCTION ***/
 
 void Map(MATRIKS *M);
 void AssignMatriks (Bidak B, Point P);
 void printCommand();
+void printMainMenu();
 
 /**** MOVE FUNCTION ****/
 
-Queue MoveRook(Bidak B);
-Queue MoveKnight(Bidak B);
-Queue MoveBishop(Bidak B);
-Queue MoveQueen(Bidak B);
-Queue MoveKing(Bidak B);
-Queue MovePion(Bidak B);
+Stack MoveRook(Bidak B);
+Stack MoveKnight(Bidak B);
+Stack MoveBishop(Bidak B);
+Stack MoveQueen(Bidak B);
+Stack MoveKing(Bidak B);
+Stack MovePion(Bidak B);
 boolean cekGerak (MATRIKS *M, Bidak B);
 
 /**** GAME FUNCTION ****/
@@ -47,3 +52,4 @@ void New(MATRIKS *M)
  
  boolean cekSkak ();
  boolean cekSkakMat();
+ boolean whiteTurn(int turn);

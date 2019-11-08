@@ -1,26 +1,26 @@
 #include "kamus.h"
 
-Queue MoveRook(Bidak B){
+Stack MoveRook(Bidak B){
     
 }
 
-Queue MoveKnight(Bidak B){
+Stack MoveKnight(Bidak B){
 
 }
 
-Queue MoveBishop(Bidak B){
+Stack MoveBishop(Bidak B){
 
 }
 
-Queue MoveQueen(Bidak B){
+Stack MoveQueen(Bidak B){
 
 }
 
-Queue MoveKing(Bidak B){
+Stack MoveKing(Bidak B){
 
 }
 
-Queue MovePion(Bidak B){
+Stack MovePion(Bidak B){
 
 }
 

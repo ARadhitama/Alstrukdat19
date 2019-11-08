@@ -19,7 +19,7 @@
 #include "./ADT/mesin_kata.h"
 
 typedef struct {
-    char name;
+    char code;
     POINT Position;
 } Bidak;
 

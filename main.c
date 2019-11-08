@@ -5,6 +5,7 @@ Int main() {
     MATRIKS Board;
     boolean Exit;
     char Command;
+    Bidak P1,P2,P3,P4,P5,P6,P7,P8,R1,
 
     /* ALGORITMA */
     MakeMATRIKS(8,8,Board);

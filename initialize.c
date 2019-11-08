@@ -22,8 +22,8 @@ void New(MATRIKS *M) {
     Elmt(*M,8,1) = 'r';
     Elmt(*M,7,1) = 'h';
     Elmt(*M,6,1) = 'b';
-    Elmt(*M,5,1) = 'k';
-    Elmt(*M,4,1) = 'q';
+    Elmt(*M,5,1) = 'q';
+    Elmt(*M,4,1) = 'k';
     Elmt(*M,3,1) = 'b';
     Elmt(*M,2,1) = 'h';
     Elmt(*M,1,1) = 'r';

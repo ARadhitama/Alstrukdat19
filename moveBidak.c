@@ -1,67 +1,73 @@
 #include "kamus.h"
 
-Stack MoveRook(Bidak B){
-    
+Stack MoveBidak(Bidak B, MATRIKS *M){
+    switch (Bidak.code) {
+        case 'r':
+        case 'R': {
+            break;
+        }
+        case 'h':
+        case 'H': {
+            break;
+        }
+        case 'b':
+        case 'B': {
+            break;
+        }
+        case 'q':
+        case 'Q': {
+            break;
+        }
+        case 'k':
+        case 'K': {
+            break;
+        }
+        case 'p':{
+            break;
+        }
+        case 'P':{
+            break;
+        }
+    }
 }
 
-Stack MoveKnight(Bidak B){
-
-}
-
-Stack MoveBishop(Bidak B){
-
-}
-
-Stack MoveQueen(Bidak B){
-
-}
-
-Stack MoveKing(Bidak B){
-
-}
-
-Stack MovePion(Bidak B){
-
-}
 
 boolean cekGerak (MATRIKS *M, Bidak B) {
 
     switch(Bidak.code) {
-        case 'R' : {
-
-        }
+        case 'R' : 
         case 'r' : {
-            
+           break; 
         }
         case 'H' : {
-            
-        }
         case 'h' : {
-            
+            break;
         }
-        case 'B' : {
-            
-        }
+        case 'B' : 
         case 'b' : {
-            
+            break;
         }
-        case 'Q' : {
-            
-        }
+        case 'Q' : 
         case 'q' : {
-            
+            break;
         }
-        case 'K' : {
-            
-        }
+        case 'K' : 
         case 'k' : {
-            
+            break;  
         }
         case 'P' : {
-            
+            break;
         }
         case 'p' : {
-            
+            break;
         }
     }
+}
+
+void printBisaGerak(MATRIKS *M) {
+
+}
+
+void printGerak(Bidak B, MATRIKS *M) {
+
 }

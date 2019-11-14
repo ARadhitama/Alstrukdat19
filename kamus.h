@@ -36,13 +36,10 @@ void printMainMenu();
 
 /**** MOVE FUNCTION ****/
 
-Stack MoveRook(Bidak B);
-Stack MoveKnight(Bidak B);
-Stack MoveBishop(Bidak B);
-Stack MoveQueen(Bidak B);
-Stack MoveKing(Bidak B);
-Stack MovePion(Bidak B);
+Stack MoveRBidak(Bidak B, MATRIKS *M);
 boolean cekGerak (MATRIKS *M, Bidak B);
+void printBisaGerak(MATRIKS *M);
+void printGerak(Bidak B, MATRIKS *M);
 
 /**** GAME FUNCTION ****/
 

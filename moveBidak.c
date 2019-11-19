@@ -65,9 +65,11 @@ boolean cekGerak (MATRIKS *M, Bidak B) {
 }
 
 void printBisaGerak(MATRIKS *M) {
-
+    return 0;
 }
 
 void printGerak(Bidak B, MATRIKS *M) {
-
+    return 0;
 }
+
+Queue

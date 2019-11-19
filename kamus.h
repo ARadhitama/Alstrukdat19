@@ -21,6 +21,7 @@
 typedef struct {
     char code;
     POINT Position;
+    POINT prevPos;
 } Bidak;
 
 typedef struct {

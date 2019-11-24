@@ -1,11 +1,11 @@
-#include "queuelist.h"
+#include "Queuelist.h"
 
 /* Prototype manajemen memori */
 void Alokasi (address *P, infotype X) {
 	/* Kamus Lokal */
 
 	/* Algoritma */
-	*P = (address) malloc (sizeof (ElmtQueue));
+	*P = (address) malloc (sizeof (ElmtQueuelist));
 	if (*P != Nil) {
     	Info(*P) = X;
     	Next(*P) = Nil;
@@ -27,14 +27,14 @@ void Dealokasi (address P) {
 /* I.S. P adalah hasil alokasi, P != Nil */
 /* F.S. Alamat P didealokasi, dikembalikan ke sistem */
 
-boolean IsEmpty (Queue Q) {
+boolean IsEmpty (Queuelist Q) {
 	/* Kamus Lokal */
 
 	/* Algoritma */
 	return ((Head(Q) == Nil) && (Tail(Q) == Nil));
 }
 /* Mengirim true jika Q kosong: HEAD(Q)=Nil and TAIL(Q)=Nil */
-int NbElmt (Queue Q) {
+int NbElmt (Queuelist Q) {
 	/* Kamus Lokal */
 	int count = 0;
 	address P;
@@ -49,9 +49,9 @@ int NbElmt (Queue Q) {
 	}
 	return count;
 }
-/* Mengirimkan banyaknya elemen queue. Mengirimkan 0 jika Q kosong */
+/* Mengirimkan banyaknya elemen Queuelist. Mengirimkan 0 jika Q kosong */
 /*** Kreator ***/
-void CreateEmpty (Queue * Q) {
+void CreateEmpty (Queuelist * Q) {
 	/* Kamus Lokal */
 
 	/* Algoritma */
@@ -61,7 +61,7 @@ void CreateEmpty (Queue * Q) {
 /* I.S. sembarang */
 /* F.S. Sebuah Q kosong terbentuk */
 /*** Primitif Add/Delete ***/
-void Add (Queue * Q, infotype X) {
+void Add (Queuelist * Q, infotype X) {
 /* Proses: Mengalokasi X dan menambahkan X pada bagian TAIL dari Q
  jika alokasi berhasil; jika alokasi gagal Q tetap */
 /* Pada dasarnya adalah proses insert last */
@@ -82,7 +82,7 @@ void Add (Queue * Q, infotype X) {
 		Tail(*Q) = P;
 	} /* else: alokasi gagal, Q tetap */
 }
-void Del (Queue * Q, infotype * X) {
+void Del (Queuelist * Q, infotype * X) {
 /* Proses: Menghapus X pada bagian HEAD dari Q dan mendealokasi
  elemen HEAD */
 /* Pada dasarnya operasi delete first */

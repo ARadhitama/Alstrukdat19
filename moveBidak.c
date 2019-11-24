@@ -71,5 +71,3 @@ void printBisaGerak(MATRIKS *M) {
 void printGerak(Bidak B, MATRIKS *M) {
     return 0;
 }
-
-Queue

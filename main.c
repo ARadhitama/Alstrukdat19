@@ -6,17 +6,17 @@ Int main() {
     boolean Exit;
     char Command;
     Bidak P1, P2, P3, P4, P5, P6, P7, P8, R1, R2, H1, H2, B1, B2, Q, K, p1, p2, p3, p4, p5, p6, p7, p8, r1, r2, h1, h2, b1, b2, q, k;
-    States game;
+    Queuelist turn;
 
     /* ALGORITMA */
     printMainMenu();    
+    CreateEmpty(&Queuelist);
     printf("Command : ");
     scanf("%c\n", &Command);
     switch (Command) {
         case '1' :{
             MakeMATRIKS(8,8,Board);
-            New(*Board);
-            game.turn = 1;
+        
             Exit = false;
             
             /* assign bidak */
@@ -130,6 +130,41 @@ Int main() {
             q.code = 'k';
             q.Position.X = 5;
             q.Position.Y = 1;
+
+            /* Assign Board */
+            Elmt(Board,8,8) = R2;
+            Elmt(Board,7,8) = H2;
+            Elmt(Board,6,8) = B2;
+            Elmt(Board,5,8) = Q;
+            Elmt(Board,4,8) = K;
+            Elmt(Board,3,8) = B1;
+            Elmt(Board,2,8) = H1;
+            Elmt(Board,1,8) = R1;
+            Elmt(Board,1,7) = P1;
+            Elmt(Board,2,7) = P2;
+            Elmt(Board,3,7) = P3;
+            Elmt(Board,4,7) = P4;
+            Elmt(Board,5,7) = P5;
+            Elmt(Board,6,7) = P6;
+            Elmt(Board,7,7) = P7;
+            Elmt(Board,8,7) = P8;
+
+            Elmt(Board,8,1) = r2;
+            Elmt(Board,7,1) = h1;
+            Elmt(Board,6,1) = b2;
+            Elmt(Board,5,1) = q;
+            Elmt(Board,4,1) = k;
+            Elmt(Board,3,1) = b1;
+            Elmt(Board,2,1) = h1;
+            Elmt(Board,1,1) = r1;
+            Elmt(Board,1,2) = p1;
+            Elmt(Board,2,2) = p2;
+            Elmt(Board,3,2) = p3;
+            Elmt(Board,4,2) = p4;
+            Elmt(Board,5,2) = p5;
+            Elmt(Board,6,2) = p6;
+            Elmt(Board,7,2) = p7;
+            Elmt(Board,8,2) = p8;
 
             do {
                 printCommand();

@@ -37,14 +37,14 @@ void printMainMenu();
 
 /**** MOVE FUNCTION ****/
 
-Stack MoveRBidak(Bidak B, MATRIKS *M);
+Queue MoveBidak(Bidak B, MATRIKS *M);
 boolean cekGerak (MATRIKS *M, Bidak B);
-void printBisaGerak(MATRIKS *M);
+Queue bidakBisaGerak(MATRIKS *M);
 void printGerak(Bidak B, MATRIKS *M);
 
 /**** GAME FUNCTION ****/
 
-void New(MATRIKS *M)
+void New(MATRIKS *M);
 
 /**** GAME RULES ****/
  

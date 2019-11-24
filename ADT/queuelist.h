@@ -1,7 +1,7 @@
-/* File : queuelist.h */
-/* Representasi queue dengan list berkait dengan first (HEAD) dan last (TAIL) */
-#ifndef _QUEUELIST_H
-#define _QUEUELIST_H
+/* File : Queuelistlist.h */
+/* Representasi Queuelist dengan list berkait dengan first (HEAD) dan last (TAIL) */
+#ifndef _QueueLIST_H
+#define _QueueLIST_H
 #include "boolean.h"
 #include <stdlib.h>
 #include "point.h"
@@ -11,20 +11,20 @@
 #define Nil NULL
 
 /* Deklarasi infotype */
-typedef Bidak infotype;
+typedef char infotype;
 
-/* Queue dengan representasi berkait dengan pointer */
-typedef struct tElmtQueue * address;
-typedef struct tElmtQueue {
+/* Queuelist dengan representasi berkait dengan pointer */
+typedef struct tElmtQueuelist * address;
+typedef struct tElmtQueuelist {
 	infotype Info;
 	address Next;
-} ElmtQueue;
+} ElmtQueuelist;
 
-/* Type queue dengan ciri HEAD dan TAIL : */
+/* Type Queuelist dengan ciri HEAD dan TAIL : */
 typedef struct {
 	address HEAD;  /* alamat penghapusan */
 	address TAIL;  /* alamat penambahan */
-} Queue;
+} Queuelist;
 
 /* Selektor */
 #define Head(Q) (Q).HEAD
@@ -43,22 +43,22 @@ void Alokasi (address *P, infotype X);
 void Dealokasi (address  P);
 /* I.S. P adalah hasil alokasi, P != Nil */
 /* F.S. Alamat P didealokasi, dikembalikan ke sistem */
-boolean IsEmpty (Queue Q);
+boolean IsEmpty (Queuelist Q);
 /* Mengirim true jika Q kosong: HEAD(Q)=Nil and TAIL(Q)=Nil */
-int NbElmt(Queue Q);
-/* Mengirimkan banyaknya elemen queue. Mengirimkan 0 jika Q kosong */
+int NbElmt(Queuelist Q);
+/* Mengirimkan banyaknya elemen Queuelist. Mengirimkan 0 jika Q kosong */
 /*** Kreator ***/
-void CreateEmpty(Queue * Q);
+void CreateEmpty(Queuelist * Q);
 /* I.S. sembarang */
 /* F.S. Sebuah Q kosong terbentuk */
 /*** Primitif Add/Delete ***/
-void Add (Queue * Q, infotype X);
+void Add (Queuelist * Q, infotype X);
 /* Proses: Mengalokasi X dan menambahkan X pada bagian TAIL dari Q
    jika alokasi berhasil; jika alokasi gagal Q tetap */
 /* Pada dasarnya adalah proses insert last */
 /* I.S. Q mungkin kosong */
 /* F.S. X menjadi TAIL, TAIL "maju" */
-void Del(Queue * Q, infotype * X);
+void Del(Queuelist * Q, infotype * X);
 /* Proses: Menghapus X pada bagian HEAD dari Q dan mendealokasi
    elemen HEAD */
 /* Pada dasarnya operasi delete first */

@@ -6,6 +6,7 @@
 #ifndef __QUEUE_H__
 #define __QUEUE_H__
 
+#include "../kamus.h"
 #include "boolean.h"
 #include <stdlib.h>
 
@@ -13,7 +14,7 @@
 #define Nil 0
 
 /* *** Definisi elemen dan address *** */
-typedef int infotype;
+typedef Bidak infotype;
 typedef int address; /* indeks tabel */
 
 /* *** Definisi Type Queue *** */

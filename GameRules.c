@@ -7,6 +7,3 @@
  boolean cekSkakMat() {
 
  }
- boolean whiteTurn(int turn) {
-     return (turn % 2 != 0);
- }

@@ -10,7 +10,7 @@ Int main() {
 
     /* ALGORITMA */
     printMainMenu();    
-    CreateEmpty(&Queuelist);
+    CreateEmpty(&turn);
     printf("Command : ");
     scanf("%c\n", &Command);
     switch (Command) {
@@ -166,32 +166,57 @@ Int main() {
             Elmt(Board,7,2) = p7;
             Elmt(Board,8,2) = p8;
 
-            do {
-                printCommand();
-                printf("Command : ");
-                scanf("%c\n", &Command);
-                switch (Command) {
-                    case '1' : {
-                        game.turn++;
-                    }
-                    case '2' : {
-                        game.turn++;
-                    }
-                    case '3' : {
+            while ((!Exit) || (NbElmt(turn) <= 50)) {
+                if ((IsEmpty(turn) || InfoTail(turn) == 'b') {          // white turn
+                    printCommand();
+                    printf("Command : ");
+                    scanf("%c\n", &Command);
+                    switch (Command) {
+                        case '1' : {
+                            Add(&turn, 'w');
+                        }
+                        case '2' : {
+                            Add(&turn, 'w');
+                        }
+                        case '3' : {
 
-                    }
-                    case '4' : {
+                        }
+                        case '4' : {
 
+                        }
+                        case '5' : {
+                            Exit = true;
+                        }
+                        default : {
+                            printf("Command salah!\n");
+                        }
                     }
-                    case '5' : {
-                        Exit = true;
-                    }
-                    default : {
-                        printf("Command salah!\n");
+                } else {                                                // black turn
+                    printCommand();
+                    printf("Command : ");
+                    scanf("%c\n", &Command);
+                    switch (Command) {
+                        case '1' : {
+                            Add(&turn, 'b');
+                        }
+                        case '2' : {
+                            Add(&turn, 'b');
+                        }
+                        case '3' : {
+
+                        }
+                        case '4' : {
+
+                        }
+                        case '5' : {
+                            Exit = true;
+                        }
+                        default : {
+                            printf("Command salah!\n");
+                        }
                     }
                 }
-
-            } while (!Exit)
+            }
         }
     }
 }

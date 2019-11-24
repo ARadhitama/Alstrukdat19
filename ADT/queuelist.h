@@ -43,22 +43,22 @@ void Alokasi (address *P, infotype X);
 void Dealokasi (address  P);
 /* I.S. P adalah hasil alokasi, P != Nil */
 /* F.S. Alamat P didealokasi, dikembalikan ke sistem */
-boolean IsEmpty (Queuelist Q);
+boolean IsEmptyQueueList (Queuelist Q);
 /* Mengirim true jika Q kosong: HEAD(Q)=Nil and TAIL(Q)=Nil */
-int NbElmt(Queuelist Q);
+int NbElmtQueueList(Queuelist Q);
 /* Mengirimkan banyaknya elemen Queuelist. Mengirimkan 0 jika Q kosong */
 /*** Kreator ***/
-void CreateEmpty(Queuelist * Q);
+void CreateEmptyQueueList (Queuelist * Q);
 /* I.S. sembarang */
 /* F.S. Sebuah Q kosong terbentuk */
 /*** Primitif Add/Delete ***/
-void Add (Queuelist * Q, infotype X);
+void AddQueueList (Queuelist * Q, infotype X);
 /* Proses: Mengalokasi X dan menambahkan X pada bagian TAIL dari Q
    jika alokasi berhasil; jika alokasi gagal Q tetap */
 /* Pada dasarnya adalah proses insert last */
 /* I.S. Q mungkin kosong */
 /* F.S. X menjadi TAIL, TAIL "maju" */
-void Del(Queuelist * Q, infotype * X);
+void DelQueueList (Queuelist * Q, infotype * X);
 /* Proses: Menghapus X pada bagian HEAD dari Q dan mendealokasi
    elemen HEAD */
 /* Pada dasarnya operasi delete first */

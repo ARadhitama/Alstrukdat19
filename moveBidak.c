@@ -8,58 +8,39 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
     switch(Bidak.code) {
         case 'R' : 
         case 'r' : {
-            i = 1;
-            n = 1;
-
-            while (B.code(*M,v1-i,h1+n) = Nil) {
-                if( (v1-i) == -1 || (h1+n) == 8 ) {
-                    break ;
-                } else {
-                AddQueue(*Q, B.code(*M,v1-i,h1+n)) ;
-                i++ ;
-                n++ ;
-                }
-            } 
-
-            i = 1;
-            n = 1;
-
-            while (B.code(*M,v1+i,h1-n) = Nil) {
-                if( (v1+i) == 8 || (h1-n) == -1 ) {
-                    break ;
-                } else {
-                AddQueue(*Q, B.code(*M,v1+i,h1-n)) ;
-                i++ ;
-                n++ ;
-                }
-            } 
-
-            i = 1;
-            n = 1;
-
-            while (B.code(*M,v1+i,h1+n) = Nil) {
-                if( (v1+i) == 8 || (h1+n) == 8 ) {
-                    break ;
-                } else {
-                AddQueue(*Q, B.code(*M,v1+i,h1+n)) ;
-                i++ ;
-                n++ ;
-                }
-            } 
-
-            i = 1;
-            n = 1;
+           n=h1;
             
-            while (B.code(*M,v1-i,h1-n) = Nil) {
-                if( (v1-i) == -1 || (h1-n) == -1 ) {
-                    break ;
-                } else {
-                AddQueue(*Q, B.code(*M,v1-i,h1-n)) ;
-                i++ ;
-                n++ ;
-                }
-            } 
-           break; 
+            while( B.code(*M,v1,n-1) == Nil )
+            {
+            if( n == 0 ) { break ; }
+            AddQueue(*Q, B.code(*M,v1,n-1)) ;
+            n-- ;
+            }
+
+            n=h1 ;
+
+            while( B.code(*M,v1,n+1) == Nil  && (n+1) <= 7 )
+            {
+                AddQueue(*Q, B.code(*M,v1,n+1)) ;
+                ++n ;
+            }
+
+            n = h1 ;
+
+            while( B.code(*M,n-1,h1) == Nil && n > -1 )
+            {
+                AddQueue(*Q, B.code(*M,n-1,h1)) ;
+                --n ;
+            }
+
+            n = h1 ;
+
+            while( (B.code(*M,n+1,h1) == Nil) && ( (n) <= 7 ) )
+            {
+                AddQueue(*Q, B.code(*M,n+1,h1)) ;
+                ++n ;
+            }    
+            break;
         }
         case 'H' : 
         case 'h' : {
@@ -113,41 +94,59 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             break;
         }
         case 'B' : 
-        case 'b' : {
-        
-            n=h1;
+        case 'b' : {  
+            i = 1;
+            n = 1;
+
+            while (B.code(*M,v1-i,h1+n) = Nil) {
+                if( (v1-i) == -1 || (h1+n) == 8 ) {
+                    break ;
+                } else {
+                AddQueue(*Q, B.code(*M,v1-i,h1+n)) ;
+                i++ ;
+                n++ ;
+                }
+            } 
+
+            i = 1;
+            n = 1;
+
+            while (B.code(*M,v1+i,h1-n) = Nil) {
+                if( (v1+i) == 8 || (h1-n) == -1 ) {
+                    break ;
+                } else {
+                AddQueue(*Q, B.code(*M,v1+i,h1-n)) ;
+                i++ ;
+                n++ ;
+                }
+            } 
+
+            i = 1;
+            n = 1;
+
+            while (B.code(*M,v1+i,h1+n) = Nil) {
+                if( (v1+i) == 8 || (h1+n) == 8 ) {
+                    break ;
+                } else {
+                AddQueue(*Q, B.code(*M,v1+i,h1+n)) ;
+                i++ ;
+                n++ ;
+                }
+            } 
+
+            i = 1;
+            n = 1;
             
-            while( B.code(*M,v1,n-1) == Nil )
-            {
-            if( n == 0 ) { break ; }
-            AddQueue(*Q, B.code(*M,v1,n-1)) ;
-            n-- ;
-            }
-
-            n=h1 ;
-
-            while( B.code(*M,v1,n+1) == Nil  && (n+1) <= 7 )
-            {
-                AddQueue(*Q, B.code(*M,v1,n+1)) ;
-                ++n ;
-            }
-
-            n = h1 ;
-
-            while( B.code(*M,n-1,h1) == Nil && n > -1 )
-            {
-                AddQueue(*Q, B.code(*M,n-1,h1)) ;
-                --n ;
-            }
-
-            n = h1 ;
-
-            while( (B.code(*M,n+1,h1) == Nil) && ( (n) <= 7 ) )
-            {
-                AddQueue(*Q, B.code(*M,n+1,h1)) ;
-                ++n ;
-            }    
-            break;
+            while (B.code(*M,v1-i,h1-n) = Nil) {
+                if( (v1-i) == -1 || (h1-n) == -1 ) {
+                    break ;
+                } else {
+                AddQueue(*Q, B.code(*M,v1-i,h1-n)) ;
+                i++ ;
+                n++ ;
+                }
+            } 
+           break; 
         }
         case 'Q' : 
         case 'q' : {
@@ -324,58 +323,40 @@ int i, n, h1, v1,;
     switch(Bidak.code) {
         case 'R' : 
         case 'r' : {
-            i = 1;
-            n = 1;
-
-            while (B.code(*M,v1-i,h1+n) = Nil) {
-                if( (v1-i) == -1 || (h1+n) == 8 ) {
-                    break ;
-                } else {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
-                i++ ;
-                n++ ;
-                }
-            } 
-
-            i = 1;
-            n = 1;
-
-            while (B.code(*M,v1+i,h1-n) = Nil) {
-                if( (v1+i) == 8 || (h1-n) == -1 ) {
-                    break ;
-                } else {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
-                i++ ;
-                n++ ;
-                }
-            } 
-
-            i = 1;
-            n = 1;
-
-            while (B.code(*M,v1+i,h1+n) = Nil) {
-                if( (v1+i) == 8 || (h1+n) == 8 ) {
-                    break ;
-                } else {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
-                i++ ;
-                n++ ;
-                }
-            } 
-
-            i = 1;
-            n = 1;
+          
+            n=v1;
             
-            while (B.code(*M,v1-i,h1-n) = Nil) {
-                if( (v1-i) == -1 || (h1-n) == -1 ) {
-                    break ;
-                } else {
+            while( B.code(*M,v1,n-1) == Nil )
+            {
+            if( n == 0 ) { break ; }
+            AddQueue(*Q, B.code(*M,v1,h1)) ;
+            n-- ;
+            }
+
+            n=v1 ;
+
+            while( B.code(*M,v1,n+1) == Nil  && (n+1) <= 7 )
+            {
                 AddQueue(*Q, B.code(*M,v1,h1)) ;
-                i++ ;
-                n++ ;
-                }
-            } 
-           break; 
+                ++n ;
+            }
+
+            n = h1 ;
+
+            while( B.code(*M,n-1,h1) == Nil && n > -1 )
+            {
+                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                --n ;
+            }
+
+            n = h1 ;
+
+            while( (B.code(*M,n+1,h1) == Nil) && ( (n) <= 7 ) )
+            {
+                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                ++n ;
+            }    
+            break;
         }
         case 'H' : 
         case 'h' : {
@@ -430,40 +411,58 @@ int i, n, h1, v1,;
         }
         case 'B' : 
         case 'b' : {
-        
-            n=v1;
+         i = 1;
+            n = 1;
+
+            while (B.code(*M,v1-i,h1+n) = Nil) {
+                if( (v1-i) == -1 || (h1+n) == 8 ) {
+                    break ;
+                } else {
+                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                i++ ;
+                n++ ;
+                }
+            } 
+
+            i = 1;
+            n = 1;
+
+            while (B.code(*M,v1+i,h1-n) = Nil) {
+                if( (v1+i) == 8 || (h1-n) == -1 ) {
+                    break ;
+                } else {
+                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                i++ ;
+                n++ ;
+                }
+            } 
+
+            i = 1;
+            n = 1;
+
+            while (B.code(*M,v1+i,h1+n) = Nil) {
+                if( (v1+i) == 8 || (h1+n) == 8 ) {
+                    break ;
+                } else {
+                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                i++ ;
+                n++ ;
+                }
+            } 
+
+            i = 1;
+            n = 1;
             
-            while( B.code(*M,v1,n-1) == Nil )
-            {
-            if( n == 0 ) { break ; }
-            AddQueue(*Q, B.code(*M,v1,h1)) ;
-            n-- ;
-            }
-
-            n=v1 ;
-
-            while( B.code(*M,v1,n+1) == Nil  && (n+1) <= 7 )
-            {
+            while (B.code(*M,v1-i,h1-n) = Nil) {
+                if( (v1-i) == -1 || (h1-n) == -1 ) {
+                    break ;
+                } else {
                 AddQueue(*Q, B.code(*M,v1,h1)) ;
-                ++n ;
-            }
-
-            n = h1 ;
-
-            while( B.code(*M,n-1,h1) == Nil && n > -1 )
-            {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
-                --n ;
-            }
-
-            n = h1 ;
-
-            while( (B.code(*M,n+1,h1) == Nil) && ( (n) <= 7 ) )
-            {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
-                ++n ;
-            }    
-            break;
+                i++ ;
+                n++ ;
+                }
+            } 
+           break; 
         }
         case 'Q' : 
         case 'q' : {

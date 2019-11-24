@@ -5,12 +5,19 @@ Int main() {
     MATRIKS Board;
     boolean Exit;
     char Command;
-    Bidak P1, P2, P3, P4, P5, P6, P7, P8, R1, R2, H1, H2, B1, B2, Q, K, p1, p2, p3, p4, p5, p6, p7, p8, r1, r2, h1, h2, b1, b2, q, k;
+    Bidak P1, P2, P3, P4, P5, P6, P7, P8, R1, R2, H1, H2, B1, B2, Q, K, p1, p2, p3, p4, p5, p6, p7, p8, r1, r2, h1, h2, b1, b2, q, k, digerak, titikGerak;
     Queuelist turn;
+    Queue bisaGerak, bidakGerak;
+    List white, black;
+    int gerak, opsiGerak, i;
 
     /* ALGORITMA */
     printMainMenu();    
-    CreateEmpty(&turn);
+    CreateEmptyQueueList(&turn);
+    CreateEmptyQueue(&bisaGerak, 16);
+    CreateEmptyQueue(&bidakGerak, 100);
+    CreateEmptyListLinear(&white);
+    CreateEmptyListLinear(&black);
     printf("Command : ");
     scanf("%c\n", &Command);
     switch (Command) {
@@ -132,39 +139,39 @@ Int main() {
             q.Position.Y = 1;
 
             /* Assign Board */
-            Elmt(Board,8,8) = R2;
-            Elmt(Board,7,8) = H2;
-            Elmt(Board,6,8) = B2;
-            Elmt(Board,5,8) = Q;
-            Elmt(Board,4,8) = K;
-            Elmt(Board,3,8) = B1;
-            Elmt(Board,2,8) = H1;
-            Elmt(Board,1,8) = R1;
-            Elmt(Board,1,7) = P1;
-            Elmt(Board,2,7) = P2;
-            Elmt(Board,3,7) = P3;
-            Elmt(Board,4,7) = P4;
-            Elmt(Board,5,7) = P5;
-            Elmt(Board,6,7) = P6;
-            Elmt(Board,7,7) = P7;
-            Elmt(Board,8,7) = P8;
+            Elmt(Board,8,8) = R2; InsVFirst (&black, R2); 
+            Elmt(Board,7,8) = H2; InsertLast (&black, *H2);
+            Elmt(Board,6,8) = B2; InsertLast (&black, *B2);
+            Elmt(Board,5,8) = Q; InsertLast (&black, *Q);
+            Elmt(Board,4,8) = K; InsertLast (&black, *K);
+            Elmt(Board,3,8) = B1; InsertLast (&black, *B1);
+            Elmt(Board,2,8) = H1; InsertLast (&black, *H1);
+            Elmt(Board,1,8) = R1; InsertLast (&black, *R1);
+            Elmt(Board,1,7) = P1; InsertLast (&black, *P1);
+            Elmt(Board,2,7) = P2; InsertLast (&black, *P2);
+            Elmt(Board,3,7) = P3; InsertLast (&black, *P3);
+            Elmt(Board,4,7) = P4; InsertLast (&black, *P4);
+            Elmt(Board,5,7) = P5; InsertLast (&black, *P5);
+            Elmt(Board,6,7) = P6; InsertLast (&black, *P6);
+            Elmt(Board,7,7) = P7; InsertLast (&black, *P7);
+            Elmt(Board,8,7) = P8; InsertLast (&black, *P8);
 
-            Elmt(Board,8,1) = r2;
-            Elmt(Board,7,1) = h1;
-            Elmt(Board,6,1) = b2;
-            Elmt(Board,5,1) = q;
-            Elmt(Board,4,1) = k;
-            Elmt(Board,3,1) = b1;
-            Elmt(Board,2,1) = h1;
-            Elmt(Board,1,1) = r1;
-            Elmt(Board,1,2) = p1;
-            Elmt(Board,2,2) = p2;
-            Elmt(Board,3,2) = p3;
-            Elmt(Board,4,2) = p4;
-            Elmt(Board,5,2) = p5;
-            Elmt(Board,6,2) = p6;
-            Elmt(Board,7,2) = p7;
-            Elmt(Board,8,2) = p8;
+            Elmt(Board,8,1) = r2; InsertLast (&white, *r2);
+            Elmt(Board,7,1) = h2; InsertLast (&white, *h2);
+            Elmt(Board,6,1) = b2; InsertLast (&white, *b2);
+            Elmt(Board,5,1) = q; InsertLast (&white, *q);
+            Elmt(Board,4,1) = k; InsertLast (&white, *k);
+            Elmt(Board,3,1) = b1; InsertLast (&white, *b1);
+            Elmt(Board,2,1) = h1; InsertLast (&white, *h1);
+            Elmt(Board,1,1) = r1; InsertLast (&white, *r1);
+            Elmt(Board,1,2) = p1; InsertLast (&white, *p1);
+            Elmt(Board,2,2) = p2; InsertLast (&white, *p2);
+            Elmt(Board,3,2) = p3; InsertLast (&white, *p3);
+            Elmt(Board,4,2) = p4; InsertLast (&white, *p4);
+            Elmt(Board,5,2) = p5; InsertLast (&white, *p5);
+            Elmt(Board,6,2) = p6; InsertLast (&white, *p6);
+            Elmt(Board,7,2) = p7; InsertLast (&white, *p7);
+            Elmt(Board,8,2) = p8; InsertLast (&white, *p8);
 
             while ((!Exit) || (NbElmt(turn) <= 50)) {
                 if ((IsEmpty(turn) || InfoTail(turn) == 'b') {          // white turn
@@ -173,10 +180,26 @@ Int main() {
                     scanf("%c\n", &Command);
                     switch (Command) {
                         case '1' : {
-                            Add(&turn, 'w');
+                            bisaGerak = cekGerak(&Board, &white);
+                            printBisaGerak(&bisaGerak);
+                            scanf("%d\n", &gerak);
+                            for (i = 1; i<=gerak; i++) {
+                                DelQueue(&bisaGerak, &digerak);
+                            }   
+                            bidakGerak = MoveBidak(digerak, &Board);
+                            printGerak(&bidakGerak);
+                            scanf("%d\n", &opsiGerak);
+                            for (i = 1; i<opsiGerak; i++) {
+                                DelQueue(&bidakGerak, &titikGerak);
+                            }
+                            if (Elmt(Board, titikGerak.X, titikGerak.Y) != Nil) {
+                                DelP (&white, Elmt(Board, titikGerak.X, titikGerak.Y));
+                            }
+
+                            AddQueueList(&turn, 'w');
                         }
                         case '2' : {
-                            Add(&turn, 'w');
+                            AddQueueList(&turn, 'w');
                         }
                         case '3' : {
 
@@ -197,6 +220,9 @@ Int main() {
                     scanf("%c\n", &Command);
                     switch (Command) {
                         case '1' : {
+                            bisaGerak = cekGerak(&black);
+                            printBisaGerak(&bisaGerak);
+
                             Add(&turn, 'b');
                         }
                         case '2' : {

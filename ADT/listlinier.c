@@ -7,7 +7,7 @@
 
 /* PROTOTYPE */
 /****************** TEST LIST KOSONG ******************/
-boolean IsEmpty (List L) {
+boolean IsEmptyListLinear (List L) {
 	/* Kamus Lokal */
 
 	/* Algoritma */
@@ -16,7 +16,7 @@ boolean IsEmpty (List L) {
 /* Mengirim true jika list kosong */
 
 /****************** PEMBUATAN LIST KOSONG ******************/
-void CreateEmpty (List *L) {
+void CreateEmptyListLinear (List *L) {
 	/* Kamus Lokal */
 
 	/* Algoritma */

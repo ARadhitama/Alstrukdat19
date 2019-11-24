@@ -1,9 +1,12 @@
 #include "kamus.h"
 
 Stack MoveBidak(Bidak B, MATRIKS *M){
+    int h1,v1, h2, v2;
+    
     switch (Bidak.code) {
         case 'r':
         case 'R': {
+        
             break;
         }
         case 'h':

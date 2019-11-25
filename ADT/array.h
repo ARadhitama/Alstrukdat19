@@ -43,7 +43,7 @@ void MakeEmpty (TabInt *T);
 
 /* ********** SELEKTOR ********** */
 /* *** Banyaknya elemen *** */
-int NbElmt (TabInt T);
+int NbElmtArray (TabInt T);
 /* Mengirimkan banyaknya elemen efektif tabel */
 /* Mengirimkan nol jika tabel kosong */
 /* *** Daya tampung container *** */
@@ -77,11 +77,11 @@ void SetNeff (TabInt *T, IdxType N);
 /* Mengeset nilai indeks elemen efektif sehingga bernilai N */
 
 /* ********** Test Indeks yang valid ********** */
-boolean IsIdxValid (TabInt T, IdxType i);
+boolean IsIdxValidArray (TabInt T, IdxType i);
 /* Prekondisi : i sembarang */
 /* Mengirimkan true jika i adalah indeks yang valid utk ukuran tabel */
 /* yaitu antara indeks yang terdefinisi utk container*/
-boolean IsIdxEff (TabInt T, IdxType i);
+boolean IsIdxEffArray (TabInt T, IdxType i);
 /* Prekondisi : i sembarang*/
 /* Mengirimkan true jika i adalah indeks yang terdefinisi utk tabel */
 /* yaitu antara FirstIdx(T)..LastIdx(T) */

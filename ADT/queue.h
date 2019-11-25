@@ -22,7 +22,7 @@ typedef struct {
     infotype *T; /* tabel penyimpan elemen */
     address HEAD; /* alamat penghapusan */
     address TAIL; /* alamat penambahan */
-    int MaxEl; /* maksimum banyaknya elemen queue */
+    int MaxElQ; /* maksimum banyaknya elemen queue */
 } Queue;
 
 /* Definisi Queue kosong: Head = Nil; TAIL = Nil. */
@@ -33,7 +33,7 @@ typedef struct {
 #define Tail(Q) (Q).TAIL
 #define InfoHead(Q) (Q).T[(Q).HEAD]
 #define InfoTail(Q) (Q).T[(Q).TAIL]
-#define MaxEl(Q) (Q).MaxEl
+#define MaxElQ(Q) (Q).MaxElQ
 
 /* *** Predikat Pemeriksaan Kondisi Queue *** */
 boolean IsEmptyQueue(Queue Q);

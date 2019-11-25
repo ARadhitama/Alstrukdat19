@@ -1,6 +1,6 @@
 #include "kamus.h"
 
-Int main() {
+int main() {
     /* KAMUS */
     MATRIKS Board;
     boolean Exit;
@@ -24,7 +24,7 @@ Int main() {
     scanf("%c\n", &Command);
     switch (Command) {
         case '1' :{
-            MakeMATRIKS(8,8,Board);
+            MakeMATRIKS(8,8,&Board);
         
             Exit = false;
             
@@ -141,9 +141,9 @@ Int main() {
             q.Position.Y = 1;
 
             /* Assign Board */
-            Elmt(Board,8,8) = R2; InsVFirst (&black, R2); 
-            Elmt(Board,7,8) = H2; InsertLast (&black, *H2);
-            Elmt(Board,6,8) = B2; InsertLast (&black, *B2);
+            Elmt(Board,8,8) = *R2; InsVFirst (&black, R2); 
+            Elmt(Board,7,8) = *H2; InsertLast (&black, *H2);
+            Elmt(Board,6,8) = *B2; InsertLast (&black, *B2);
             Elmt(Board,5,8) = Q; InsertLast (&black, *Q);
             Elmt(Board,4,8) = K; InsertLast (&black, *K);
             Elmt(Board,3,8) = B1; InsertLast (&black, *B1);
@@ -177,12 +177,12 @@ Int main() {
 
             for (i=1; i<=8; i++) {
                 for(j=3; j<=6; j++) {
-                    Elmt(Board,i,j).code = " "
+                    Elmt(Board,i,j).code = " ";
                 }
             }
-            Map(&Board));
-            while ((!Exit) || (NbElmt(turn) <= 50)) {
-                if ((IsEmpty(turn) || InfoTail(turn) == 'b') {          // white turn
+            Map(&Board);
+            while ((!Exit) || (NbElmtQueueList(turn) <= 50)) {
+                if ((IsEmptyQueueList(turn) || InfoTail(turn) == 'b')) {          // white turn
                     printCommand();
                     printf("Command : ");
                     scanf("%c\n", &Command);
@@ -196,12 +196,12 @@ Int main() {
                                 DelQueue(&bisaGerak, &digerak);
                             }   
                             bidakGerak = MoveBidak(digerak, &Board);
-                            printGerak(&bidakGerak);
+                            printGerak(&bidakGerak,&Board);
                             scanf("%d\n", &opsiGerak);
                             for (i = 1; i<opsiGerak; i++) {
                                 DelQueue(&bidakGerak, &titikGerak);
                             }
-                            DelP(&white, Elmt(Board, digerak.Position.X, digerak.Position.Y))
+                            DelP(&white, Elmt(Board, digerak.Position.X, digerak.Position.Y));
 
                             if (Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y).code != ' ') {
                                 DelP (&white, Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y));

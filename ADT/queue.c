@@ -14,7 +14,7 @@ boolean IsFullQueue(Queue Q) {
   /* Kamus Lokal */
 
   /* Algoritma */
-  return (Tail(Q) == MaxEl(Q));
+  return (Tail(Q) == MaxElQ(Q));
 }
 /* Mengirim true jika tabel penampung elemen Q sudah penuh yaitu mengandung
 MaxEl elemen */
@@ -33,12 +33,12 @@ void CreateEmptyQueue(Queue *Q, int Max) {
   /* Algoritma */
   (*Q).T = (infotype *) malloc ((Max + 1) * sizeof(infotype));
   if ((*Q).T != NULL) {
-    MaxEl(*Q) = Max;
+    MaxElQ(*Q) = Max;
     Head(*Q) = Nil;
     Tail(*Q) = Nil;
   }
   else {                                                        /* Alokasi gagal */
-    MaxEl(*Q) = Nil;
+    MaxElQ(*Q) = Nil;
   }
 }
 /* I.S. Max terdefinisi }
@@ -52,7 +52,7 @@ void DeAlokasi(Queue *Q) {
   /* Kamus Lokal */
 
   /* Algoritma */
-  MaxEl(*Q) = Nil;
+  MaxElQ(*Q) = Nil;
   free((*Q).T);
 }
 /* Proses : Mengembalikan memori Q
@@ -64,7 +64,7 @@ void AddQueue(Queue *Q, infotype X) {
   /* Kamus Lokal */
 
   /* Algoritma */
-  if (IsEmpty(*Q)) {
+  if (IsEmptyQueue(*Q)) {
     Head(*Q) = 1;
     Tail(*Q) = 1;
   }

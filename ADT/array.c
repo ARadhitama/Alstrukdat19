@@ -13,7 +13,7 @@ void MakeEmpty (TabInt *T) {
 
 /* ********** SELEKTOR ********** */
 /* *** Banyaknya elemen *** */
-int NbElmt (TabInt T) {
+int NbElmtArray (TabInt T) {
 	return T.Neff;
 }
 /* Mengirimkan banyaknya elemen efektif tabel */
@@ -81,7 +81,7 @@ void SetNeff (TabInt *T, IdxType N) {
 /* Mengeset nilai indeks elemen efektif sehingga bernilai N */
 
 /* ********** Test Indeks yang valid ********** */
-boolean IsIdxValid (TabInt T, IdxType i) {
+boolean IsIdxValidArray (TabInt T, IdxType i) {
 	if ((i >= IdxMin) && (i <= IdxMax)) {
 		return true;
 	}
@@ -90,7 +90,7 @@ boolean IsIdxValid (TabInt T, IdxType i) {
 /* Prekondisi : i sembarang */
 /* Mengirimkan true jika i adalah indeks yang valid utk ukuran tabel */
 /* yaitu antara indeks yang terdefinisi utk container*/
-boolean IsIdxEff (TabInt T, IdxType i) {
+boolean IsIdxEffArray (TabInt T, IdxType i) {
 	if ((i >= GetFirstIdx(T)) && (i <= GetLastIdx(T))) {
 		return true;
 	}

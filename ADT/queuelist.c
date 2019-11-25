@@ -40,7 +40,7 @@ int NbElmtQueueList (Queuelist Q) {
 	address P;
 
 	/* Algoritma */
-	if (!IsEmpty(Q)) {
+	if (!IsEmptyQueueList(Q)) {
 		P = Head(Q);
 		while (P != Nil) {
 			count++;
@@ -73,7 +73,7 @@ void AddQueueList (Queuelist * Q, infotype X) {
 	/* Algoritma */
 	Alokasi(&P,X);
 	if (P!=Nil) {
-		if (IsEmpty(*Q)) {
+		if (IsEmptyQueueList(*Q)) {
 			Head(*Q) = P;
 		}
 		else {

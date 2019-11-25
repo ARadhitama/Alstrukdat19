@@ -26,7 +26,7 @@ void CreateEmptyListLinear (List *L) {
 /* F.S. Terbentuk list kosong */
 
 /****************** Manajemen Memori ******************/
-address Alokasi (infotype X) {
+address AlokasiListLinear (infotype X) {
 	/* Kamus Lokal */
 	address P;
 
@@ -45,7 +45,7 @@ address Alokasi (infotype X) {
 /* Jika alokasi berhasil, maka address tidak nil, dan misalnya */
 /* menghasilkan P, maka info(P)=X, Next(P)=Nil */
 /* Jika alokasi gagal, mengirimkan Nil */
-void Dealokasi (address *P) {
+void DealokasiListLinear (address *P) {
 	/* Kamus Lokal */
 
 	/* Algoritma */
@@ -127,7 +127,7 @@ void InsVFirst (List *L, infotype X) {
 	address P;
 	
 	/* Algoritma */
-	P = Alokasi(X);
+	P = AlokasiListLinear(X);
 	if (P != Nil) {
 		InsertFirst(L, P);
 	}
@@ -149,7 +149,7 @@ void InsVLast (List *L, infotype X) {
 	address P;
 	
 	/* Algoritma */
-	P = Alokasi(X);
+	P = AlokasiListLinear(X);
 	if (P != Nil) {
 		InsertLast(L, P);
 	}
@@ -251,7 +251,7 @@ void InsertLast (List *L, address P) {
 	address Last;
 
 	/* Algoritma */
-	if (IsEmpty(*L)) {
+	if (IsEmptyListLinear(*L)) {
 		InsertFirst(L, P);
 	}
 	else {
@@ -395,7 +395,7 @@ int NbElmt (List L) {
 
 	/* Algoritma */
 	count = 0;
-	if (!IsEmpty(L)) {
+	if (!IsEmptyListLinear(L)) {
 		P = First(L);
 		do {
 			count++;
@@ -436,11 +436,11 @@ int NbElmt (List L) {
  void Konkat1 (List *L1, List *L2, List *L3){
  	CreateEmpty(L3);
  	address PTemp;
- 	while (!IsEmpty(*L1)) {
+ 	while (!IsEmptyListLinear(*L1)) {
  		DelFirst(L1,&PTemp);
  		InsertLast(L3,PTemp);
  	}
- 	while (!IsEmpty(*L2)) {
+ 	while (!IsEmptyListLinear(*L2)) {
  		DelFirst(L2,&PTemp);
  		InsertLast(L3,PTemp);
  	}

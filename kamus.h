@@ -50,10 +50,7 @@ void New(MATRIKS *M);
 /**** GAME RULES ****/
  
  boolean cekSkak ();
-<<<<<<< HEAD
  boolean cekSkakMat();
-=======
- boolean cekSkakMat();
+ 
  #endif
  
->>>>>>> cdd48f0a7f3b0ff5caae9c6ef939272a2ef907d3

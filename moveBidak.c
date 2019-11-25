@@ -5,265 +5,639 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
     Queue Q;
     Bidak TempBidak;
     boolean found;
-    int pos;
+    int posX, posY;
 
     CreateEmptyQueue(&Q, 100);
     TempBidak=B;
 
 
     switch(*B.code) {
-        case 'R' : 
-        case 'r' : {
-           if (B.Position.X == 0) {
+        case 'R' : {
+            if (B.Position.X == 0) {
                found = false;
-               pos = B.Position.X;
-               while (!found && (pos<=7)) {
-                   pos++;
-                   if (&Elmt(*M,pos,B.Position.Y) != ' ') {
-                       Elmt(*M,pos,B.Position.Y).Position.X = pos;
-                       AddQueue(&Q, Elmt(*M,pos,B.Position.Y));
+               posX = B.Position.X;
+               while (!found && (posX<=7)) {
+                   posX++;
+                   if ((&Elmt(*M,posX,B.Position.Y).code != ' ') || &Elmt(*M,posX,B.Position.Y).code == 'r' || &Elmt(*M,posX,B.Position.Y).code =='h' || &Elmt(*M,posX,B.Position.Y).code == 'b' || &Elmt(*M,posX,B.Position.Y).code == 'k' || &Elmt(*M,posX,B.Position.Y).code == 'q' || &Elmt(*M,posX,B.Position.Y).code == 'p') {
+                       Elmt(*M,posX,B.Position.Y).Position.X = posX;
+                       AddQueue(&Q, Elmt(*M,posX,B.Position.Y));
                    } else {
                        found = true;
                    }
                }
            } else {
                found = false;
-               pos = B.Position.X;
-               while (!found && (pos <=7)){
-                   pos++;
-                   if (&Elmt(*M,pos,B.Position.Y) != ' ') {
-                       Elmt(*M,pos,B.Position.Y).Position.X = pos;
-                       AddQueue(&Q, Elmt(*M,pos,B.Position.Y));
+               posX = B.Position.X;
+               while (!found && (posX <=7)){
+                   posX++;
+                   if ((&Elmt(*M,posX,B.Position.Y).code != ' ') || &Elmt(*M,posX,B.Position.Y).code == 'r' || &Elmt(*M,posX,B.Position.Y).code =='h' || &Elmt(*M,posX,B.Position.Y).code == 'b' || &Elmt(*M,posX,B.Position.Y).code == 'k' || &Elmt(*M,posX,B.Position.Y).code == 'q' || &Elmt(*M,posX,B.Position.Y).code == 'p') {
+                       Elmt(*M,posX,B.Position.Y).Position.X = posX;
+                       AddQueue(&Q, Elmt(*M,posX,B.Position.Y));
                    } else {
                        found = true;
                    }
                }
                found = false;
-               pos = B.Position.X;
-               while (!found && (pos >=0)){
-                   pos--;
-                   if (&Elmt(*M,pos,B.Position.Y) != ' ') {
-                       Elmt(*M,pos,B.Position.Y).Position.X = pos;
-                       AddQueue(&Q, Elmt(*M,pos,B.Position.Y));
+               posX = B.Position.X;
+               while (!found && (posX >=0)){
+                   posX--;
+                   if ((&Elmt(*M,posX,B.Position.Y).code != ' ') || &Elmt(*M,posX,B.Position.Y).code == 'r' || &Elmt(*M,posX,B.Position.Y).code =='h' || &Elmt(*M,posX,B.Position.Y).code == 'b' || &Elmt(*M,posX,B.Position.Y).code == 'k' || &Elmt(*M,posX,B.Position.Y).code == 'q' || &Elmt(*M,posX,B.Position.Y).code == 'p') {
+                       Elmt(*M,posX,B.Position.Y).Position.X = posX;
+                       AddQueue(&Q, Elmt(*M,posX,B.Position.Y));
                    } else {
                        found = true;
                    }
+               }
            }
            if (B.Position.Y == 0) {
                found = false;
-               pos = B.Position.Y;
-               while (!found && (pos<=7)) {
-                   pos++;
-                   if (&Elmt(*M,B.Position.X,pos) != ' ') {
-                       Elmt(*M,B.Position.X,pos).Position.Y = pos;
-                       AddQueue(&Q, Elmt(*M,B.Position.X,pos));
+               posY = B.Position.Y;
+               while (!found && (posY<=7)) {
+                   posY++;
+                   if ((&Elmt(*M,posX,B.Position.Y).code != ' ') || &Elmt(*M,posX,B.Position.Y).code == 'r' || &Elmt(*M,posX,B.Position.Y).code =='h' || &Elmt(*M,posX,B.Position.Y).code == 'b' || &Elmt(*M,posX,B.Position.Y).code == 'k' || &Elmt(*M,posX,B.Position.Y).code == 'q' || &Elmt(*M,posX,B.Position.Y).code == 'p') {
+                       Elmt(*M,B.Position.X,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,B.Position.X,posY));
                    } else {
                        found = true;
                    }
                }
            } else {
                found = false;
-               pos = B.Position.Y;
-               while (!found && (pos <=7)){
-                   pos++;
-                   if (&Elmt(*M,B.Position.X,pos) != ' ') {
-                       Elmt(*M,B.Position.X,pos).Position.Y = pos;
-                       AddQueue(&Q, Elmt(*M,B.Position.X,pos));
+               posY = B.Position.Y;
+               while (!found && (posY <=7)){
+                   posY++;
+                   if ((&Elmt(*M,posX,B.Position.Y).code != ' ') || &Elmt(*M,posX,B.Position.Y).code == 'r' || &Elmt(*M,posX,B.Position.Y).code =='h' || &Elmt(*M,posX,B.Position.Y).code == 'b' || &Elmt(*M,posX,B.Position.Y).code == 'k' || &Elmt(*M,posX,B.Position.Y).code == 'q' || &Elmt(*M,posX,B.Position.Y).code == 'p') {
+                       Elmt(*M,B.Position.X,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,B.Position.X,posY));
                    } else {
                        found = true;
                    }
                }
                found = false;
-               pos = B.Position.Y;
-               while (!found && (pos >=0)){
-                   pos--;
-                   if (&Elmt(*M,B.Position.X,pos) != ' ') {
-                       Elmt(*M,B.Position.X,pos).Position.Y = pos;
-                       AddQueue(&Q, Elmt(*M,B.Position.X,pos));
+               posY = B.Position.Y;
+               while (!found && (posY >=0)){
+                   posY--;
+                   if ((&Elmt(*M,posX,B.Position.Y).code != ' ') || &Elmt(*M,posX,B.Position.Y).code == 'r' || &Elmt(*M,posX,B.Position.Y).code =='h' || &Elmt(*M,posX,B.Position.Y).code == 'b' || &Elmt(*M,posX,B.Position.Y).code == 'k' || &Elmt(*M,posX,B.Position.Y).code == 'q' || &Elmt(*M,posX,B.Position.Y).code == 'p') {
+                       Elmt(*M,B.Position.X,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,B.Position.X,posY));
                    } else {
                        found = true;
                    }
            }
-            
            
-            break;
+            return Q;
         }
-        case 'H' : 
+        case 'r' : {
+           if (B.Position.X == 0) {
+               found = false;
+               posX = B.Position.X;
+               while (!found && (posX<=7)) {
+                   posX++;
+                   if ((&Elmt(*M,posX,B.Position.Y).code != ' ') || &Elmt(*M,posX,B.Position.Y).code == 'R' || &Elmt(*M,posX,B.Position.Y).code =='H' || &Elmt(*M,posX,B.Position.Y).code == 'B' || &Elmt(*M,posX,B.Position.Y).code == 'K' || &Elmt(*M,posX,B.Position.Y).code == 'Q' || &Elmt(*M,posX,B.Position.Y).code == 'P') {
+                       Elmt(*M,posX,B.Position.Y).Position.X = posX;
+                       AddQueue(&Q, Elmt(*M,posX,B.Position.Y));
+                   } else {
+                       found = true;
+                   }
+               }
+           } else {
+               found = false;
+               posX = B.Position.X;
+               while (!found && (posX <=7)){
+                   posX++;
+                   if ((&Elmt(*M,posX,B.Position.Y).code != ' ') || &Elmt(*M,posX,B.Position.Y).code == 'R' || &Elmt(*M,posX,B.Position.Y).code =='H' || &Elmt(*M,posX,B.Position.Y).code == 'B' || &Elmt(*M,posX,B.Position.Y).code == 'K' || &Elmt(*M,posX,B.Position.Y).code == 'Q' || &Elmt(*M,posX,B.Position.Y).code == 'P') {
+                       Elmt(*M,posX,B.Position.Y).Position.X = posX;
+                       AddQueue(&Q, Elmt(*M,posX,B.Position.Y));
+                   } else {
+                       found = true;
+                   }
+               }
+               found = false;
+               posX = B.Position.X;
+               while (!found && (posX >=0)){
+                   posX--;
+                   if (((&Elmt(*M,posX,B.Position.Y).code != ' ') || &Elmt(*M,posX,B.Position.Y).code == 'R' || &Elmt(*M,posX,B.Position.Y).code =='H' || &Elmt(*M,posX,B.Position.Y).code == 'B' || &Elmt(*M,posX,B.Position.Y).code == 'K' || &Elmt(*M,posX,B.Position.Y).code == 'Q' || &Elmt(*M,posX,B.Position.Y).code == 'P')) {
+                       Elmt(*M,posX,B.Position.Y).Position.X = posX;
+                       AddQueue(&Q, Elmt(*M,posX,B.Position.Y));
+                   } else {
+                       found = true;
+                   }
+               }
+           }
+           if (B.Position.Y == 0) {
+               found = false;
+               posY = B.Position.Y;
+               while (!found && (posY<=7)) {
+                   posY++;
+                   if (((&Elmt(*M,posX,B.Position.Y).code != ' ') || &Elmt(*M,posX,B.Position.Y).code == 'R' || &Elmt(*M,posX,B.Position.Y).code =='H' || &Elmt(*M,posX,B.Position.Y).code == 'B' || &Elmt(*M,posX,B.Position.Y).code == 'K' || &Elmt(*M,posX,B.Position.Y).code == 'Q' || &Elmt(*M,posX,B.Position.Y).code == 'P')) {
+                       Elmt(*M,B.Position.X,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,B.Position.X,posY));
+                   } else {
+                       found = true;
+                   }
+               }
+           } else {
+               found = false;
+               posY = B.Position.Y;
+               while (!found && (posY <=7)){
+                   posY++;
+                   if (((&Elmt(*M,posX,B.Position.Y).code != ' ') || &Elmt(*M,posX,B.Position.Y).code == 'R' || &Elmt(*M,posX,B.Position.Y).code =='H' || &Elmt(*M,posX,B.Position.Y).code == 'B' || &Elmt(*M,posX,B.Position.Y).code == 'K' || &Elmt(*M,posX,B.Position.Y).code == 'Q' || &Elmt(*M,posX,B.Position.Y).code == 'P')) {
+                       Elmt(*M,B.Position.X,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,B.Position.X,posY));
+                   } else {
+                       found = true;
+                   }
+               }
+               found = false;
+               posY = B.Position.Y;
+               while (!found && (posY >=0)){
+                   posY--;
+                   if (((&Elmt(*M,posX,B.Position.Y).code != ' ') || &Elmt(*M,posX,B.Position.Y).code == 'R' || &Elmt(*M,posX,B.Position.Y).code =='H' || &Elmt(*M,posX,B.Position.Y).code == 'B' || &Elmt(*M,posX,B.Position.Y).code == 'K' || &Elmt(*M,posX,B.Position.Y).code == 'Q' || &Elmt(*M,posX,B.Position.Y).code == 'P')) {
+                       Elmt(*M,B.Position.X,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,B.Position.X,posY));
+                   } else {
+                       found = true;
+                   }
+           }
+           
+            return Q;
+        }
+        case 'H' : {
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX++;
+        posY += 2;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX++;
+        posY -= 2;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX--;
+        posY += 2;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX--;
+        posY -= 2;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX+=2;
+        posY++;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX-=2;
+        posY++;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX+=2;
+        posY--;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX-=2;
+        posY--;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+            return Q;
+        }
         case 'h' : {
-           if (B.Position.X = 
-            break;
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX++;
+        posY += 2;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX++;
+        posY -= 2;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX--;
+        posY += 2;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX--;
+        posY -= 2;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX+=2;
+        posY++;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX-=2;
+        posY++;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX+=2;
+        posY--;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX-=2;
+        posY--;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+            return Q;
         }
         case 'B' : 
         case 'b' : {  
-           if (B.Position.X=0) {
-               
-           }
-           break; 
+               found = false;
+               posX = B.Position.X;
+               posY = B.Position.Y;
+               while (!found && posX<=7 && posX>=0 && posY<=7 && posY>=0){
+                   posX++;
+                   posY++;
+                   if (&Elmt(*M,posX,posY).code != ' ') {
+                       Elmt(*M,posX,posY).Position.X = posX;
+                       Elmt(*M,posX,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,posX,posY));
+                   } else {
+                       found = true;
+                   }
+                }
+                found = false;
+                posX = B.Position.X;
+                posY = B.Position.Y; 
+                while (!found && posX<=7 && posX>=0 && posY<=7 && posY>=0){
+                   posX--;
+                   posY--;
+                   if (&Elmt(*M,posX,posY).code != ' ') {
+                       Elmt(*M,posX,posY).Position.X = posX;
+                       Elmt(*M,posX,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,posX,posY));
+                    } else {
+                       found = true;
+                    }
+                }
+                found = false;
+                posX = B.Position.X;
+                posY = B.Position.Y;
+                while (!found && posX<=7 && posX>=0 && posY<=7 && posY>=0){
+                   posX++;
+                   posY--;
+                   if (&Elmt(*M,posX,posY).code != ' ') {
+                       Elmt(*M,posX,posY).Position.X = posX;
+                       Elmt(*M,posX,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,posX,posY));
+                   } else {
+                       found = true;
+                   }
+                }
+                found = false;
+                posX = B.Position.X;
+                posY = B.Position.Y;
+                while (!found && posX<=7 && posX>=0 && posY<=7 && posY>=0){
+                   posX--;
+                   posY++;
+                   if (&Elmt(*M,posX,posY).code != ' ') {
+                       Elmt(*M,posX,posY).Position.X = posX;
+                       Elmt(*M,posX,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,posX,posY));
+                   } else {
+                       found = true;
+                   }
+                }
+           return Q;
         }
         case 'Q' : 
         case 'q' : {
-            int x=1 , y=1 , a , b ;
-
-            // Horizontal //
-
-            while( B.code[v1][&h1-y] == ' ' )
-            {
-                if( (h1-y) == -1 ) {
-                    break ;        
-                } else {
-                AddQueue(&Q, B.code[v1][&h1-y]) ;
-                y++ ;
-                }
-            }
-
-            y = 1 ;
-
-            while( B.code[v1][&h1+y] == ' ' )
-            {
-                if( (h1+y) == 8 ) {
-                    break ;
-                }
-                AddQueue(&Q, B.code[v1][&h1+y]) ;
-                y++ ;
-            }
-
-            // vertical //
-
-            x = 1 ;
-
-            while( B.code[v1-x][&h1] == ' ' )
-            {
-                if( (v1-x) == -1 ) {
-                    break ;
-                } else {
-                AddQueue(&Q, B.code[v1-x][&h1]) ;
-                x++ ;
-                }
-            }
-
-            x = 1 ;
-
-            while( B.code[v1+x][&h1] == ' ' ) {
-                if( (v1+x) == 8 ) {
-                    break ;
-                } else {
-                AddQueue(&Q, B.code[v1+x][&h1]) ;
-                x++ ;
-                }
-            }
+        // horizontal dan vertikal //
+           if (B.Position.X == 0) {
+               found = false;
+               posX = B.Position.X;
+               while (!found && (posX<=7)) {
+                   posX++;
+                   if (&Elmt(*M,posX,B.Position.Y).code != ' ') {
+                       Elmt(*M,posX,B.Position.Y).Position.X = posX;
+                       AddQueue(&Q, Elmt(*M,posX,B.Position.Y));
+                   } else {
+                       found = true;
+                   }
+               }
+           } else {
+               found = false;
+               posX = B.Position.X;
+               while (!found && (posX <=7)){
+                   posX++;
+                   if (&Elmt(*M,posX,B.Position.Y).code != ' ') {
+                       Elmt(*M,posX,B.Position.Y).Position.X = posX;
+                       AddQueue(&Q, Elmt(*M,posX,B.Position.Y));
+                   } else {
+                       found = true;
+                   }
+               }
+               found = false;
+               posX = B.Position.X;
+               while (!found && (posX >=0)){
+                   posX--;
+                   if (&Elmt(*M,posX,B.Position.Y).code != ' ') {
+                       Elmt(*M,posX,B.Position.Y).Position.X = posX;
+                       AddQueue(&Q, Elmt(*M,posX,B.Position.Y));
+                   } else {
+                       found = true;
+                   }
+               }
+           }
+           if (B.Position.Y == 0) {
+               found = false;
+               posY = B.Position.Y;
+               while (!found && (posY<=7)) {
+                   posY++;
+                   if (&Elmt(*M,B.Position.X,posY).code != ' ') {
+                       Elmt(*M,B.Position.X,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,B.Position.X,posY));
+                   } else {
+                       found = true;
+                   }
+               }
+           } else {
+               found = false;
+               posY = B.Position.Y;
+               while (!found && (posY <=7)){
+                   posY++;
+                   if (&Elmt(*M,B.Position.X,posY).code != ' ') {
+                       Elmt(*M,B.Position.X,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,B.Position.X,posY));
+                   } else {
+                       found = true;
+                   }
+               }
+               found = false;
+               posY = B.Position.Y;
+               while (!found && (posY >=0)){
+                   posY--;
+                   if (&Elmt(*M,B.Position.X,posY).code != ' ') {
+                       Elmt(*M,B.Position.X,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,B.Position.X,posY));
+                   } else {
+                       found = true;
+                   }
+           }
 
             // Diagonal  //
 
-            a = 1;
-            b = 1 ;
-
-            while( B.code[v1-a][&h1+b] == ' ' )
-            {
-                if( (v1-a) == -1 || (h1+b) == 8 ) {
-                    break ;
-                } else {
-                AddQueue(&Q, B.code[v1-a][&h1+b]) ;
-                a++ ;
-                b++ ;
+            found = false;
+               posX = B.Position.X;
+               posY = B.Position.Y;
+               while (!found && posX<=7 && posX>=0 && posY<=7 && posY>=0){
+                   posX++;
+                   posY++;
+                   if (&Elmt(*M,posX,posY).code != ' ') {
+                       Elmt(*M,posX,posY).Position.X = posX;
+                       Elmt(*M,posX,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,posX,posY));
+                   } else {
+                       found = true;
+                   }
                 }
-            }
-
-
-            a = 1;
-            b = 1 ;
-
-            while( B.code[v1+a][&h1-b] == ' ' )
-            {
-                if( (v1+a) == 8 || (h1-b) == -1 ) {
-                    break ;
-                } else {
-                AddQueue(&Q, B.code[v1+a][&h1-b]) ;
-                a++ ;
-                b++ ;
+                found = false;
+                posX = B.Position.X;
+                posY = B.Position.Y; 
+                while (!found && posX<=7 && posX>=0 && posY<=7 && posY>=0){
+                   posX--;
+                   posY--;
+                   if (&Elmt(*M,posX,posY).code != ' ') {
+                       Elmt(*M,posX,posY).Position.X = posX;
+                       Elmt(*M,posX,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,posX,posY));
+                    } else {
+                       found = true;
+                    }
                 }
-            }
-
-            a = 1;
-            b = 1 ;
-
-
-            while( B.code[v1+a][&h1+b] == ' ' )
-            {
-                if( (v1+a) == 8 || (h1+b) == 8 ) {
-                    break ;
+                found = false;
+                posX = B.Position.X;
+                posY = B.Position.Y;
+                while (!found && posX<=7 && posX>=0 && posY<=7 && posY>=0){
+                   posX++;
+                   posY--;
+                   if (&Elmt(*M,posX,posY).code != ' ') {
+                       Elmt(*M,posX,posY).Position.X = posX;
+                       Elmt(*M,posX,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,posX,posY));
+                   } else {
+                       found = true;
+                   }
                 }
-                AddQueue(&Q, B.code[v1+a][&h1+b]) ;
-                a++ ;
-                b++ ;
-            }
-
-            a = 1 ;
-            b = 1 ;
-
-            while( B.code[v1-a][&h1-b] == ' ' )
-            {
-                if( (v1-a) == -1 || (h1-b) == -1 ) {
-                    break ;
-                } else {
-                AddQueue(&Q, B.code[v1-a][&h1-b]) ;
-                a++ ;
-                b++ ;
+                found = false;
+                posX = B.Position.X;
+                posY = B.Position.Y;
+                while (!found && posX<=7 && posX>=0 && posY<=7 && posY>=0){
+                   posX--;
+                   posY++;
+                   if (&Elmt(*M,posX,posY).code != ' ') {
+                       Elmt(*M,posX,posY).Position.X = posX;
+                       Elmt(*M,posX,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,posX,posY));
+                   } else {
+                       found = true;
+                   }
                 }
-            }
             break;
         }
         case 'K' : 
         case 'k' : {
-            if(B.code[v1][&h1+1] = ' ') {
-                AddQueue(&Q, B.code[v1][&h1+1]) ;
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            posX++;
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                Elmt(*M, posX, posY).Position.X = posX;
+                Elmt(*M, posX, posY).Position.Y = posY;
+                AddQueue(&Q, Elmt(*M, posX, posY));
             }
-            if(B.code[v1][&h1-1] = ' ') {
-                AddQueue(&Q, B.code[v1][&h1-1]) ;
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            posX--;
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                Elmt(*M, posX, posY).Position.X = posX;
+                Elmt(*M, posX, posY).Position.Y = posY;
+                AddQueue(&Q, Elmt(*M, posX, posY));
             }
-            if(B.code[v1+1][&h1] = ' ') {
-                AddQueue(&Q, B.code[v1+1][&h1]) ;
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            posY++;
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                Elmt(*M, posX, posY).Position.X = posX;
+                Elmt(*M, posX, posY).Position.Y = posY;
+                AddQueue(&Q, Elmt(*M, posX, posY));
             }
-            if(B.code[v1-1][&h1] = ' ') {
-                AddQueue(&Q, B.code[v1-1][&h1]) ;
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            posY--;
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                Elmt(*M, posX, posY).Position.X = posX;
+                Elmt(*M, posX, posY).Position.Y = posY;
+                AddQueue(&Q, Elmt(*M, posX, posY));
             }
-            if(B.code[v1+1][&h1+1] = ' ') {
-                AddQueue(&Q, B.code[v1+1][&h1+1]) ;
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            posX++;
+            posY++;
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                Elmt(*M, posX, posY).Position.X = posX;
+                Elmt(*M, posX, posY).Position.Y = posY;
+                AddQueue(&Q, Elmt(*M, posX, posY));
             }
-            if(B.code[v1-1][&h1-1] = ' ') {
-                AddQueue(&Q, B.code[v1-2][&h1-1]) ;
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            posX++;
+            posY--;
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                Elmt(*M, posX, posY).Position.X = posX;
+                Elmt(*M, posX, posY).Position.Y = posY;
+                AddQueue(&Q, Elmt(*M, posX, posY));
             }
-            if(B.code[v1-1][&h1+1] = ' ') {
-                AddQueue(&Q, B.code[v1-1][&h1+1]) ;
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            posX--;
+            posY++;
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                Elmt(*M, posX, posY).Position.X = posX;
+                Elmt(*M, posX, posY).Position.Y = posY;
+                AddQueue(&Q, Elmt(*M, posX, posY));
             }
-            if(B.code[v1+1][&h1-1] = ' ') {
-                AddQueue(&Q, B.code[v1+1][&h1-1]) ;
-            } 
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            posX--;
+            posY--;
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                Elmt(*M, posX, posY).Position.X = posX;
+                Elmt(*M, posX, posY).Position.Y = posY;
+                AddQueue(&Q, Elmt(*M, posX, posY));
+            }
+
             break;  
         }
         case 'P' : {
-            if (B.Position.X=7) {
-                if (B.code[v1-1][&h1] = ' ') {
-                    AddQueue(&Q, B.code[v1-1][&h1]) ;
-                } else if (B.code[v1-2][&h1] = ' ') {
-                    AddQueue(&Q, B.code[v1-2][&h1]) ;
-                } 
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            if (posY=7){
+                posX--;
+                posY--;
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                    Elmt(*M, posX, posY).Position.X = posX;
+                    Elmt(*M, posX, posY).Position.Y = posY;
+                    AddQueue(&Q, Elmt(*M, posX, posY));
+                }
+                posX--;
+                posY--;
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                    Elmt(*M, posX, posY).Position.X = posX;
+                    Elmt(*M, posX, posY).Position.Y = posY;
+                    AddQueue(&Q, Elmt(*M, posX, posY));
+                }
             } else {
-                if (B.code[v1-1][&h1] = ' ' ) {
-                    AddQueue(&Q, B.code[v1-1][&h1]) ;
+                posX=B.Position.X;
+                posY=B.Position.Y;
+                posX--;
+                posY--;
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                    Elmt(*M, posX, posY).Position.X = posX;
+                    Elmt(*M, posX, posY).Position.Y = posY;
+                    AddQueue(&Q, Elmt(*M, posX, posY));
                 }
             }
             break;
         }
         case 'p' : {
-            if (B.Position.X=2) {
-                if (B.code[v1+1][&h1] = ' ') {
-                    AddQueue(&Q, B.code[v1+1][&h1]) ;
-                } else if (B.code[v1+2][&h1] = ' ') {
-                    AddQueue(&Q, B.code[v1+2][&h1]) ;
-                } 
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            if (posY=2){
+                posX++;
+                posY++;
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                    Elmt(*M, posX, posY).Position.X = posX;
+                    Elmt(*M, posX, posY).Position.Y = posY;
+                    AddQueue(&Q, Elmt(*M, posX, posY));
+                }
+                posX++;
+                posY++;
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                    Elmt(*M, posX, posY).Position.X = posX;
+                    Elmt(*M, posX, posY).Position.Y = posY;
+                    AddQueue(&Q, Elmt(*M, posX, posY));
+                }
             } else {
-                if (B.code[v1+1][&h1] = ' ' ) {
-                    AddQueue(&Q, B.code[v1+1][&h1]) ;
+                posX=B.Position.X;
+                posY=B.Position.Y;
+                posX++;
+                posY++;
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                    Elmt(*M, posX, posY).Position.X = posX;
+                    Elmt(*M, posX, posY).Position.Y = posY;
+                    AddQueue(&Q, Elmt(*M, posX, posY));
                 }
             }
             break;
@@ -273,323 +647,504 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
 
 
 Queue cekGerak (MATRIKS *M, List *L) {
-    int i, n, h1, v1;
-    addressQ P;
+    int i, n;
     Queue Q;
-    Bidak B;
+    Bidak TempBidak;
+    boolean found;
+    int posX, posY;
 
     CreateEmptyQueue(&Q, 100);
+    TempBidak=B;
 
     while (info(P)!=NilQ) {
 
     switch(*B.code) {
         case 'R' : 
         case 'r' : {
-          
-            n=v1;
-            
-            while( B.code[v1][&n-1] == ' ' )
-            {
-            if( n == 0 ) { break ; }
-            AddQueue(&Q, B.code[v1][&h1]) ;
-            n-- ;
-            }
-
-            n=v1 ;
-
-            while( B.code[v1][&n+1] == ' '  && (n+1) <= 7 )
-            {
-                AddQueue(&Q, B.code[v1][&h1]) ;
-                ++n ;
-            }
-
-            n = h1 ;
-
-            while( B.code[n-1][&h1] == ' ' && n > -1 )
-            {
-                AddQueue(&Q, B.code[v1][&h1]) ;
-                --n ;
-            }
-
-            n = h1 ;
-
-            while( (B.code[n+1][&h1] == ' ') && ( (n) <= 7 ) )
-            {
-                AddQueue(&Q, B.code[v1][&h1]) ;
-                ++n ;
-            }    
+           if (B.Position.X == 0) {
+               found = false;
+               posX = B.Position.X;
+               while (!found && (posX<=7)) {
+                   posX++;
+                   if (&Elmt(*M,posX,B.Position.Y).code != ' ') {
+                       Elmt(*M,posX,B.Position.Y).Position.X = posX;
+                       AddQueue(&Q, Elmt(*M,posX,B.Position.Y));
+                   } else {
+                       found = true;
+                   }
+               }
+           } else {
+               found = false;
+               posX = B.Position.X;
+               while (!found && (posX <=7)){
+                   posX++;
+                   if (&Elmt(*M,posX,B.Position.Y).code != ' ') {
+                       Elmt(*M,posX,B.Position.Y).Position.X = posX;
+                       AddQueue(&Q, Elmt(*M,posX,B.Position.Y));
+                   } else {
+                       found = true;
+                   }
+               }
+               found = false;
+               posX = B.Position.X;
+               while (!found && (posX >=0)){
+                   posX--;
+                   if (&Elmt(*M,posX,B.Position.Y).code != ' ') {
+                       Elmt(*M,posX,B.Position.Y).Position.X = posX;
+                       AddQueue(&Q, Elmt(*M,posX,B.Position.Y));
+                   } else {
+                       found = true;
+                   }
+               }
+           }
+           if (B.Position.Y == 0) {
+               found = false;
+               posY = B.Position.Y;
+               while (!found && (posY<=7)) {
+                   posY++;
+                   if (&Elmt(*M,B.Position.X,posY).code != ' ') {
+                       Elmt(*M,B.Position.X,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,B.Position.X,posY));
+                   } else {
+                       found = true;
+                   }
+               }
+           } else {
+               found = false;
+               posY = B.Position.Y;
+               while (!found && (posY <=7)){
+                   posY++;
+                   if (&Elmt(*M,B.Position.X,posY).code != ' ') {
+                       Elmt(*M,B.Position.X,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,B.Position.X,posY));
+                   } else {
+                       found = true;
+                   }
+               }
+               found = false;
+               posY = B.Position.Y;
+               while (!found && (posY >=0)){
+                   posY--;
+                   if (&Elmt(*M,B.Position.X,posY).code != ' ') {
+                       Elmt(*M,B.Position.X,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,B.Position.X,posY));
+                   } else {
+                       found = true;
+                   }
+           }
+           
             break;
         }
         case 'H' : 
         case 'h' : {
-            if(B.code[v1+2][&h1+1] = ' ') {
-                if((v1<8) && (h1<8)) { 
-                    AddQueue(&Q, B.code[v1][&h1]) ;
-                }
-            }
-            if( B.code[v1+2][&h1-1] == ' ' ) {
-                if((v1<8) && (h1>-1)) { 
-                    AddQueue(&Q, B.code[v1][&h1]) ;
-                }
-            }
-
-            if( B.code[v1+1][&h1+2] == ' ' ) {  
-                if((v1<8) && (h1<8)) { 
-                    AddQueue(&Q, B.code[v1][&h1]) ;
-                }
-            }
-            if( B.code[v1-1][&h1+2] == ' ' ) {  
-                if((v1>-1) && (h1<8)) { 
-                    AddQueue(&Q, B.code[v1][&h1]) ;
-                } 
-            }
-
-            if (B.code[v1-2][&h1-1]== ' ' ) {
-                if((v1>-1) && (h1>-1)) { 
-                    AddQueue(&Q, B.code[v1][&h1]) ;
-                }
-            }
-
-            if( B.code[v1-2][&h1+1] == ' ' )  {
-                if((v1>-1) && (h1<8)) { 
-                    AddQueue(&Q, B.code[v1][&h1]) ;
-                }
-            }
-
-            if( B.code[h1+1][&v1-2] == ' ' ) {
-                if((h1<8) && (v1>-1)) { 
-                    AddQueue(&Q, B.code[v1][&h1]) ;
-                }
-            }
-
-            if( B.code[v1-1][&h1-2] == ' ' )
-            {   
-                if((v1>-1) && (h1>-1)) { 
-                    AddQueue(&Q, B.code[v1][&h1]) ;
-                }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX++;
+        posY += 2;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX++;
+        posY -= 2;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX--;
+        posY += 2;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX--;
+        posY -= 2;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX+=2;
+        posY++;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX-=2;
+        posY++;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX+=2;
+        posY--;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
+        }
+        posX = B.Position.X;
+        posY = B.Position.Y;
+        posX-=2;
+        posY--;
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+            Elmt(*M, posX, posY).Position.X = posX;
+            Elmt(*M, posX, posY).Position.Y = posY;
+            AddQueue(&Q, Elmt(*M, posX, posY));
         }
             break;
         }
         case 'B' : 
-        case 'b' : {
-         i = 1;
-            n = 1;
-
-            while (B.code[v1-i][&h1+n] = ' ') {
-                if( (v1-i) == -1 || (h1+n) == 8 ) {
-                    break ;
-                } else {
-                AddQueue(&Q, B.code[v1][&h1]) ;
-                i++ ;
-                n++ ;
+        case 'b' : {  
+               found = false;
+               posX = B.Position.X;
+               posY = B.Position.Y;
+               while (!found && posX<=7 && posX>=0 && posY<=7 && posY>=0){
+                   posX++;
+                   posY++;
+                   if (&Elmt(*M,posX,posY).code != ' ') {
+                       Elmt(*M,posX,posY).Position.X = posX;
+                       Elmt(*M,posX,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,posX,posY));
+                   } else {
+                       found = true;
+                   }
                 }
-            } 
-
-            i = 1;
-            n = 1;
-
-            while (B.code[v1+i][&h1-n] = ' ') {
-                if( (v1+i) == 8 || (h1-n) == -1 ) {
-                    break ;
-                } else {
-                AddQueue(&Q, B.code[v1][&h1]) ;
-                i++ ;
-                n++ ;
+                found = false;
+                posX = B.Position.X;
+                posY = B.Position.Y; 
+                while (!found && posX<=7 && posX>=0 && posY<=7 && posY>=0){
+                   posX--;
+                   posY--;
+                   if (&Elmt(*M,posX,posY).code != ' ') {
+                       Elmt(*M,posX,posY).Position.X = posX;
+                       Elmt(*M,posX,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,posX,posY));
+                    } else {
+                       found = true;
+                    }
                 }
-            } 
-
-            i = 1;
-            n = 1;
-
-            while (B.code[v1+i][&h1+n] = ' ') {
-                if( (v1+i) == 8 || (h1+n) == 8 ) {
-                    break ;
-                } else {
-                AddQueue(&Q, B.code[v1][&h1]) ;
-                i++ ;
-                n++ ;
+                found = false;
+                posX = B.Position.X;
+                posY = B.Position.Y;
+                while (!found && posX<=7 && posX>=0 && posY<=7 && posY>=0){
+                   posX++;
+                   posY--;
+                   if (&Elmt(*M,posX,posY).code != ' ') {
+                       Elmt(*M,posX,posY).Position.X = posX;
+                       Elmt(*M,posX,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,posX,posY));
+                   } else {
+                       found = true;
+                   }
                 }
-            } 
-
-            i = 1;
-            n = 1;
-            
-            while (B.code[v1-i][&h1-n] = ' ') {
-                if( (v1-i) == -1 || (h1-n) == -1 ) {
-                    break ;
-                } else {
-                AddQueue(&Q, B.code[v1][&h1]) ;
-                i++ ;
-                n++ ;
+                found = false;
+                posX = B.Position.X;
+                posY = B.Position.Y;
+                while (!found && posX<=7 && posX>=0 && posY<=7 && posY>=0){
+                   posX--;
+                   posY++;
+                   if (&Elmt(*M,posX,posY).code != ' ') {
+                       Elmt(*M,posX,posY).Position.X = posX;
+                       Elmt(*M,posX,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,posX,posY));
+                   } else {
+                       found = true;
+                   }
                 }
-            } 
-           break; 
+           return Q;
         }
         case 'Q' : 
         case 'q' : {
-            int x=1 , y=1 , a , b ;
-
-            // Horizontal //
-
-            while( B.code[v1][&h1-y] == ' ' )
-            {
-                if( (h1-y) == -1 ) {
-                    break ;        
-                } else {
-                AddQueue(&Q, B.code[v1][&h1]) ;
-                y++ ;
-                }
-            }
-
-            y = 1 ;
-
-            while( B.code[v1][&h1+y] == ' ' )
-            {
-                if( (h1+y) == 8 ) {
-                    break ;
-                }
-                AddQueue(&Q, B.code[v1][&h1]) ;
-                y++ ;
-            }
-
-            // vertical //
-
-            x = 1 ;
-
-            while( B.code[v1-x][&h1] == ' ' )
-            {
-                if( (v1-x) == -1 ) break ;
-                AddQueue(&Q, B.code[v1][&h1]) ;
-                x++ ;
-            }
-
-            x = 1 ;
-
-            while( B.code[v1+x][&h1] == ' ' )
-            {
-                if( (v1+x) == 8 ) break ;
-                AddQueue(&Q, B.code[v1][&h1]) ;
-                x++ ;
-            }
+        // horizontal dan vertikal //
+           if (B.Position.X == 0) {
+               found = false;
+               posX = B.Position.X;
+               while (!found && (posX<=7)) {
+                   posX++;
+                   if (&Elmt(*M,posX,B.Position.Y).code != ' ') {
+                       Elmt(*M,posX,B.Position.Y).Position.X = posX;
+                       AddQueue(&Q, Elmt(*M,posX,B.Position.Y));
+                   } else {
+                       found = true;
+                   }
+               }
+           } else {
+               found = false;
+               posX = B.Position.X;
+               while (!found && (posX <=7)){
+                   posX++;
+                   if (&Elmt(*M,posX,B.Position.Y).code != ' ') {
+                       Elmt(*M,posX,B.Position.Y).Position.X = posX;
+                       AddQueue(&Q, Elmt(*M,posX,B.Position.Y));
+                   } else {
+                       found = true;
+                   }
+               }
+               found = false;
+               posX = B.Position.X;
+               while (!found && (posX >=0)){
+                   posX--;
+                   if (&Elmt(*M,posX,B.Position.Y).code != ' ') {
+                       Elmt(*M,posX,B.Position.Y).Position.X = posX;
+                       AddQueue(&Q, Elmt(*M,posX,B.Position.Y));
+                   } else {
+                       found = true;
+                   }
+               }
+           }
+           if (B.Position.Y == 0) {
+               found = false;
+               posY = B.Position.Y;
+               while (!found && (posY<=7)) {
+                   posY++;
+                   if (&Elmt(*M,B.Position.X,posY).code != ' ') {
+                       Elmt(*M,B.Position.X,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,B.Position.X,posY));
+                   } else {
+                       found = true;
+                   }
+               }
+           } else {
+               found = false;
+               posY = B.Position.Y;
+               while (!found && (posY <=7)){
+                   posY++;
+                   if (&Elmt(*M,B.Position.X,posY).code != ' ') {
+                       Elmt(*M,B.Position.X,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,B.Position.X,posY));
+                   } else {
+                       found = true;
+                   }
+               }
+               found = false;
+               posY = B.Position.Y;
+               while (!found && (posY >=0)){
+                   posY--;
+                   if (&Elmt(*M,B.Position.X,posY).code != ' ') {
+                       Elmt(*M,B.Position.X,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,B.Position.X,posY));
+                   } else {
+                       found = true;
+                   }
+           }
 
             // Diagonal  //
 
-            a = 1;
-            b = 1;
-
-            while( B.code[v1-a][&h1+b] == ' ' )
-            {
-                if( (v1-a) == -1 || (h1+b) == 8 ) {
-                    break ;
-                } else {
-                AddQueue(&Q, B.code[v1][&h1]) ;
-                a++ ;
-                b++ ;
+            found = false;
+               posX = B.Position.X;
+               posY = B.Position.Y;
+               while (!found && posX<=7 && posX>=0 && posY<=7 && posY>=0){
+                   posX++;
+                   posY++;
+                   if (&Elmt(*M,posX,posY).code != ' ') {
+                       Elmt(*M,posX,posY).Position.X = posX;
+                       Elmt(*M,posX,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,posX,posY));
+                   } else {
+                       found = true;
+                   }
                 }
-            }
-
-
-            a = 1;
-            b = 1;
-
-            while( B.code[v1+a][&h1-b] == ' ' )
-            {
-                if( (v1+a) == 8 || (h1-b) == -1 ) {
-                    break ;
-                } else {
-                AddQueue(&Q, B.code[v1][&h1]) ;
-                a++ ;
-                b++ ;
+                found = false;
+                posX = B.Position.X;
+                posY = B.Position.Y; 
+                while (!found && posX<=7 && posX>=0 && posY<=7 && posY>=0){
+                   posX--;
+                   posY--;
+                   if (&Elmt(*M,posX,posY).code != ' ') {
+                       Elmt(*M,posX,posY).Position.X = posX;
+                       Elmt(*M,posX,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,posX,posY));
+                    } else {
+                       found = true;
+                    }
                 }
-            }
-
-            a = 1;
-            b = 1;
-
-
-            while( B.code[v1+a][&h1+b] == ' ' )
-            {
-                if( (v1+a) == 8 || (h1+b) == 8 ) {
-                    break ;
+                found = false;
+                posX = B.Position.X;
+                posY = B.Position.Y;
+                while (!found && posX<=7 && posX>=0 && posY<=7 && posY>=0){
+                   posX++;
+                   posY--;
+                   if (&Elmt(*M,posX,posY).code != ' ') {
+                       Elmt(*M,posX,posY).Position.X = posX;
+                       Elmt(*M,posX,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,posX,posY));
+                   } else {
+                       found = true;
+                   }
                 }
-                AddQueue(&Q, B.code[v1][&h1]) ;
-                a++ ;
-                b++ ;
-            }
-
-            a = 1 ;
-            b = 1 ;
-
-            while( B.code[v1-a][&h1-b] == ' ' )
-            {
-                if( (v1-a) == -1 || (h1-b) == -1 ) {
-                    break ;
-                } else {
-                AddQueue(&Q, B.code[v1][&h1]) ;
-                a++ ;
-                b++ ;
+                found = false;
+                posX = B.Position.X;
+                posY = B.Position.Y;
+                while (!found && posX<=7 && posX>=0 && posY<=7 && posY>=0){
+                   posX--;
+                   posY++;
+                   if (&Elmt(*M,posX,posY).code != ' ') {
+                       Elmt(*M,posX,posY).Position.X = posX;
+                       Elmt(*M,posX,posY).Position.Y = posY;
+                       AddQueue(&Q, Elmt(*M,posX,posY));
+                   } else {
+                       found = true;
+                   }
                 }
-            }
             break;
         }
         case 'K' : 
         case 'k' : {
-            if(B.code[v1][&h1+1] = ' ') {
-                AddQueue(&Q, B.code[v1][&h1]) ;
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            posX++;
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                Elmt(*M, posX, posY).Position.X = posX;
+                Elmt(*M, posX, posY).Position.Y = posY;
+                AddQueue(&Q, Elmt(*M, posX, posY));
             }
-            if(B.code[v1][&h1-1] = ' ') {
-                AddQueue(&Q, B.code[v1][&h1]) ;
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            posX--;
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                Elmt(*M, posX, posY).Position.X = posX;
+                Elmt(*M, posX, posY).Position.Y = posY;
+                AddQueue(&Q, Elmt(*M, posX, posY));
             }
-            if(B.code[v1+1][&h1] = ' ') {
-                AddQueue(&Q, B.code[v1][&h1]) ;
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            posY++;
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                Elmt(*M, posX, posY).Position.X = posX;
+                Elmt(*M, posX, posY).Position.Y = posY;
+                AddQueue(&Q, Elmt(*M, posX, posY));
             }
-            if(B.code[v1-1][&h1] = ' ') {
-                AddQueue(&Q, B.code[v1][&h1]) ;
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            posY--;
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                Elmt(*M, posX, posY).Position.X = posX;
+                Elmt(*M, posX, posY).Position.Y = posY;
+                AddQueue(&Q, Elmt(*M, posX, posY));
             }
-            if(B.code[v1+1][&h1+1] = ' ') {
-                AddQueue(&Q, B.code[v1][&h1]) ;
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            posX++;
+            posY++;
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                Elmt(*M, posX, posY).Position.X = posX;
+                Elmt(*M, posX, posY).Position.Y = posY;
+                AddQueue(&Q, Elmt(*M, posX, posY));
             }
-            if(B.code[v1-1][&h1-1] = ' ') {
-                AddQueue(&Q, B.code[v1][&h1]) ;
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            posX++;
+            posY--;
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                Elmt(*M, posX, posY).Position.X = posX;
+                Elmt(*M, posX, posY).Position.Y = posY;
+                AddQueue(&Q, Elmt(*M, posX, posY));
             }
-            if(B.code[v1-1][&h1+1] = ' ') {
-                AddQueue(&Q, B.code[v1][&h1]) ;
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            posX--;
+            posY++;
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                Elmt(*M, posX, posY).Position.X = posX;
+                Elmt(*M, posX, posY).Position.Y = posY;
+                AddQueue(&Q, Elmt(*M, posX, posY));
             }
-            if(B.code[v1+1][&h1-1] = ' ') {
-                AddQueue(&Q, B.code[v1][&h1]) ;
-            } 
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            posX--;
+            posY--;
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                Elmt(*M, posX, posY).Position.X = posX;
+                Elmt(*M, posX, posY).Position.Y = posY;
+                AddQueue(&Q, Elmt(*M, posX, posY));
+            }
+
             break;  
         }
         case 'P' : {
-            if (B.Position.X=7) {
-                if (B.code[v1-1][&h1] = ' ') {
-                    AddQueue(&Q, B.code[v1][&h1]) ;
-                } else if (B.code[v1-2][&h1] = ' ') {
-                    AddQueue(&Q, B.code[v1][&h1]) ;
-                } 
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            if (posY=7){
+                posX--;
+                posY--;
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                    Elmt(*M, posX, posY).Position.X = posX;
+                    Elmt(*M, posX, posY).Position.Y = posY;
+                    AddQueue(&Q, Elmt(*M, posX, posY));
+                }
+                posX--;
+                posY--;
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                    Elmt(*M, posX, posY).Position.X = posX;
+                    Elmt(*M, posX, posY).Position.Y = posY;
+                    AddQueue(&Q, Elmt(*M, posX, posY));
+                }
             } else {
-                if (B.code[v1-1][&h1] = ' ') {
-                    AddQueue(&Q, B.code[v1][&h1]) ;
+                posX=B.Position.X;
+                posY=B.Position.Y;
+                posX--;
+                posY--;
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                    Elmt(*M, posX, posY).Position.X = posX;
+                    Elmt(*M, posX, posY).Position.Y = posY;
+                    AddQueue(&Q, Elmt(*M, posX, posY));
                 }
             }
             break;
         }
         case 'p' : {
-             if (B.Position.X=2) {
-                if (B.code[v1+1][&h1] = ' ') {
-                    AddQueue(&Q, B.code[v1][&h1]) ;
-                } else if (B.code[v1+2][&h1] = ' ') {
-                    AddQueue(&Q, B.code[v1][&h1]) ;
-                } 
+            posX=B.Position.X;
+            posY=B.Position.Y;
+            if (posY=2){
+                posX++;
+                posY++;
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                    Elmt(*M, posX, posY).Position.X = posX;
+                    Elmt(*M, posX, posY).Position.Y = posY;
+                    AddQueue(&Q, Elmt(*M, posX, posY));
+                }
+                posX++;
+                posY++;
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                    Elmt(*M, posX, posY).Position.X = posX;
+                    Elmt(*M, posX, posY).Position.Y = posY;
+                    AddQueue(&Q, Elmt(*M, posX, posY));
+                }
             } else {
-                if (B.code[v1+1][&h1] = ' ') {
-                    AddQueue(&Q, B.code[v1][&h1]) ;
+                posX=B.Position.X;
+                posY=B.Position.Y;
+                posX++;
+                posY++;
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && (Elmt(*M, posX, posY).code == ' '))) {
+                    Elmt(*M, posX, posY).Position.X = posX;
+                    Elmt(*M, posX, posY).Position.Y = posY;
+                    AddQueue(&Q, Elmt(*M, posX, posY));
                 }
             }
             break;
+            }
         }
-    }
-    P = next(P);
+        P = next(P);
+        }
+        }
     }
 }
 

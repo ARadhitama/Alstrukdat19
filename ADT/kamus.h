@@ -20,12 +20,6 @@
 #include "matriks.h"
 #include "bidak.h"
 
-// typedef struct {
-//     char *code;
-//     POINT Position;
-//     POINT prevPos;
-// } Bidak;
-
 /**** UI FUNCTION ***/
 
 void Map(MATRIKS *M);

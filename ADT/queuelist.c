@@ -1,7 +1,7 @@
 #include "Queuelist.h"
 
 /* Prototype manajemen memori */
-void Alokasi (address *P, infotype X) {
+void AlokasiQL (address *P, infotype X) {
 	/* Kamus Lokal */
 
 	/* Algoritma */
@@ -18,7 +18,7 @@ void Alokasi (address *P, infotype X) {
 /* F.S. Alamat P dialokasi, jika berhasil maka Info(P)=X dan
  Next(P)=Nil */
 /* P=Nil jika alokasi gagal */
-void Dealokasi (address P) {
+void DealokasiQL (address P) {
 	/* Kamus Lokal */
 
 	/* Algoritma */
@@ -31,7 +31,7 @@ boolean IsEmptyQueueList (Queuelist Q) {
 	/* Kamus Lokal */
 
 	/* Algoritma */
-	return ((Head(Q) == Nil) && (Tail(Q) == Nil));
+	return ((Head(Q) == Nil) && (TailQL(Q) == Nil));
 }
 /* Mengirim true jika Q kosong: HEAD(Q)=Nil and TAIL(Q)=Nil */
 int NbElmtQueueList (Queuelist Q) {

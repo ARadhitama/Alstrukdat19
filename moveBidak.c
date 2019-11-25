@@ -637,6 +637,7 @@ Bidak B;
             break;
         }
     }
+    P = next(P);
     }
 }
 

@@ -39,9 +39,9 @@ void printMainMenu();
 /**** MOVE FUNCTION ****/
 
 Queue MoveBidak(Bidak B, MATRIKS *M);
-boolean cekGerak (MATRIKS *M, Bidak B);
-Queue bidakBisaGerak(MATRIKS *M);
-void printGerak(Bidak B, MATRIKS *M);
+Queue cekGerak (MATRIKS *M, List *L);
+void printGerak(Queue Q);
+void printBisaGerak(Queue Q, MATRIKS *M);
 
 /**** GAME FUNCTION ****/
 

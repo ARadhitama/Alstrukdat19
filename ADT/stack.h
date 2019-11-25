@@ -3,16 +3,16 @@
 #include "boolean.h"
 #include "kamus.h"
 
-#define Nil 0 /* Nil adalah stack dengan elemen kosong */
-#define MaxEl 100
+#define NilStack 0 /* Nil adalah stack dengan elemen kosong */
+#define MaxElStack 100
 
-typedef Bidak infotype;
-typedef int address; /* indeks tabel */
+typedef Bidak infotypeStack;
+typedef int addressStack; /* indeks tabel */
 
 /* Versi I : dengan menyimpan tabel dan alamat top secara eksplisit */
 typedef struct {
-    infotype T[MaxEl+1]; /* tabel penyimpan elemen */
-    address TOP; /* alamat TOP: elemen puncak */
+    infotypeStack T[MaxElStack+1]; /* tabel penyimpan elemen */
+    addressStack TOPStack; /* alamat TOP: elemen puncak */
 } Stack;
 /* Definisi stack S kosong : S.TOP = Nil
    Elemen yang dipakai menyimpan nilai Stack T[1]..T[MaxEl]
@@ -21,8 +21,8 @@ typedef struct {
    S.TOP adalah alamat elemen TOP */
 
 /* Definisi akses dengan Selektor : */
-#define Top(S) (S).TOP
-#define InfoTop(S) (S).T[(S).TOP]
+#define TopStack(S) (S).TOPStack
+#define InfoTopStack(S) (S).T[(S).TOPStack]
 
 /* ********* Prototype ********* */
 
@@ -40,11 +40,11 @@ boolean IsFullStack(Stack S);
 /* Mengirim true jika tabel penampung nilai elemen stack penuh */
 
 /* ********** Operator Dasar Stack ********* */
-void PushStack(Stack *S,infotype X);
+void PushStack(Stack *S,infotypeStack X);
 /* Menambahkan X sebagai elemen Stack S.
    I.S. S mungkin kosong, tabel penampung elemen stack TIDAK penuh
    F.S. X menjadi TOP yang baru, TOP bertambah 1 */
-void PopStack(Stack *S,infotype *X);
+void PopStack(Stack *S,infotypeStack *X);
 /* Menghapus X dari Stack S.
    I.S. S tidak kosong
    F.S. X adalah nilai elemen TOP yang lama, TOP berkurang 1 */

@@ -1,6 +1,6 @@
 /* Implementasi UI */
 
-#include "kamus.h"
+#include "./ADT/kamus.h"
 
 void Map(MATRIKS *M) {
     /* kamus */

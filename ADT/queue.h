@@ -11,17 +11,17 @@
 #include <stdlib.h>
 
 /* *** konstanta *** */
-#define Nil 0
+#define NilQ 0
 
 /* *** Definisi elemen dan address *** */
-typedef Bidak infotype;
-typedef int address; /* indeks tabel */
+typedef Bidak infotypeQ;
+typedef int addressQ; /* indeks tabel */
 
 /* *** Definisi Type Queue *** */
 typedef struct {
-    infotype *TQ; /* tabel penyimpan elemen */
-    address HEADQ; /* alamat penghapusan */
-    address TAILQ; /* alamat penambahan */
+    infotypeQ *TQ; /* tabel penyimpan elemen */
+    addressQ HEADQ; /* alamat penghapusan */
+    addressQ TAILQ; /* alamat penambahan */
     int MaxElQ; /* maksimum banyaknya elemen queue */
 } Queue;
 
@@ -59,11 +59,11 @@ void DeAlokasiQueue(Queue *Q);
    F.S. Q menjadi tidak terdefinisi lagi, MaxEl(Q) diset 0 */
 
 /* *** Operator-Operator Dasar Queue *** */
-void AddQueue(Queue *Q,infotype X);
+void AddQueue(Queue *Q,infotypeQ X);
 /* Proses : Menambahkan X pada Q dengan aturan FIFO
    I.S. Q mungkin kosong, tabel penampung elemen Q TIDAK penuh
    F.S. X menjadi TAIL yang baru, TAIL "maju" */
-void DelQueue(Queue *Q,infotype *X);
+void DelQueue(Queue *Q,infotypeQ *X);
 /* Proses: Menghapus elemen pertama pada Q dengan aturan FIFO
    I.S. Q tidak kosong
    F.S. X = nilai elemen HEAD pada I.S.,

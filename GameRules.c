@@ -1,4 +1,4 @@
-#include "kamus.h"
+#include "./ADT/kamus.h"
 
  boolean cekSkak () {
      

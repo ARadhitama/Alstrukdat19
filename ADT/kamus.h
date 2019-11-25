@@ -25,10 +25,6 @@ typedef struct {
     POINT prevPos;
 } Bidak;
 
-typedef struct {
-    int turn;
-    boolean whiteTurn
-} States;
 /**** UI FUNCTION ***/
 
 void Map(MATRIKS *M);

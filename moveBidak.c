@@ -1,4 +1,4 @@
-#include "kamus.h"
+#include "./ADT/kamus.h"
 
 Queue MoveBidak(Bidak B, MATRIKS *M){
     int i, n, h1, v1;
@@ -322,13 +322,13 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
 
 Queue cekGerak (MATRIKS *M, List *L) {
     int i, n, h1, v1;
-    address P;
+    addressQ P;
     Queue Q;
     Bidak B;
 
     CreateEmptyQueue(&Q, 100);
 
-    while (info(P)!=Nil) {
+    while (info(P)!=NilQ) {
 
     switch(B.code) {
         case 'R' : 

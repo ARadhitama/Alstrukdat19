@@ -7,7 +7,7 @@ boolean IsEmptyQueue(Queue Q) {
   /* Kamus Lokal */
 
   /* Algoritma */
-  return ((HeadQ(Q) == Nil) && (TailQ(Q) == Nil));
+  return ((HeadQ(Q) == NilQ) && (TailQ(Q) == NilQ));
 }
 /* Mengirim true jika Q kosong */
 boolean IsFullQueue(Queue Q) {
@@ -31,14 +31,14 @@ void CreateEmptyQueue(Queue *Q, int Max) {
   /* Kamus Lokal */
 
   /* Algoritma */
-  (*Q).TQ = (infotype *) malloc ((Max + 1) * sizeof(infotype));
+  (*Q).TQ = (infotypeQ *) malloc ((Max + 1) * sizeof(infotypeQ));
   if ((*Q).TQ != NULL) {
     MaxElQ(*Q) = Max;
-    HeadQ(*Q) = Nil;
-    TailQ(*Q) = Nil;
+    HeadQ(*Q) = NilQ;
+    TailQ(*Q) = NilQ;
   }
   else {                                                        /* Alokasi gagal */
-    MaxElQ(*Q) = Nil;
+    MaxElQ(*Q) = NilQ;
   }
 }
 /* I.S. Max terdefinisi }
@@ -52,7 +52,7 @@ void DeAlokasiQueue(Queue *Q) {
   /* Kamus Lokal */
 
   /* Algoritma */
-  MaxElQ(*Q) = Nil;
+  MaxElQ(*Q) = NilQ;
   free((*Q).TQ);
 }
 /* Proses : Mengembalikan memori Q
@@ -60,7 +60,7 @@ void DeAlokasiQueue(Queue *Q) {
    F.S. Q menjadi tidak terdefinisi lagi, MaxEl(Q) diset 0 */
 
 /* *** Operator-Operator Dasar Queue *** */
-void AddQueue(Queue *Q, infotype X) {
+void AddQueue(Queue *Q, infotypeQ X) {
   /* Kamus Lokal */
 
   /* Algoritma */
@@ -77,15 +77,15 @@ void AddQueue(Queue *Q, infotype X) {
 /* Proses : Menambahkan X pada Q dengan aturan FIFO
    I.S. Q mungkin kosong, tabel penampung elemen Q TIDAK penuh
    F.S. X menjadi Tail yang baru, Tail "maju" */
-void DelQueue(Queue *Q, infotype *X) {
+void DelQueue(Queue *Q, infotypeQ *X) {
   /* Kamus Lokal */
-  address i;
+  addressQ i;
 
   /* Algoritma */
   *X = InfoHeadQ(*Q);
   if (HeadQ(*Q) == TailQ(*Q)) {                                  /* Set menjadi queue kosong */
-    HeadQ(*Q) = Nil;
-    TailQ(*Q) = Nil;
+    HeadQ(*Q) = NilQ;
+    TailQ(*Q) = NilQ;
   }
   else {
     for (i = 1; i <= TailQ(*Q); i++) {

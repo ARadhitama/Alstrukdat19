@@ -16,7 +16,7 @@
 
 /* *** DEFINISI PROTOTIPE PRIMITIF *** */
 /* *** Konstruktor membentuk POINT *** */
-POINT MakePOINT (float X, float Y) {
+POINT MakePOINT (int X, int Y) {
     POINT P;
     P.X = X;
     P.Y = Y;
@@ -26,7 +26,7 @@ POINT MakePOINT (float X, float Y) {
 
 /* *** KELOMPOK Interaksi dengan I/O device, BACA/TULIS  *** */                                                 
 void BacaPOINT (POINT * P) {
-    float a,b;
+    int a,b;
     scanf("%f %f", &a, &b);
     (*P).X = a;
     (*P).Y = b;
@@ -86,21 +86,21 @@ int Kuadran (POINT P) {
 /*              dan P tidak terletak di salah satu sumbu */
 
 /* *** KELOMPOK OPERASI LAIN TERHADAP TYPE *** */
-POINT PlusDelta (POINT P, float deltaX, float deltaY){
+POINT PlusDelta (POINT P, int deltaX, int deltaY){
     return(MakePOINT(P.X+deltaX, P.Y+deltaY));
 }
 /* Mengirim salinan P yang absisnya adalah Absis(P) + deltaX dan ordinatnya adalah Ordinat(P) + deltaY */
-void Geser (POINT *P, float deltaX, float deltaY){
+void Geser (POINT *P, int deltaX, int deltaY){
     (*P).X = (*P).X+deltaY;
     (*P).Y = (*P).Y+deltaY;
 }
 /* I.S. P terdefinisi */
 /* F.S. P digeser, absisnya sebesar deltaX dan ordinatnya sebesar deltaY */
-float Jarak0 (POINT P){
+int Jarak0 (POINT P){
     return( sqrt((P.X * P.X) + (P.Y*P.Y)));
 }
 /* Menghitung jarak P ke (0,0) */
-float Panjang (POINT P1, POINT P2){
+int Panjang (POINT P1, POINT P2){
     return (sqrt(((P1.X-P2.X)*(P1.X-P2.X))+((P1.Y-P2.Y)*(P1.Y-P2.Y))));
 }
 /* Menghitung panjang garis yang dibentuk P1 dan P2 */

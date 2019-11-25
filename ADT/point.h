@@ -18,7 +18,7 @@ typedef struct {
         
 /* *** DEFINISI PROTOTIPE PRIMITIF *** */
 /* *** Konstruktor membentuk POINT *** */
-POINT MakePOINT (float X, float Y);
+POINT MakePOINT (int X, int Y);
 /* Membentuk sebuah POINT dari komponen-komponennya */
 
 /* *** KELOMPOK Interaksi dengan I/O device, BACA/TULIS  *** */                                                 
@@ -56,14 +56,14 @@ int Kuadran (POINT P);
 /*              dan P tidak terletak di salah satu sumbu */
 
 /* *** KELOMPOK OPERASI LAIN TERHADAP TYPE *** */
-POINT PlusDelta (POINT P, float deltaX, float deltaY);
+POINT PlusDelta (POINT P, int deltaX, int deltaY);
 /* Mengirim salinan P yang absisnya adalah Absis(P) + deltaX dan ordinatnya adalah Ordinat(P) + deltaY */
-void Geser (POINT *P, float deltaX, float deltaY);
+void Geser (POINT *P, int deltaX, int deltaY);
 /* I.S. P terdefinisi */
 /* F.S. P digeser, absisnya sebesar deltaX dan ordinatnya sebesar deltaY */
-float Jarak0 (POINT P);
+int Jarak0 (POINT P);
 /* Menghitung jarak P ke (0,0) */
-float Panjang (POINT P1, POINT P2);
+int Panjang (POINT P1, POINT P2);
 /* Menghitung panjang garis yang dibentuk P1 dan P2 */
 /* Perhatikanlah bahwa di sini spec fungsi kurang baik sebab menyangkut ADT Garis. */
 /* Tuliskan spec fungsi yang lebih tepat. */

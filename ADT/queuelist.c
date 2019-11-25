@@ -1,24 +1,24 @@
 #include "Queuelist.h"
 
 /* Prototype manajemen memori */
-void AlokasiQL (address *P, infotype X) {
+void AlokasiQL (addressQL *P, infotypeQL X) {
 	/* Kamus Lokal */
 
 	/* Algoritma */
-	*P = (address) malloc (sizeof (ElmtQueuelist));
-	if (*P != Nil) {
-    	Info(*P) = X;
-    	Next(*P) = Nil;
+	*P = (addressQL) malloc (sizeof (ElmtQueuelist));
+	if (*P != NilQL) {
+    	InfoQL(*P) = X;
+    	NextQL(*P) = NilQL;
   	}
   	else {
-    	*P = Nil;
+    	*P = NilQL;
   	}
 }
 /* I.S. Sembarang */
 /* F.S. Alamat P dialokasi, jika berhasil maka Info(P)=X dan
  Next(P)=Nil */
 /* P=Nil jika alokasi gagal */
-void DealokasiQL (address P) {
+void DealokasiQL (addressQL P) {
 	/* Kamus Lokal */
 
 	/* Algoritma */
@@ -31,20 +31,20 @@ boolean IsEmptyQueueList (Queuelist Q) {
 	/* Kamus Lokal */
 
 	/* Algoritma */
-	return ((Head(Q) == Nil) && (TailQL(Q) == Nil));
+	return ((HeadQL(Q) == NilQL) && (TailQL(Q) == NilQL));
 }
 /* Mengirim true jika Q kosong: HEAD(Q)=Nil and TAIL(Q)=Nil */
 int NbElmtQueueList (Queuelist Q) {
 	/* Kamus Lokal */
 	int count = 0;
-	address P;
+	addressQL P;
 
 	/* Algoritma */
 	if (!IsEmptyQueueList(Q)) {
-		P = Head(Q);
-		while (P != Nil) {
+		P = HeadQL(Q);
+		while (P != NilQL) {
 			count++;
-			P = Next(P);
+			P = NextQL(P);
 		}
 	}
 	return count;
@@ -55,49 +55,49 @@ void CreateEmptyQueueList (Queuelist * Q) {
 	/* Kamus Lokal */
 
 	/* Algoritma */
-	Head(*Q) = Nil;
-	Tail(*Q) = Nil;
+	HeadQL(*Q) = NilQL;
+	TailQL(*Q) = NilQL;
 }
 /* I.S. sembarang */
 /* F.S. Sebuah Q kosong terbentuk */
 /*** Primitif Add/Delete ***/
-void AddQueueList (Queuelist * Q, infotype X) {
+void AddQueueList (Queuelist * Q, infotypeQL X) {
 /* Proses: Mengalokasi X dan menambahkan X pada bagian TAIL dari Q
  jika alokasi berhasil; jika alokasi gagal Q tetap */
 /* Pada dasarnya adalah proses insert last */
 /* I.S. Q mungkin kosong */
 /* F.S. X menjadi TAIL, TAIL "maju" */
 	/* Kamus Lokal */
-	address P;
+	addressQL P;
 
 	/* Algoritma */
-	Alokasi(&P,X);
-	if (P!=Nil) {
+	AlokasiQL(&P,X);
+	if (P!=NilQL) {
 		if (IsEmptyQueueList(*Q)) {
-			Head(*Q) = P;
+			HeadQL(*Q) = P;
 		}
 		else {
-			Next(Tail(*Q)) = P;
+			NextQL(TailQL(*Q)) = P;
 		}
-		Tail(*Q) = P;
+		TailQL(*Q) = P;
 	} /* else: alokasi gagal, Q tetap */
 }
-void DelQueueList (Queuelist * Q, infotype * X) {
+void DelQueueList (Queuelist * Q, infotypeQL * X) {
 /* Proses: Menghapus X pada bagian HEAD dari Q dan mendealokasi
  elemen HEAD */
 /* Pada dasarnya operasi delete first */
 /* I.S. Q tidak mungkin kosong */
 /* F.S. X = nilai elemen HEAD pd I.S., HEAD "mundur" */
 	/* Kamus Lokal */
-	address P;
+	addressQL P;
 
 	/* Algoritma */
-	*X = InfoHead(*Q);
-	P = Head(*Q);
-	Head(*Q) = Next(Head(*Q));
-	if (Head(*Q)==Nil) {
- 		Tail(*Q) = Nil;
+	*X = InfoHeadQL(*Q);
+	P = HeadQL(*Q);
+	HeadQL(*Q) = NextQL(HeadQL(*Q));
+	if (HeadQL(*Q)==NilQL) {
+ 		TailQL(*Q) = NilQL;
 	}
-	Next(P) = Nil;
-	Dealokasi(P);
+	NextQL(P) = NilQL;
+	DealokasiQL(P);
 }

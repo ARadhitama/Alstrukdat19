@@ -7,7 +7,7 @@ void CreateEmptyStack(Stack *S) {
   /* Kamus Lokal */
 
   /* Algoritma */
-  Top(*S) = Nil;
+  TopStack(*S) = NilStack;
 }
 /* I.S. Sembarang
    F.S. Membuat sebuah stack S yang kosong berkapasitas MaxEl
@@ -19,34 +19,34 @@ boolean IsEmptyStack(Stack S) {
   /* Kamus Lokal */
 
   /* Algoritma */
-  return (Top(S) == Nil);
+  return (TopStack(S) == NilStack);
 }
 /* Mengirim true jika Stack kosong: lihat definisi di atas */
 boolean IsFullStack(Stack S) {
   /* Kamus Lokal */
 
   /* Algoritma */
-  return (Top(S) == MaxEl);
+  return (TopStack(S) == MaxElStack);
 }
 /* Mengirim true jika tabel penampung nilai elemen stack penuh */
 
 /* ********** Operator Dasar Stack ********* */
-void PushStack(Stack *S, infotype X) {
+void PushStack(Stack *S, infotypeStack X) {
   /* Kamus Lokal */
 
   /* Algoritma */
-  Top(*S)++;
-  InfoTop(*S) = X;
+  TopStack(*S)++;
+  InfoTopStack(*S) = X;
 }
 /* Menambahkan X sebagai elemen Stack S.
    I.S. S mungkin kosong, tabel penampung elemen stack TIDAK penuh
    F.S. X menjadi TOP yang baru, TOP bertambah 1 */
-void PopStack(Stack *S, infotype *X) {
+void PopStack(Stack *S, infotypeStack *X) {
   /* Kamus Lokal */
 
   /* Algoritma */
-  *X = InfoTop(*S);
-  Top(*S)--;
+  *X = InfoTopStack(*S);
+  TopStack(*S)--;
 }
 /* Menghapus X dari Stack S.
    I.S. S tidak kosong

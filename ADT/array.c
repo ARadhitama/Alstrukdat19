@@ -33,7 +33,7 @@ IdxTypeA GetFirstIdxA (TabIntA T) {
 /* Mengirimkan indeks elemen pertama */
 IdxTypeA GetLastIdxA (TabIntA T) {
 	if (T.NeffA != 0) {
-		return (IdxMinA + NbElmtA(T) - 1);
+		return (IdxMinA + NbElmtArray(T) - 1);
 	}
 }
 /* Prekondisi : Tabel T tidak kosong */
@@ -56,7 +56,7 @@ void SetTabA (TabIntA Tin, TabIntA *Tout) {
 	int i;
 
 	/* Algoritma */
-	for (i = 1; i <= NbElmtA(Tin); i++) {
+	for (i = 1; i <= NbElmtArray(Tin); i++) {
 		SetElA(Tout, i, GetElmtA(Tin, i));
 	}
 	SetNeffA(Tout, Tin.NeffA);
@@ -66,8 +66,8 @@ void SetTabA (TabIntA Tin, TabIntA *Tout) {
 /* Assignment THsl -> Tin */
 void SetElA (TabIntA *T, IdxTypeA i, ElTypeA v) {
 	(*T).TI[i - IdxMinA] = v;
-	if (i > NbElmtA(*T)) {
-		SetNeffA(T, (NbElmtA(*T) + 1));
+	if (i > NbElmtArray(*T)) {
+		SetNeffA(T, (NbElmtArray(*T) + 1));
 	}
 }
 /* I.S. T terdefinisi, sembarang */
@@ -103,7 +103,7 @@ boolean IsIdxEffArray (TabIntA T, IdxTypeA i) {
 /* ********** TEST KOSONG/PENUH ********** */
 /* *** Test tabel kosong *** */
 boolean IsEmptyA (TabIntA T) {
-	if (NbElmtA(T) == 0) {
+	if (NbElmtArray(T) == 0) {
 		return true;
 	}
 	return false;
@@ -111,7 +111,7 @@ boolean IsEmptyA (TabIntA T) {
 /* Mengirimkan true jika tabel T kosong, mengirimkan false jika tidak */
 /* *** Test tabel penuh *** */
 boolean IsFullA (TabIntA T) {
-	if (NbElmtA(T) == IdxMaxA) {
+	if (NbElmtArray(T) == IdxMaxA) {
 		return true;
 	}
 	return false;

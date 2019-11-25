@@ -4,7 +4,7 @@ int main() {
     /* KAMUS */
     MATRIKS Board;
     boolean Exit;
-    char Command;
+    char command[10];
     Bidak P1, P2, P3, P4, P5, P6, P7, P8, R1, R2, H1, H2, B1, B2, Q, K, p1, p2, p3, p4, p5, p6, p7, p8, r1, r2, h1, h2, b1, b2, q, k, digerak, titikGerak, temp;
     Queuelist turn;
     Queue bisaGerak, bidakGerak;
@@ -21,11 +21,9 @@ int main() {
     CreateEmptyListLinear(&black);
     CreateEmptyStack(&move);
     printf("Command : ");
-    scanf("%c\n", &Command);
-    switch (Command) {
-        case '1' :{
+    gets(command);
+    if (strcmp(command, "1") == 0) {
             MakeMATRIKS(8,8,&Board);
-        
             Exit = false;
             
             /* assign bidak */
@@ -177,7 +175,7 @@ int main() {
 
             for (i=0; i<=7; i++) {
                 for(j=2; j<=5; j++) {
-                    Elmt(Board,i,j).code = " ";
+                    Elmt(Board,i,j).code = ' ';
                 }
             }
             Map(&Board);
@@ -185,12 +183,11 @@ int main() {
                 if ((IsEmptyQueueList(turn) || (InfoTailQL(turn) == 'b'))) {          // white turn
                     printCommand();
                     printf("Command : ");
-                    scanf("%c\n", &Command);
-                    switch (Command) {
-                        case '1' : {
-
+                    gets(command);
+                    if (strcmp(command,"1") == 0) {
                             bisaGerak = cekGerak(&Board, &white);
                             printBisaGerak(bisaGerak);
+                            printf("CUman 1 ke addQueue\n");
                             scanf("%d\n", &gerak);
                             for (i = 1; i<=gerak; i++) {
                                 DelQueue(&bisaGerak, &digerak);
@@ -203,7 +200,7 @@ int main() {
                             }
                             DelP(&white, Elmt(Board, digerak.Position.X, digerak.Position.Y));
 
-                            if (Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y).code != ' ') {
+                            if (*Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y).code != ' ') {
                                 DelP (&black, Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y));
                             }
                             
@@ -219,75 +216,93 @@ int main() {
                             InsertLast (&white, &(Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y)));
                             PushStack(&move, Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y));
                             AddQueueList(&turn, 'w');
-                        }
-                        case '2' : {
+                    } else if (strcmp(command,'2') == 0){
                             AddQueueList(&turn, 'b');
-                        }
-                        case '3' : { // undo
-                            PopStack(&move, &temp);
-                            Elmt(Board, temp.prevPos.X, temp.prevPos.Y) = Elmt(Board, temp.Position.X, temp.Position.Y);
-                            Elmt(Board, temp.Position.X, temp.Position.Y).code = " ";
-                            Elmt(Board, temp.prevPos.X, temp.prevPos.Y).Position.X = temp.prevPos.X;
-                            Elmt(Board, temp.prevPos.X, temp.prevPos.Y).Position.Y = temp.prevPos.Y;
-                            DelQueueList(&turn, &temp);
+                    } else if (strcmp(command,'3') == 0) { // undo
+                 
+                            // PopStack(&move, &temp);
+                            // Elmt(Board, temp.prevPos.X, temp.prevPos.Y) = Elmt(Board, temp.Position.X, temp.Position.Y);
+                            // Elmt(Board, temp.Position.X, temp.Position.Y).code = " ";
+                            // Elmt(Board, temp.prevPos.X, temp.prevPos.Y).Position.X = temp.prevPos.X;
+                            // Elmt(Board, temp.prevPos.X, temp.prevPos.Y).Position.Y = temp.prevPos.Y;
+                            // DelQueueList(&turn, &temp);
 
-                            PopStack(&move, &temp);
-                            Elmt(Board, temp.prevPos.X, temp.prevPos.Y) = Elmt(Board, temp.Position.X, temp.Position.Y);
-                            Elmt(Board, temp.Position.X, temp.Position.Y).code = " ";
-                            Elmt(Board, temp.prevPos.X, temp.prevPos.Y).Position.X = temp.prevPos.X;
-                            Elmt(Board, temp.prevPos.X, temp.prevPos.Y).Position.Y = temp.prevPos.Y;
-                            DelQueueList(&turn, &temp);
+                            // PopStack(&move, &temp);
+                            // Elmt(Board, temp.prevPos.X, temp.prevPos.Y) = Elmt(Board, temp.Position.X, temp.Position.Y);
+                            // Elmt(Board, temp.Position.X, temp.Position.Y).code = " ";
+                            // Elmt(Board, temp.prevPos.X, temp.prevPos.Y).Position.X = temp.prevPos.X;
+                            // Elmt(Board, temp.prevPos.X, temp.prevPos.Y).Position.Y = temp.prevPos.Y;
+                            // DelQueueList(&turn, &temp);
 
-                        }
-                        case '4' : {
+                        }else if (strcmp(command,'4') == 0) {
 
-                        }
-                        case '5' : {
+                        }else if (strcmp(command,'5') == 0){
                             Exit = true;
-                        }
-                        default : {
+                        }else {
                             printf("Command salah!\n");
                         }
-                    }
-                } else {                                                // black turn
+                    } else {                                                // black turn
                     printCommand();
                     printf("Command : ");
-                    scanf("%c\n", &Command);
-                    switch (Command) {
-                        case '1' : {
-                        
-                        }
-                        case '2' : {
-                            Add(&turn, 'b');
-                        }
-                        case '3' : {
-                            PopStack(&move, &temp);
-                            Elmt(Board, temp.prevPos.X, temp.prevPos.Y) = Elmt(Board, temp.Position.X, temp.Position.Y);
-                            Elmt(Board, temp.Position.X, temp.Position.Y).code = " ";
-                            Elmt(Board, temp.prevPos.X, temp.prevPos.Y).Position.X = temp.prevPos.X;
-                            Elmt(Board, temp.prevPos.X, temp.prevPos.Y).Position.Y = temp.prevPos.Y;
-                            DelQueueList(&turn, &temp);
-                            
-                            PopStack(&move, &temp);
-                            Elmt(Board, temp.prevPos.X, temp.prevPos.Y) = Elmt(Board, temp.Position.X, temp.Position.Y);
-                            Elmt(Board, temp.Position.X, temp.Position.Y).code = " ";
-                            Elmt(Board, temp.prevPos.X, temp.prevPos.Y).Position.X = temp.prevPos.X;
-                            Elmt(Board, temp.prevPos.X, temp.prevPos.Y).Position.Y = temp.prevPos.Y;
-                            DelQueueList(&turn, &temp);
-                        }
-                        case '4' : {
+                    gets(command);
+                    if (strcmp(command,"1") == 0) {
+                            bisaGerak = cekGerak(&Board, &white);
+                            printBisaGerak(bisaGerak);
+                            scanf("%d\n", &gerak);
+                            for (i = 1; i<=gerak; i++) {
+                                DelQueue(&bisaGerak, &digerak);
+                            }   
+                            bidakGerak = MoveBidak(digerak, &Board);
+                            printGerak(bidakGerak);
+                            scanf("%d\n", &opsiGerak);
+                            for (i = 1; i<opsiGerak; i++) {
+                                DelQueue(&bidakGerak, &titikGerak);
+                            }
+                            DelP(&white, Elmt(Board, digerak.Position.X, digerak.Position.Y));
 
-                        }
-                        case '5' : {
+                            if (*Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y).code != ' ') {
+                                DelP (&black, Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y));
+                            }
+                            
+                            Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y) = Elmt(Board, digerak.Position.X, digerak.Position.Y);
+                            Elmt(Board, digerak.Position.X, digerak.Position.Y).code = " ";
+
+                            Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y).Position.X = titikGerak.Position.X;
+                            Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y).Position.Y = titikGerak.Position.Y;
+
+                            Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y).prevPos.X = digerak.Position.X;
+                            Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y).prevPos.Y = digerak.Position.Y;
+                            
+                            InsertLast (&white, &(Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y)));
+                            PushStack(&move, Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y));
+                            AddQueueList(&turn, 'w');
+                    } else if (strcmp(command,'2') == 0){
+                            AddQueueList(&turn, 'b');
+                    } else if (strcmp(command,'3') == 0) { // undo
+                 
+                            // PopStack(&move, &temp);
+                            // Elmt(Board, temp.prevPos.X, temp.prevPos.Y) = Elmt(Board, temp.Position.X, temp.Position.Y);
+                            // Elmt(Board, temp.Position.X, temp.Position.Y).code = " ";
+                            // Elmt(Board, temp.prevPos.X, temp.prevPos.Y).Position.X = temp.prevPos.X;
+                            // Elmt(Board, temp.prevPos.X, temp.prevPos.Y).Position.Y = temp.prevPos.Y;
+                            // DelQueueList(&turn, &temp);
+
+                            // PopStack(&move, &temp);
+                            // Elmt(Board, temp.prevPos.X, temp.prevPos.Y) = Elmt(Board, temp.Position.X, temp.Position.Y);
+                            // Elmt(Board, temp.Position.X, temp.Position.Y).code = " ";
+                            // Elmt(Board, temp.prevPos.X, temp.prevPos.Y).Position.X = temp.prevPos.X;
+                            // Elmt(Board, temp.prevPos.X, temp.prevPos.Y).Position.Y = temp.prevPos.Y;
+                            // DelQueueList(&turn, &temp);
+
+                        }else if (strcmp(command,'4') == 0) {
+
+                        }else if (strcmp(command,'5') == 0){
                             Exit = true;
-                        }
-                        default : {
+                        }else {
                             printf("Command salah!\n");
                         }
-                    }
                 }
                 Map(&Board);
             }
         }
     }
-}

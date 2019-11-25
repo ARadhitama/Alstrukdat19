@@ -7,7 +7,6 @@
 #define listlinier_H
 
 
-#include "kamus.h"
 #include "bidak.h"
 
 #define NilL NULL

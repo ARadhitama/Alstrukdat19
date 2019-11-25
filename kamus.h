@@ -52,4 +52,3 @@ void New(MATRIKS *M);
  
  boolean cekSkak ();
  boolean cekSkakMat();
- 

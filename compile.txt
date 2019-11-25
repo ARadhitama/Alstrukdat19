@@ -1,0 +1,1 @@
+gcc main.c ./ADT/matriks.c ./ADT/queue.c ./ADT/array.c ./ADT/listlinier.c ./ADT/stack.c ./ADT/queuelist.c ./ADT/point.c moveBidak.c UI.c -o test

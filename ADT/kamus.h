@@ -20,7 +20,7 @@
 #include "matriks.h"
 
 typedef struct {
-    char code;
+    char *code;
     POINT Position;
     POINT prevPos;
 } Bidak;

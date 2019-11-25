@@ -10,58 +10,58 @@ void Map(MATRIKS *M) {
     printf("    a   b   c   d   e   f   g   h\n");
     printf("\n");
     printf("8 |");
-    for (i=1;i<=8;i++) {
-        printf(" ");
-        printf("%c", Elmt(*M,i,8).code);
-        printf(" |");
-    }
-    printf(" 8\n");
-    printf("7 |");
-    for (i=1;i<=8;i++) {
+    for (i=0;i<=7;i++) {
         printf(" ");
         printf("%c", Elmt(*M,i,7).code);
         printf(" |");
     }
-    printf(" 7\n");
-    printf("6 |");
-    for (i=1;i<=8;i++) {
+    printf(" 8\n");
+    printf("7 |");
+    for (i=0;i<=7;i++) {
         printf(" ");
         printf("%c", Elmt(*M,i,6).code);
         printf(" |");
     }
-    printf(" 6\n");
-    printf("5 |");
-    for (i=1;i<=8;i++) {
+    printf(" 7\n");
+    printf("6 |");
+    for (i=0;i<=7;i++) {
         printf(" ");
         printf("%c", Elmt(*M,i,5).code);
         printf(" |");
     }
-    printf(" 5\n");
-    printf("4 |");
-    for (i=1;i<=8;i++) {
+    printf(" 6\n");
+    printf("5 |");
+    for (i=0;i<=7;i++) {
         printf(" ");
         printf("%c", Elmt(*M,i,4).code);
         printf(" |");
     }
-    printf(" 4\n");
-    printf("3 |");
-    for (i=1;i<=8;i++) {
+    printf(" 5\n");
+    printf("4 |");
+    for (i=0;i<=7;i++) {
         printf(" ");
         printf("%c", Elmt(*M,i,3).code);
         printf(" |");
     }
-    printf(" 3\n");
-    printf("2 |");
-    for (i=1;i<=8;i++) {
+    printf(" 4\n");
+    printf("3 |");
+    for (i=0;i<=7;i++) {
         printf(" ");
         printf("%c", Elmt(*M,i,2).code);
         printf(" |");
     }
-    printf(" 2\n");
-    printf("1 |");
-    for (i=1;i<=8;i++) {
+    printf(" 3\n");
+    printf("2 |");
+    for (i=0;i<=7;i++) {
         printf(" ");
         printf("%c", Elmt(*M,i,1).code);
+        printf(" |");
+    }
+    printf(" 2\n");
+    printf("1 |");
+    for (i=0;i<=7;i++) {
+        printf(" ");
+        printf("%c", Elmt(*M,i,0).code);
         printf(" |");
     }
     printf(" 1\n");

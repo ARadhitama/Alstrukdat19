@@ -24,14 +24,14 @@ typedef struct tElmtQueuelist {
 /* Type Queuelist dengan ciri HEAD dan TAIL : */
 typedef struct {
 	address HEAD;  /* alamat penghapusan */
-	address TAIL;  /* alamat penambahan */
+	address TAILQL;  /* alamat penambahan */
 } Queuelist;
 
 /* Selektor */
 #define Head(Q) (Q).HEAD
 #define Tail(Q) (Q).TAIL
 #define InfoHead(Q) (Q).HEAD->Info
-#define InfoTail(Q) (Q).TAIL->Info
+#define InfoTailQL(Q) (Q).TAILQL->Info
 #define Next(P) (P)->Next
 #define Info(P) (P)->Info
 

@@ -321,10 +321,10 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
 
 
 Queue cekGerak (MATRIKS *M, List *L) {
-int i, n, h1, v1;
-address P;
-Queue Q;
-Bidak B;
+    int i, n, h1, v1;
+    address P;
+    Queue Q;
+    Bidak B;
 
     CreateEmptyQueue(&Q, 100);
 

@@ -169,7 +169,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY = B.Position.Y;
             posX++;
             posY += 2;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -178,7 +178,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY = B.Position.Y;
             posX++;
             posY -= 2;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -187,7 +187,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY = B.Position.Y;
             posX--;
             posY += 2;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -196,7 +196,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY = B.Position.Y;
             posX--;
             posY -= 2;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -205,7 +205,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY = B.Position.Y;
             posX+=2;
             posY++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -214,7 +214,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY = B.Position.Y;
             posX-=2;
             posY++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -223,7 +223,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY = B.Position.Y;
             posX+=2;
             posY--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -232,7 +232,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY = B.Position.Y;
             posX-=2;
             posY--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -244,7 +244,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY = B.Position.Y;
             posX++;
             posY += 2;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -253,7 +253,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY = B.Position.Y;
             posX++;
             posY -= 2;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -262,7 +262,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY = B.Position.Y;
             posX--;
             posY += 2;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -271,7 +271,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY = B.Position.Y;
             posX--;
             posY -= 2;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -280,7 +280,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY = B.Position.Y;
             posX+=2;
             posY++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -289,7 +289,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY = B.Position.Y;
             posX-=2;
             posY++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -298,7 +298,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY = B.Position.Y;
             posX+=2;
             posY--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -307,7 +307,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY = B.Position.Y;
             posX-=2;
             posY--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -706,7 +706,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
              posX=B.Position.X;
             posY=B.Position.Y;
             posX++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -714,7 +714,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posX=B.Position.X;
             posY=B.Position.Y;
             posX--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -722,7 +722,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posX=B.Position.X;
             posY=B.Position.Y;
             posY++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -730,7 +730,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posX=B.Position.X;
             posY=B.Position.Y;
             posY--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -739,7 +739,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY=B.Position.Y;
             posX++;
             posY++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -748,7 +748,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY=B.Position.Y;
             posX++;
             posY--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -757,7 +757,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY=B.Position.Y;
             posX--;
             posY++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -766,7 +766,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY=B.Position.Y;
             posX--;
             posY--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -778,7 +778,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posX=B.Position.X;
             posY=B.Position.Y;
             posX++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -786,7 +786,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posX=B.Position.X;
             posY=B.Position.Y;
             posX--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -794,7 +794,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posX=B.Position.X;
             posY=B.Position.Y;
             posY++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -802,7 +802,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posX=B.Position.X;
             posY=B.Position.Y;
             posY--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -811,7 +811,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY=B.Position.Y;
             posX++;
             posY++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -820,7 +820,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY=B.Position.Y;
             posX++;
             posY--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -829,7 +829,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY=B.Position.Y;
             posX--;
             posY++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -838,7 +838,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             posY=B.Position.Y;
             posX--;
             posY--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -852,14 +852,14 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             if (posY=7){
                 posX--;
                 posY--;
-                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                     Elmt(*M, posX, posY).Position.X = posX;
                     Elmt(*M, posX, posY).Position.Y = posY;
                     AddQueue(&Q, Elmt(*M, posX, posY));
                 }
                 posX--;
                 posY--;
-                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                     Elmt(*M, posX, posY).Position.X = posX;
                     Elmt(*M, posX, posY).Position.Y = posY;
                     AddQueue(&Q, Elmt(*M, posX, posY));
@@ -869,7 +869,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
                 posY=B.Position.Y;
                 posX--;
                 posY--;
-                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                     Elmt(*M, posX, posY).Position.X = posX;
                     Elmt(*M, posX, posY).Position.Y = posY;
                     AddQueue(&Q, Elmt(*M, posX, posY));
@@ -883,14 +883,14 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             if (posY=2){
                 posX++;
                 posY++;
-                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                     Elmt(*M, posX, posY).Position.X = posX;
                     Elmt(*M, posX, posY).Position.Y = posY;
                     AddQueue(&Q, Elmt(*M, posX, posY));
                 }
                 posX++;
                 posY++;
-                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                     Elmt(*M, posX, posY).Position.X = posX;
                     Elmt(*M, posX, posY).Position.Y = posY;
                     AddQueue(&Q, Elmt(*M, posX, posY));
@@ -900,7 +900,7 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
                 posY=B.Position.Y;
                 posX++;
                 posY++;
-                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                     Elmt(*M, posX, posY).Position.X = posX;
                     Elmt(*M, posX, posY).Position.Y = posY;
                     AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1027,7 +1027,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY = B.Position.Y;
         posX++;
         posY += 2;
-        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1036,7 +1036,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY = B.Position.Y;
         posX++;
         posY -= 2;
-        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1045,7 +1045,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY = B.Position.Y;
         posX--;
         posY += 2;
-        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1054,7 +1054,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY = B.Position.Y;
         posX--;
         posY -= 2;
-        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1063,7 +1063,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY = B.Position.Y;
         posX+=2;
         posY++;
-        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1072,7 +1072,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY = B.Position.Y;
         posX-=2;
         posY++;
-        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1081,7 +1081,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY = B.Position.Y;
         posX+=2;
         posY--;
-        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1090,7 +1090,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY = B.Position.Y;
         posX-=2;
         posY--;
-        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1102,7 +1102,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY = B.Position.Y;
         posX++;
         posY += 2;
-        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1111,7 +1111,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY = B.Position.Y;
         posX++;
         posY -= 2;
-        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1120,7 +1120,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY = B.Position.Y;
         posX--;
         posY += 2;
-        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1129,7 +1129,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY = B.Position.Y;
         posX--;
         posY -= 2;
-        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1138,7 +1138,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY = B.Position.Y;
         posX+=2;
         posY++;
-        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1147,7 +1147,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY = B.Position.Y;
         posX-=2;
         posY++;
-        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1156,7 +1156,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY = B.Position.Y;
         posX+=2;
         posY--;
-        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1165,7 +1165,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY = B.Position.Y;
         posX-=2;
         posY--;
-        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+        if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1423,7 +1423,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
              posX=B.Position.X;
             posY=B.Position.Y;
             posX++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1431,7 +1431,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
             posX=B.Position.X;
             posY=B.Position.Y;
             posX--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1439,7 +1439,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
             posX=B.Position.X;
             posY=B.Position.Y;
             posY++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1447,7 +1447,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
             posX=B.Position.X;
             posY=B.Position.Y;
             posY--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1456,7 +1456,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
             posY=B.Position.Y;
             posX++;
             posY++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1465,7 +1465,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
             posY=B.Position.Y;
             posX++;
             posY--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1474,7 +1474,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
             posY=B.Position.Y;
             posX--;
             posY++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1483,7 +1483,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
             posY=B.Position.Y;
             posX--;
             posY--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1495,7 +1495,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
             posX=B.Position.X;
             posY=B.Position.Y;
             posX++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1503,7 +1503,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
             posX=B.Position.X;
             posY=B.Position.Y;
             posX--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1511,7 +1511,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
             posX=B.Position.X;
             posY=B.Position.Y;
             posY++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1519,7 +1519,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
             posX=B.Position.X;
             posY=B.Position.Y;
             posY--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1528,7 +1528,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
             posY=B.Position.Y;
             posX++;
             posY++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1537,7 +1537,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
             posY=B.Position.Y;
             posX++;
             posY--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1546,7 +1546,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
             posY=B.Position.Y;
             posX--;
             posY++;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1555,7 +1555,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
             posY=B.Position.Y;
             posX--;
             posY--;
-            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+            if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                 Elmt(*M, posX, posY).Position.X = posX;
                 Elmt(*M, posX, posY).Position.Y = posY;
                 AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1569,14 +1569,14 @@ Queue cekGerak (MATRIKS *M, List *L) {
             if (posY=7){
                 posX--;
                 posY--;
-                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                     Elmt(*M, posX, posY).Position.X = posX;
                     Elmt(*M, posX, posY).Position.Y = posY;
                     AddQueue(&Q, Elmt(*M, posX, posY));
                 }
                 posX--;
                 posY--;
-                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                     Elmt(*M, posX, posY).Position.X = posX;
                     Elmt(*M, posX, posY).Position.Y = posY;
                     AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1586,7 +1586,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
                 posY=B.Position.Y;
                 posX--;
                 posY--;
-                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'r' ) || (Elmt(*M, posX, posY).code == 'h' || (Elmt(*M, posX, posY).code == 'b' ) || (Elmt(*M, posX, posY).code == 'k' ) || (Elmt(*M, posX, posY).code == 'q' ) || (Elmt(*M, posX, posY).code == 'p' )) )))) {
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'r' ) || (*Elmt(*M, posX, posY).code == 'h' || (*Elmt(*M, posX, posY).code == 'b' ) || (*Elmt(*M, posX, posY).code == 'k' ) || (*Elmt(*M, posX, posY).code == 'q' ) || (*Elmt(*M, posX, posY).code == 'p' )) )))) {
                     Elmt(*M, posX, posY).Position.X = posX;
                     Elmt(*M, posX, posY).Position.Y = posY;
                     AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1600,14 +1600,14 @@ Queue cekGerak (MATRIKS *M, List *L) {
             if (posY=2){
                 posX++;
                 posY++;
-                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                     Elmt(*M, posX, posY).Position.X = posX;
                     Elmt(*M, posX, posY).Position.Y = posY;
                     AddQueue(&Q, Elmt(*M, posX, posY));
                 }
                 posX++;
                 posY++;
-                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                     Elmt(*M, posX, posY).Position.X = posX;
                     Elmt(*M, posX, posY).Position.Y = posY;
                     AddQueue(&Q, Elmt(*M, posX, posY));
@@ -1617,7 +1617,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
                 posY=B.Position.Y;
                 posX++;
                 posY++;
-                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
+                if (!(((posX <= 0) || (posX >= 7) || (posY <= 0) || (posY >= 0)) && ((*Elmt(*M, posX, posY).code == ' ' || (*Elmt(*M, posX, posY).code == 'R' ) || (*Elmt(*M, posX, posY).code == 'H' || (*Elmt(*M, posX, posY).code == 'B' ) || (*Elmt(*M, posX, posY).code == 'K' ) || (*Elmt(*M, posX, posY).code == 'Q' ) || (*Elmt(*M, posX, posY).code == 'P' )) )))) {
                     Elmt(*M, posX, posY).Position.X = posX;
                     Elmt(*M, posX, posY).Position.Y = posY;
                     AddQueue(&Q, Elmt(*M, posX, posY));

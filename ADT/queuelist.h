@@ -4,6 +4,7 @@
 #define _QueueLIST_H
 #include "boolean.h"
 #include <stdlib.h>
+#include "stdlib.h"
 #include "point.h"
 #include "../kamus.h"
 

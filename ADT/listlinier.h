@@ -9,6 +9,7 @@
 #include "stddef.h"
 #include "stdio.h"
 #include "stdlib.h"
+#include <stdlib.h>
 #include "boolean.h"
 #include "../kamus.h"
 

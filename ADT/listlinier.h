@@ -8,6 +8,7 @@
 
 
 #include "kamus.h"
+#include "bidak.h"
 
 #define NilL NULL
 

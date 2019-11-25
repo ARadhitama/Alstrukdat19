@@ -216,8 +216,8 @@ int main() {
                             Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y).prevPos.X = digerak.Position.X;
                             Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y).prevPos.Y = digerak.Position.Y;
                             
-                            InsertLast (&white, *(Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y)));
-                            PushStack(&move, &Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y));
+                            InsertLast (&white, &(Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y)));
+                            PushStack(&move, Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y));
                             AddQueueList(&turn, 'w');
                         }
                         case '2' : {

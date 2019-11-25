@@ -63,7 +63,7 @@ addressL SearchL (List L, infotypeL X) {
 	/* Algoritma */
 	P = FirstL(L);
 	while (P != NilL) {
-		if (InfoL(P) == X) {
+		if (InfoL(P).code == X.code) {
 			return P;
 		}
 		else {
@@ -295,11 +295,11 @@ void DelP (List *L, infotypeL X) {
 
 	/* Algoritma */
 	Prec = FirstL(*L);
-	if (InfoL(Prec) == X) {
+	if (InfoL(Prec).code == X.code && InfoL(Prec).Position.X == X.Position.X && InfoL(Prec).Position.Y == X.Position.Y) {
 		DelFirst(L, &Pdel);
 	}
 	else {
-		while (InfoL(NextL(Prec)) != X) {
+		while (InfoL(NextL(Prec)).code != X.code && InfoL(NextL(Prec)).Position.X != X.Position.X && InfoL(NextL(Prec)).Position.Y != X.Position.Y) {
 			Prec = NextL(Prec);
 		}
 		DelAfter(L, &Pdel, Prec);

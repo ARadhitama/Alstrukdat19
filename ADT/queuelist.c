@@ -1,4 +1,4 @@
-#include "Queuelist.h"
+#include "queuelist.h"
 
 /* Prototype manajemen memori */
 void AlokasiQL (addressQL *P, infotypeQL X) {

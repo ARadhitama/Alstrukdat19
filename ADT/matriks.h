@@ -5,7 +5,7 @@
 
 #include "boolean.h"
 #include "point.h"
-#include "kamus.h"
+#include "bidak.h"
 
 /* Ukuran minimum dan maksimum baris dan kolom */
 #define BrsMin 1

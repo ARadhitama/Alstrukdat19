@@ -1095,7 +1095,6 @@ Queue cekGerak (MATRIKS *M, List *L) {
         posY += 2;
         if ((((posX >= 0) || (posX >= 7) || (posY >= 0) || (posY <= 7)) && ((Elmt(*M, posX, posY).code == ' ' || (Elmt(*M, posX, posY).code == 'R' ) || (Elmt(*M, posX, posY).code == 'H' || (Elmt(*M, posX, posY).code == 'B' ) || (Elmt(*M, posX, posY).code == 'K' ) || (Elmt(*M, posX, posY).code == 'Q' ) || (Elmt(*M, posX, posY).code == 'P' )) )))) {
             Elmt(*M, posX, posY).Position.X = posX;
-            printf("%d\n", Elmt(*M, posX, posY).Position.X);
             Elmt(*M, posX, posY).Position.Y = posY;
             AddQueue(&Q, Elmt(*M, posX, posY));
         }

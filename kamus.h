@@ -4,6 +4,7 @@
 #ifndef _KAMUS_H_
 #define _KAMUS_H_
 
+#include "stdlib.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -18,7 +19,7 @@
 #include "./ADT/queuelist.h"
 #include "./ADT/queue.h"
 #include "./ADT/matriks.h"
-#include "./ADT/mesin_kata.h"
+#include "./ADT/mesinkata.h"
 
 typedef struct {
     char code;

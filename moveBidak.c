@@ -1630,26 +1630,30 @@ Queue cekGerak (MATRIKS *M, List *L) {
 }
 
 void printBisaGerak(Queue Q) {
-    int i, v1, h1;
+    int i, posX, posY;
     Bidak B;
+    MATRIKS *M;
+    POINT P;
 
     for(i=1;i<=NBElmtQueue(Q);i++){
         DelQueue(&Q, &B);
         printf("%d", &i);
-        printf(B.code[v1][&h1]);
+        printf(Elmt(*M,B.Position.X,B.Position.Y).code);
         AddQueue(&Q, B);
     }
     return 0;
 }
 
 void printGerak(Queue Q) {
-    int i, v1, h1;
+    int i, posX, posY;
     Bidak B;
+    MATRIKS M;
+    POINT P;
 
     for(i=1;i<=NBElmtQueue(Q);i++){
         DelQueue(&Q, &B);
         printf("%d", &i);
-        printf(B.code[v1][&h1]);
+        printf("%c\n", );
         AddQueue(&Q, B);
     }
 

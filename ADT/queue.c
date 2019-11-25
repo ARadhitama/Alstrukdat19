@@ -48,7 +48,7 @@ void CreateEmptyQueue(Queue *Q, int Max) {
    Proses : Melakukan alokasi memori dan membuat sebuah Q kosong */
 
 /* *** Destruktor *** */
-void DeAlokasi(Queue *Q) {
+void DeAlokasiQueue(Queue *Q) {
   /* Kamus Lokal */
 
   /* Algoritma */

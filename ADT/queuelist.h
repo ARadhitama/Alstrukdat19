@@ -29,19 +29,19 @@ typedef struct {
 
 /* Selektor */
 #define Head(Q) (Q).HEAD
-#define Tail(Q) (Q).TAIL
+#define Tail(Q) (Q).TAILQL
 #define InfoHead(Q) (Q).HEAD->Info
 #define InfoTailQL(Q) (Q).TAILQL->Info
 #define Next(P) (P)->Next
 #define Info(P) (P)->Info
 
 /* Prototype manajemen memori */
-void Alokasi (address *P, infotype X);
+void AlokasiQL (address *P, infotype X);
 /* I.S. Sembarang */
 /* F.S. Alamat P dialokasi, jika berhasil maka Info(P)=X dan
         Next(P)=Nil */
 /*      P=Nil jika alokasi gagal */
-void Dealokasi (address  P);
+void DealokasiQL (address  P);
 /* I.S. P adalah hasil alokasi, P != Nil */
 /* F.S. Alamat P didealokasi, dikembalikan ke sistem */
 boolean IsEmptyQueueList (Queuelist Q);

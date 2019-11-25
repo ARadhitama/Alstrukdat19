@@ -1,4 +1,4 @@
-#include "kamus.h"
+#include "./ADT/kamus.h"
 
 int main() {
     /* KAMUS */
@@ -190,7 +190,7 @@ int main() {
                         case '1' : {
 
                             bisaGerak = cekGerak(&Board, &white);
-                            printBisaGerak(bisaGerak, &Board);
+                            printBisaGerak(bisaGerak);
                             scanf("%d\n", &gerak);
                             for (i = 1; i<=gerak; i++) {
                                 DelQueue(&bisaGerak, &digerak);

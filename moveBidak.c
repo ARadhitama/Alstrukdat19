@@ -641,7 +641,7 @@ Queue cekGerak (MATRIKS *M, List *L) {
     }
 }
 
-void printBisaGerak(Queue Q, MATRIKS *M) {
+void printBisaGerak(Queue Q) {
     int i, v1, h1;
     Bidak B;
 

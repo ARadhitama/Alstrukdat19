@@ -9,15 +9,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "./ADT/boolean.h"
-#include "./ADT/array.h"
-#include "./ADT/point.h"
-#include "./ADT/listlinier.h"
-#include "./ADT/stack.h"
-#include "./ADT/stack.h"
-#include "./ADT/queuelist.h"
-#include "./ADT/queue.h"
-#include "./ADT/matriks.h"
+#include "boolean.h"
+#include "array.h"
+#include "point.h"
+#include "listlinier.h"
+#include "stack.h"
+#include "stack.h"
+#include "queuelist.h"
+#include "queue.h"
+#include "matriks.h"
 
 typedef struct {
     char code;
@@ -32,7 +32,6 @@ typedef struct {
 /**** UI FUNCTION ***/
 
 void Map(MATRIKS *M);
-void AssignMatriks (Bidak B, Point P);
 void printCommand();
 void printMainMenu();
 
@@ -41,7 +40,7 @@ void printMainMenu();
 Queue MoveBidak(Bidak B, MATRIKS *M);
 Queue cekGerak (MATRIKS *M, List *L);
 void printGerak(Queue Q);
-void printBisaGerak(Queue Q, MATRIKS *M);
+void printBisaGerak(Queue Q);
 
 /**** GAME FUNCTION ****/
 
@@ -49,8 +48,8 @@ void New(MATRIKS *M);
 
 /**** GAME RULES ****/
  
- boolean cekSkak ();
- boolean cekSkakMat();
+//  boolean cekSkak ();
+//  boolean cekSkakMat();
  
  #endif
  

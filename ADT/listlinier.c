@@ -127,7 +127,7 @@ void InsVFirst (List *L, infotype X) {
 	address P;
 	
 	/* Algoritma */
-	P = AlokasiListLinear(X);
+	P = Alokasi(X);
 	if (P != Nil) {
 		InsertFirst(L, P);
 	}
@@ -149,7 +149,7 @@ void InsVLast (List *L, infotype X) {
 	address P;
 	
 	/* Algoritma */
-	P = AlokasiListLinear(X);
+	P = Alokasi(X);
 	if (P != Nil) {
 		InsertLast(L, P);
 	}

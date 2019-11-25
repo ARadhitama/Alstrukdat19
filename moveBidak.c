@@ -2,93 +2,93 @@
 
 Queue MoveBidak(Bidak B, MATRIKS *M){
     int i, n, h1, v1;
+    Queue Q;
 
-    CreateEmptyQueue(Q);
+    CreateEmptyQueue(&Q, 100);
 
-    switch(Bidak.code) {
+    switch(B.code) {
         case 'R' : 
         case 'r' : {
            n=h1;
             
-            while( B.code(*M,v1,n-1) == Nil )
+            while( B.code[&v1][&n-1] == ' ' )
             {
             if( n == 0 ) { break ; }
-            AddQueue(*Q, B.code(*M,v1,n-1)) ;
+            AddQueue(&Q, B.code[&v1][&n-1]) ;
             n-- ;
             }
 
             n=h1 ;
 
-            while( B.code(*M,v1,n+1) == Nil  && (n+1) <= 7 )
+            while( B.code[&v1][&n+1] == ' '  && (n+1) <= 7 )
             {
-                AddQueue(*Q, B.code(*M,v1,n+1)) ;
+                AddQueue(&Q, B.code[&v1][&n+1]) ;
                 ++n ;
             }
 
             n = h1 ;
 
-            while( B.code(*M,n-1,h1) == Nil && n > -1 )
+            while( B.code[&n-1][&h1] == ' ' && n > -1 )
             {
-                AddQueue(*Q, B.code(*M,n-1,h1)) ;
+                AddQueue(&Q, B.code[&n-1][&h1]) ;
                 --n ;
             }
 
             n = h1 ;
 
-            while( (B.code(*M,n+1,h1) == Nil) && ( (n) <= 7 ) )
+            while( (B.code[&n+1][&h1] == ' ') && ( (n) <= 7 ) )
             {
-                AddQueue(*Q, B.code(*M,n+1,h1)) ;
+                AddQueue(&Q, B.code[&n+1][&h1]) ;
                 ++n ;
             }    
             break;
         }
         case 'H' : 
         case 'h' : {
-            if(B.code(*M,v1+2,h1+1) = Nil) {
+            if(B.code[&v1+2][&h1+1] = ' ') {
                 if((v1<8) && (h1<8)) { 
-                    AddQueue(*Q, B.code(*M,v1+2,h1+1)) ;
+                    AddQueue(&Q, B.code[&v1+2][&h1+1]) ;
                 }
             }
-            if( B.code(*M,v1+2,h1-1) == Nil ) {
+            if( B.code[&v1+2][&h1-1] == ' ' ) {
                 if((v1<8) && (h1>-1)) { 
-                    AddQueue(*Q, B.code(*M,v1+2,h1+1)) ;
+                    AddQueue(&Q, B.code[&v1+2][&h1+1]) ;
                 }
             }
 
-            if( B.code(*M,v1+1,h1+2) == Nil ) {  
+            if( B.code[&v1+1][&h1+2] == ' ' ) {  
                 if((v1<8) && (h1<8)) { 
-                    AddQueue(*Q, B.code(*M,v1+1,h1+2)) ;
+                    AddQueue(&Q, B.code[&v1+1][&h1+2]) ;
                 }
             }
-            if( B.code(*M,v1-1,h1+2) == Nil ) {  
+            if( B.code[&v1-1][&h1+2] == ' ' ) {  
                 if((v1>-1) && (h1<8)) { 
-                    AddQueue(*Q, B.code(*M,v1-1,h1+2)) ;
+                    AddQueue(&Q, B.code[&v1-1][&h1+2]) ;
                 } 
             }
 
-            if( (B.code*M,v1-2,h1-1)== Nil )
-            {
+            if (B.code[&v1-2][&h1-1]== ' ' ) {
                 if((v1>-1) && (h1>-1)) { 
-                    AddQueue(*Q, B.code(*M,v1-2,h1-1)) ;
+                    AddQueue(&Q, B.code[&v1-2][&h1-1]) ;
                 }
             }
 
-            if( B.code(*M,v1-2,h1+1) == Nil )  {
+            if( B.code[&v1-2][&h1+1] == ' ' )  {
                 if((v1>-1) && (h1<8)) { 
-                    AddQueue(*Q, B.code(*M,v1-2,h1+1)) ;
+                    AddQueue(&Q, B.code[&v1-2][&h1+1]) ;
                 }
             }
 
-            if( B.code(*M,h1+1,v1-2) == Nil ) {
+            if( B.code[&h1+1][&v1-2] == ' ' ) {
                 if((h1<8) && (v1>-1)) { 
-                    AddQueue(*Q, B.code(*M,v1+1,h1-2)) ;
+                    AddQueue(&Q, B.code[&v1+1][&h1-2]) ;
                 }
             }
 
-            if( B.code(*M,v1-1,h1-2) == Nil )
+            if( B.code[&v1-1][&h1-2] == ' ' )
             {   
                 if((v1>-1) && (h1>-1)) { 
-                    AddQueue(*Q, B.code(*M,v1-1,h1-2)) ;
+                    AddQueue(&Q, B.code[&v1-1][&h1-2]) ;
                 }
         }
             break;
@@ -98,11 +98,11 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             i = 1;
             n = 1;
 
-            while (B.code(*M,v1-i,h1+n) = Nil) {
+            while (B.code[&v1-i][&h1+n] = ' ') {
                 if( (v1-i) == -1 || (h1+n) == 8 ) {
                     break ;
                 } else {
-                AddQueue(*Q, B.code(*M,v1-i,h1+n)) ;
+                AddQueue(&Q, B.code[&v1-i][&h1+n]) ;
                 i++ ;
                 n++ ;
                 }
@@ -111,11 +111,11 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             i = 1;
             n = 1;
 
-            while (B.code(*M,v1+i,h1-n) = Nil) {
+            while (B.code[&v1+i][&h1-n] = ' ') {
                 if( (v1+i) == 8 || (h1-n) == -1 ) {
                     break ;
                 } else {
-                AddQueue(*Q, B.code(*M,v1+i,h1-n)) ;
+                AddQueue(&Q, B.code[&v1+i][&h1-n]) ;
                 i++ ;
                 n++ ;
                 }
@@ -124,11 +124,11 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             i = 1;
             n = 1;
 
-            while (B.code(*M,v1+i,h1+n) = Nil) {
+            while (B.code[&v1+i][&h1+n] = ' ') {
                 if( (v1+i) == 8 || (h1+n) == 8 ) {
                     break ;
                 } else {
-                AddQueue(*Q, B.code(*M,v1+i,h1+n)) ;
+                AddQueue(&Q, B.code[&v1+i][&h1+n]) ;
                 i++ ;
                 n++ ;
                 }
@@ -137,11 +137,11 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             i = 1;
             n = 1;
             
-            while (B.code(*M,v1-i,h1-n) = Nil) {
+            while (B.code[&v1-i][&h1-n] = ' ') {
                 if( (v1-i) == -1 || (h1-n) == -1 ) {
                     break ;
                 } else {
-                AddQueue(*Q, B.code(*M,v1-i,h1-n)) ;
+                AddQueue(&Q, B.code[&v1-i][&h1-n]) ;
                 i++ ;
                 n++ ;
                 }
@@ -154,24 +154,24 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
 
             // Horizontal //
 
-            while( B.code(*M,v1,h1-y) == Nil )
+            while( B.code[&v1][&h1-y] == ' ' )
             {
                 if( (h1-y) == -1 ) {
                     break ;        
                 } else {
-                AddQueue(*Q, B.code(*M,v1,h1-y)) ;
+                AddQueue(&Q, B.code[&v1][&h1-y]) ;
                 y++ ;
                 }
             }
 
             y = 1 ;
 
-            while( B.code(*M,v1,h1+y) == Nil )
+            while( B.code[&v1][&h1+y] == ' ' )
             {
                 if( (h1+y) == 8 ) {
                     break ;
                 }
-                AddQueue(*Q, B.code(*M,v1,h1+y)) ;
+                AddQueue(&Q, B.code[&v1][&h1+y]) ;
                 y++ ;
             }
 
@@ -179,60 +179,68 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
 
             x = 1 ;
 
-            while( B.code(*M,v1-x,h1) == Nil )
+            while( B.code[&v1-x][&h1] == ' ' )
             {
-                if( (v1-x) == -1 ) break ;
-                AddQueue(*Q, B.code(*M,v1-x,h1)) ;
+                if( (v1-x) == -1 ) {
+                    break ;
+                } else {
+                AddQueue(&Q, B.code[&v1-x][&h1]) ;
                 x++ ;
+                }
             }
 
             x = 1 ;
 
-            while( B.code(*M,v1+x,h1) == Nil )
-            {
-                if( (v1+x) == 8 ) break ;
-                AddQueue(*Q, B.code(*M,v1+x,h1)) ;
+            while( B.code[&v1+x][&h1] == ' ' ) {
+                if( (v1+x) == 8 ) {
+                    break ;
+                } else {
+                AddQueue(&Q, B.code[&v1+x][&h1]) ;
                 x++ ;
+                }
             }
 
             // Diagonal  //
 
-            a = 1 , b = 1 ;
+            a = 1;
+            b = 1 ;
 
-            while( B.code(*M,v1-a,h1+b) == Nil )
+            while( B.code[&v1-a][&h1+b] == ' ' )
             {
                 if( (v1-a) == -1 || (h1+b) == 8 ) {
                     break ;
                 } else {
-                AddQueue(*Q, B.code(*M,v1-a,h1+b)) ;
+                AddQueue(&Q, B.code[&v1-a][&h1+b]) ;
                 a++ ;
                 b++ ;
                 }
             }
 
 
-            a = 1 , b = 1 ;
+            a = 1;
+            b = 1 ;
 
-            while( B.code(*M,v1+a,h1-b) == Nil )
+            while( B.code[&v1+a][&h1-b] == ' ' )
             {
                 if( (v1+a) == 8 || (h1-b) == -1 ) {
                     break ;
                 } else {
-                AddQueue(*Q, B.code(*M,v1+a,h1-b)) ;
+                AddQueue(&Q, B.code[&v1+a][&h1-b]) ;
                 a++ ;
                 b++ ;
                 }
             }
 
-            a = 1 , b = 1 ;
+            a = 1;
+            b = 1 ;
 
 
-            while( B(*M,v1+a,h1+b) == Nil )
+            while( B.code[&v1+a][&h1+b] == ' ' )
             {
                 if( (v1+a) == 8 || (h1+b) == 8 ) {
                     break ;
                 }
-                AddQueue(*Q, B.code(*M,v1+a,h1+b)) ;
+                AddQueue(&Q, B.code[&v1+a][&h1+b]) ;
                 a++ ;
                 b++ ;
             }
@@ -240,12 +248,12 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
             a = 1 ;
             b = 1 ;
 
-            while( B.code(*M,v1-a,h1-b) == Nil )
+            while( B.code[&v1-a][&h1-b] == ' ' )
             {
                 if( (v1-a) == -1 || (h1-b) == -1 ) {
                     break ;
                 } else {
-                AddQueue(*Q, B.code(*M,v1-a,h1-b)) ;
+                AddQueue(&Q, B.code[&v1-a][&h1-b]) ;
                 a++ ;
                 b++ ;
                 }
@@ -254,57 +262,56 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
         }
         case 'K' : 
         case 'k' : {
-            if(B.code(*M,v1,h1+1) = Nil) {
-                AddQueue(*Q, B.code(*M,v1,h1+1)) ;
+            if(B.code[&v1][&h1+1] = ' ') {
+                AddQueue(&Q, B.code[&v1][&h1+1]) ;
             }
-            if(B.code(*M,v1,h1-1) = Nil) {
-                AddQueue(*Q, B.code(*M,v1,h1-1)) ;
+            if(B.code[&v1][&h1-1] = ' ') {
+                AddQueue(&Q, B.code[&v1][&h1-1]) ;
             }
-            if(B.code(*M,v1+1,h1) = Nil) {
-                AddQueue(*Q, B.code(*M,v1+1,h1)) ;
+            if(B.code[&v1+1][&h1] = ' ') {
+                AddQueue(&Q, B.code[&v1+1][&h1]) ;
             }
-            if(B.code(*M,v1-1,h1) = Nil) {
-                AddQueue(*Q, B.code(*M,v1-1,h1)) ;
+            if(B.code[&v1-1][&h1] = ' ') {
+                AddQueue(&Q, B.code[&v1-1][&h1]) ;
             }
-            if(B.code(*M,v1+1,h1+1) = Nil) {
-                AddQueue(*Q, B.code(*M,v1+1,h1+1)) ;
+            if(B.code[&v1+1][&h1+1] = ' ') {
+                AddQueue(&Q, B.code[&v1+1][&h1+1]) ;
             }
-            if(B.code(*M,v1-1,h1-1) = Nil) {
-                AddQueue(*Q, B.code(*M,v1-2,h1-1)) ;
+            if(B.code[&v1-1][&h1-1] = ' ') {
+                AddQueue(&Q, B.code[&v1-2][&h1-1]) ;
             }
-            if(B.code(*M,v1-1,h1+1) = Nil) {
-                AddQueue(*Q, B.code(*M,v1-1,h1+1)) ;
+            if(B.code[&v1-1][&h1+1] = ' ') {
+                AddQueue(&Q, B.code[&v1-1][&h1+1]) ;
             }
-            if(B.code(*M,v1+1,h1-1) = Nil) {
-                AddQueue(*Q, B.code(*M,v1+1,h1-1)) ;
+            if(B.code[&v1+1][&h1-1] = ' ') {
+                AddQueue(&Q, B.code[&v1+1][&h1-1]) ;
             } 
             break;  
         }
         case 'P' : {
-            if (B.code.x=7) {
-                if (B.code(*M,v1-1,h1) = Nil) {
-                    AddQueue(*Q, B.code(*M,v1-1,h1)) ;
-                } else if (B.code(*M,v1-2,h1) = Nil) {
-                    AddQueue(*Q, B.code(*M,v1-2,h1)) ;
+            if (B.Position.X=7) {
+                if (B.code[&v1-1][&h1] = ' ') {
+                    AddQueue(&Q, B.code[&v1-1][&h1]) ;
+                } else if (B.code[&v1-2][&h1] = ' ') {
+                    AddQueue(&Q, B.code[&v1-2][&h1]) ;
                 } 
             } else {
-                if (B.code(*M,v1-1,h1) = Nil) {
-                    AddQueue(*Q, B.code(*M,v1-1,h1)) ;
+                if (B.code[&v1-1][&h1] = ' ' ) {
+                    AddQueue(&Q, B.code[&v1-1][&h1]) ;
                 }
             }
             break;
         }
         case 'p' : {
-            if (B.code.x=2) {
-                if (B.code(*M,v1+1,h1) = Nil) {
-
-                    AddQueue(*Q, B.code(*M,v1+1,h1)) ;
-                } else if (B.code(*M,v1+2,h1) = Nil) {
-                    AddQueue(*Q, B.code(*M,v1+2,h1)) ;
+            if (B.Position.X=2) {
+                if (B.code[&v1+1][&h1] = ' ') {
+                    AddQueue(&Q, B.code[&v1+1][&h1]) ;
+                } else if (B.code[&v1+2][&h1] = ' ') {
+                    AddQueue(&Q, B.code[&v1+2][&h1]) ;
                 } 
             } else {
-                if (B.code(*M,v1+1,h1) = Nil) {
-                    AddQueue(*Q, B.code(*M,v1+1,h1)) ;
+                if (B.code[&v1+1][&h1] = ' ' ) {
+                    AddQueue(&Q, B.code[&v1+1][&h1]) ;
                 }
             }
             break;
@@ -313,98 +320,100 @@ Queue MoveBidak(Bidak B, MATRIKS *M){
 }
 
 
-Queue cekGerak (MATRIKS *M, listlinier *L) {
-int i, n, h1, v1,;
+Queue cekGerak (MATRIKS *M, List *L) {
+int i, n, h1, v1;
+address P;
+Queue Q;
+Bidak B;
 
-    CreateEmptyQueue(Q);
+    CreateEmptyQueue(&Q, 100);
 
     while (info(P)!=Nil) {
 
-    switch(Bidak.code) {
+    switch(B.code) {
         case 'R' : 
         case 'r' : {
           
             n=v1;
             
-            while( B.code(*M,v1,n-1) == Nil )
+            while( B.code[&v1][&n-1] == ' ' )
             {
             if( n == 0 ) { break ; }
-            AddQueue(*Q, B.code(*M,v1,h1)) ;
+            AddQueue(&Q, B.code[&v1][&h1]) ;
             n-- ;
             }
 
             n=v1 ;
 
-            while( B.code(*M,v1,n+1) == Nil  && (n+1) <= 7 )
+            while( B.code[&v1][&n+1] == ' '  && (n+1) <= 7 )
             {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                AddQueue(&Q, B.code[&v1][&h1]) ;
                 ++n ;
             }
 
             n = h1 ;
 
-            while( B.code(*M,n-1,h1) == Nil && n > -1 )
+            while( B.code[&n-1][&h1] == ' ' && n > -1 )
             {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                AddQueue(&Q, B.code[&v1][&h1]) ;
                 --n ;
             }
 
             n = h1 ;
 
-            while( (B.code(*M,n+1,h1) == Nil) && ( (n) <= 7 ) )
+            while( (B.code[&n+1][&h1] == ' ') && ( (n) <= 7 ) )
             {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                AddQueue(&Q, B.code[&v1][&h1]) ;
                 ++n ;
             }    
             break;
         }
         case 'H' : 
         case 'h' : {
-            if(B.code(*M,v1+2,h1+1) = Nil) {
+            if(B.code[&v1+2][&h1+1] = ' ') {
                 if((v1<8) && (h1<8)) { 
-                    AddQueue(*Q, B.code(*M,v1,h1)) ;
+                    AddQueue(&Q, B.code[&v1][&h1]) ;
                 }
             }
-            if( B.code(*M,v1+2,h1-1) == Nil ) {
+            if( B.code[&v1+2][&h1-1] == ' ' ) {
                 if((v1<8) && (h1>-1)) { 
-                    AddQueue(*Q, B.code(*M,v1,h1)) ;
+                    AddQueue(&Q, B.code[&v1][&h1]) ;
                 }
             }
 
-            if( B.code(*M,v1+1,h1+2) == Nil ) {  
+            if( B.code[&v1+1][&h1+2] == ' ' ) {  
                 if((v1<8) && (h1<8)) { 
-                    AddQueue(*Q, B.code(*M,v1,h1)) ;
+                    AddQueue(&Q, B.code[&v1][&h1]) ;
                 }
             }
-            if( B.code(*M,v1-1,h1+2) == Nil ) {  
+            if( B.code[&v1-1][&h1+2] == ' ' ) {  
                 if((v1>-1) && (h1<8)) { 
-                    AddQueue(*Q, B.code(*M,v1,h1)) ;
+                    AddQueue(&Q, B.code[&v1][&h1]) ;
                 } 
             }
 
-            if( (B.code*M,v1-2,h1-1)== Nil )
-            {
+            if (B.code[&v1-2][&h1-1]== ' ' ) {
                 if((v1>-1) && (h1>-1)) { 
-                    AddQueue(*Q, B.code(*M,v1,h1)) ;
+                    AddQueue(&Q, B.code[&v1][&h1]) ;
                 }
             }
 
-            if( B.code(*M,v1-2,h1+1) == Nil )  {
+            if( B.code[&v1-2][&h1+1] == ' ' )  {
                 if((v1>-1) && (h1<8)) { 
-                    AddQueue(*Q, B.code(*M,v1,h1)) ;
+                    AddQueue(&Q, B.code[&v1][&h1]) ;
                 }
             }
 
-            if( B.code(*M,h1+1,v1-2) == Nil ) {
+            if( B.code[&h1+1][&v1-2] == ' ' ) {
                 if((h1<8) && (v1>-1)) { 
-                    AddQueue(*Q, B.code(*M,v1,h1)) ;
+                    AddQueue(&Q, B.code[&v1][&h1]) ;
                 }
             }
 
-            if( B.code(*M,v1-1,h1-2) == Nil )
+            if( B.code[&v1-1][&h1-2] == ' ' )
             {   
                 if((v1>-1) && (h1>-1)) { 
-                    AddQueue(*Q, B.code(*M,v1,h1)) ;
+                    AddQueue(&Q, B.code[&v1][&h1]) ;
                 }
         }
             break;
@@ -414,11 +423,11 @@ int i, n, h1, v1,;
          i = 1;
             n = 1;
 
-            while (B.code(*M,v1-i,h1+n) = Nil) {
+            while (B.code[&v1-i][&h1+n] = ' ') {
                 if( (v1-i) == -1 || (h1+n) == 8 ) {
                     break ;
                 } else {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                AddQueue(&Q, B.code[&v1][&h1]) ;
                 i++ ;
                 n++ ;
                 }
@@ -427,11 +436,11 @@ int i, n, h1, v1,;
             i = 1;
             n = 1;
 
-            while (B.code(*M,v1+i,h1-n) = Nil) {
+            while (B.code[&v1+i][&h1-n] = ' ') {
                 if( (v1+i) == 8 || (h1-n) == -1 ) {
                     break ;
                 } else {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                AddQueue(&Q, B.code[&v1][&h1]) ;
                 i++ ;
                 n++ ;
                 }
@@ -440,11 +449,11 @@ int i, n, h1, v1,;
             i = 1;
             n = 1;
 
-            while (B.code(*M,v1+i,h1+n) = Nil) {
+            while (B.code[&v1+i][&h1+n] = ' ') {
                 if( (v1+i) == 8 || (h1+n) == 8 ) {
                     break ;
                 } else {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                AddQueue(&Q, B.code[&v1][&h1]) ;
                 i++ ;
                 n++ ;
                 }
@@ -453,11 +462,11 @@ int i, n, h1, v1,;
             i = 1;
             n = 1;
             
-            while (B.code(*M,v1-i,h1-n) = Nil) {
+            while (B.code[&v1-i][&h1-n] = ' ') {
                 if( (v1-i) == -1 || (h1-n) == -1 ) {
                     break ;
                 } else {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                AddQueue(&Q, B.code[&v1][&h1]) ;
                 i++ ;
                 n++ ;
                 }
@@ -470,24 +479,24 @@ int i, n, h1, v1,;
 
             // Horizontal //
 
-            while( B.code(*M,v1,h1-y) == Nil )
+            while( B.code[&v1][&h1-y] == ' ' )
             {
                 if( (h1-y) == -1 ) {
                     break ;        
                 } else {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                AddQueue(&Q, B.code[&v1][&h1]) ;
                 y++ ;
                 }
             }
 
             y = 1 ;
 
-            while( B.code(*M,v1,h1+y) == Nil )
+            while( B.code[&v1][&h1+y] == ' ' )
             {
                 if( (h1+y) == 8 ) {
                     break ;
                 }
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                AddQueue(&Q, B.code[&v1][&h1]) ;
                 y++ ;
             }
 
@@ -495,19 +504,19 @@ int i, n, h1, v1,;
 
             x = 1 ;
 
-            while( B.code(*M,v1-x,h1) == Nil )
+            while( B.code[&v1-x][&h1] == ' ' )
             {
                 if( (v1-x) == -1 ) break ;
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                AddQueue(&Q, B.code[&v1][&h1]) ;
                 x++ ;
             }
 
             x = 1 ;
 
-            while( B.code(*M,v1+x,h1) == Nil )
+            while( B.code[&v1+x][&h1] == ' ' )
             {
                 if( (v1+x) == 8 ) break ;
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                AddQueue(&Q, B.code[&v1][&h1]) ;
                 x++ ;
             }
 
@@ -516,12 +525,12 @@ int i, n, h1, v1,;
             a = 1;
             b = 1;
 
-            while( B.code(*M,v1-a,h1+b) == Nil )
+            while( B.code[&v1-a][&h1+b] == ' ' )
             {
                 if( (v1-a) == -1 || (h1+b) == 8 ) {
                     break ;
                 } else {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                AddQueue(&Q, B.code[&v1][&h1]) ;
                 a++ ;
                 b++ ;
                 }
@@ -531,12 +540,12 @@ int i, n, h1, v1,;
             a = 1;
             b = 1;
 
-            while( B.code(*M,v1+a,h1-b) == Nil )
+            while( B.code[&v1+a][&h1-b] == ' ' )
             {
                 if( (v1+a) == 8 || (h1-b) == -1 ) {
                     break ;
                 } else {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                AddQueue(&Q, B.code[&v1][&h1]) ;
                 a++ ;
                 b++ ;
                 }
@@ -546,12 +555,12 @@ int i, n, h1, v1,;
             b = 1;
 
 
-            while( B.code(*M,v1+a,h1+b) == Nil )
+            while( B.code[&v1+a][&h1+b] == ' ' )
             {
                 if( (v1+a) == 8 || (h1+b) == 8 ) {
                     break ;
                 }
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                AddQueue(&Q, B.code[&v1][&h1]) ;
                 a++ ;
                 b++ ;
             }
@@ -559,12 +568,12 @@ int i, n, h1, v1,;
             a = 1 ;
             b = 1 ;
 
-            while( B.code(*M,v1-a,h1-b) == Nil )
+            while( B.code[&v1-a][&h1-b] == ' ' )
             {
                 if( (v1-a) == -1 || (h1-b) == -1 ) {
                     break ;
                 } else {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+                AddQueue(&Q, B.code[&v1][&h1]) ;
                 a++ ;
                 b++ ;
                 }
@@ -573,56 +582,56 @@ int i, n, h1, v1,;
         }
         case 'K' : 
         case 'k' : {
-            if(B.code(*M,v1,h1+1) = Nil) {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+            if(B.code[&v1][&h1+1] = ' ') {
+                AddQueue(&Q, B.code[&v1][&h1]) ;
             }
-            if(B.code(*M,v1,h1-1) = Nil) {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+            if(B.code[&v1][&h1-1] = ' ') {
+                AddQueue(&Q, B.code[&v1][&h1]) ;
             }
-            if(B.code(*M,v1+1,h1) = Nil) {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+            if(B.code[&v1+1][&h1] = ' ') {
+                AddQueue(&Q, B.code[&v1][&h1]) ;
             }
-            if(B.code(*M,v1-1,h1) = Nil) {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+            if(B.code[&v1-1][&h1] = ' ') {
+                AddQueue(&Q, B.code[&v1][&h1]) ;
             }
-            if(B.code(*M,v1+1,h1+1) = Nil) {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+            if(B.code[&v1+1][&h1+1] = ' ') {
+                AddQueue(&Q, B.code[&v1][&h1]) ;
             }
-            if(B.code(*M,v1-1,h1-1) = Nil) {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+            if(B.code[&v1-1][&h1-1] = ' ') {
+                AddQueue(&Q, B.code[&v1][&h1]) ;
             }
-            if(B.code(*M,v1-1,h1+1) = Nil) {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+            if(B.code[&v1-1][&h1+1] = ' ') {
+                AddQueue(&Q, B.code[&v1][&h1]) ;
             }
-            if(B.code(*M,v1+1,h1-1) = Nil) {
-                AddQueue(*Q, B.code(*M,v1,h1)) ;
+            if(B.code[&v1+1][&h1-1] = ' ') {
+                AddQueue(&Q, B.code[&v1][&h1]) ;
             } 
             break;  
         }
         case 'P' : {
-            if (B.code.x=7) {
-                if (B.code(*M,v1-1,h1) = Nil) {
-                    AddQueue(*Q, B.code(*M,v1,h1)) ;
-                } else if (B.code(*M,v1-2,h1) = Nil) {
-                    AddQueue(*Q, B.code(*M,v1,h1)) ;
+            if (B.Position.X=7) {
+                if (B.code[&v1-1][&h1] = ' ') {
+                    AddQueue(&Q, B.code[&v1][&h1]) ;
+                } else if (B.code[&v1-2][&h1] = ' ') {
+                    AddQueue(&Q, B.code[&v1][&h1]) ;
                 } 
             } else {
-                if (B.code(*M,v1-1,h1) = Nil) {
-                    AddQueue(*Q, B.code(*M,v1,h1)) ;
+                if (B.code[&v1-1][&h1] = ' ') {
+                    AddQueue(&Q, B.code[&v1][&h1]) ;
                 }
             }
             break;
         }
         case 'p' : {
-            if (B.code.x=2) {
-                if (B.code(*M,v1+1,h1) = Nil) {
-                    AddQueue(*Q, B.code(*M,v1,h1)) ;
-                } else if (B.code(*M,v1+2,h1) = Nil) {
-                    AddQueue(*Q, B.code(*M,v1,h1)) ;
+             if (B.Position.X=2) {
+                if (B.code[&v1+1][&h1] = ' ') {
+                    AddQueue(&Q, B.code[&v1][&h1]) ;
+                } else if (B.code[&v1+2][&h1] = ' ') {
+                    AddQueue(&Q, B.code[&v1][&h1]) ;
                 } 
             } else {
-                if (B.code(*M,v1+1,h1) = Nil) {
-                    AddQueue(*Q, B.code(*M,v1,h1)) ;
+                if (B.code[&v1+1][&h1] = ' ') {
+                    AddQueue(&Q, B.code[&v1][&h1]) ;
                 }
             }
             break;
@@ -633,22 +642,24 @@ int i, n, h1, v1,;
 
 void printBisaGerak(Queue Q, MATRIKS *M) {
     int i, v1, h1;
+    Bidak B;
 
-    for(i=1;i<=NbElmt(Q);i++){
-        DelQueue(*Q, B);
-        printf(B.code(*M,v1,h1));
-        AddQueue(*Q, B);
+    for(i=1;i<=NBElmtQueue(Q);i++){
+        DelQueue(&Q, &B);
+        printf(B.code[&v1][&h1]);
+        AddQueue(&Q, B);
     }
     return 0;
 }
 
 void printGerak(Queue Q) {
     int i, v1, h1;
+    Bidak B;
 
-    for(i=1;i<=NbElmt(Q);i++){
-        DelQueue(*Q, B);
-        printf(B.code(*M,v1,h1));
-        AddQueue(*Q, B);
+    for(i=1;i<=NBElmtQueue(Q);i++){
+        DelQueue(&Q, &B);
+        printf(B.code[&v1][&h1]);
+        AddQueue(&Q, B);
     }
 
     return 0;

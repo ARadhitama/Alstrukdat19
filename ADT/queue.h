@@ -6,7 +6,7 @@
 #ifndef __QUEUE_H__
 #define __QUEUE_H__
 
-#include "kamus.h"
+#include "bidak.h"
 #include "boolean.h"
 #include <stdlib.h>
 

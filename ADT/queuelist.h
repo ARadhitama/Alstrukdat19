@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include "stdlib.h"
 #include "point.h"
-#include "kamus.h"
+#include "bidak.h"
 
 /* Konstanta */
 #define NilQL NULL

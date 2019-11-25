@@ -18,12 +18,21 @@
 #include "queuelist.h"
 #include "queue.h"
 #include "matriks.h"
+#include "bidak.h"
 
+<<<<<<< HEAD
 typedef struct {
     char *code;
     POINT Position;
     POINT prevPos;
 } Bidak;
+=======
+//typedef struct {
+//    char *code;
+//    POINT Position;
+//    POINT prevPos;
+//} Bidak;
+>>>>>>> f5d56937bb939cec341a7b4ecd10e6f04d0f07ba
 
 /**** UI FUNCTION ***/
 

@@ -1,7 +1,7 @@
 #ifndef __STACK_H__
 #define __STACK_H__
 #include "boolean.h"
-#include "kamus.h"
+#include "bidak.h"
 
 #define NilStack 0 /* Nil adalah stack dengan elemen kosong */
 #define MaxElStack 100

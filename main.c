@@ -9,7 +9,8 @@ Int main() {
     Queuelist turn;
     Queue bisaGerak, bidakGerak;
     List white, black;
-    int gerak, opsiGerak, i;
+    int gerak, opsiGerak, i, j;
+    Stack move; 
 
     /* ALGORITMA */
     printMainMenu();    
@@ -18,6 +19,7 @@ Int main() {
     CreateEmptyQueue(&bidakGerak, 100);
     CreateEmptyListLinear(&white);
     CreateEmptyListLinear(&black);
+    CreateEmptyStack(&move);
     printf("Command : ");
     scanf("%c\n", &Command);
     switch (Command) {
@@ -156,7 +158,7 @@ Int main() {
             Elmt(Board,7,7) = P7; InsertLast (&black, *P7);
             Elmt(Board,8,7) = P8; InsertLast (&black, *P8);
 
-            Elmt(Board,8,1) = r2; InsertLast (&white, *r2);
+            Elmt(Board,8,1) = r2; InsVFirst (&white, *r2);
             Elmt(Board,7,1) = h2; InsertLast (&white, *h2);
             Elmt(Board,6,1) = b2; InsertLast (&white, *b2);
             Elmt(Board,5,1) = q; InsertLast (&white, *q);
@@ -173,6 +175,12 @@ Int main() {
             Elmt(Board,7,2) = p7; InsertLast (&white, *p7);
             Elmt(Board,8,2) = p8; InsertLast (&white, *p8);
 
+            for (i=1; i<=8; i++) {
+                for(j=3; j<=6; j++) {
+                    Elmt(Board,i,j).code = " "
+                }
+            }
+            Map(&Board));
             while ((!Exit) || (NbElmt(turn) <= 50)) {
                 if ((IsEmpty(turn) || InfoTail(turn) == 'b') {          // white turn
                     printCommand();
@@ -180,6 +188,7 @@ Int main() {
                     scanf("%c\n", &Command);
                     switch (Command) {
                         case '1' : {
+
                             bisaGerak = cekGerak(&Board, &white);
                             printBisaGerak(&bisaGerak);
                             scanf("%d\n", &gerak);
@@ -192,14 +201,27 @@ Int main() {
                             for (i = 1; i<opsiGerak; i++) {
                                 DelQueue(&bidakGerak, &titikGerak);
                             }
-                            if (Elmt(Board, titikGerak.X, titikGerak.Y) != Nil) {
-                                DelP (&white, Elmt(Board, titikGerak.X, titikGerak.Y));
-                            }
+                            DelP(&white, Elmt(Board, digerak.Position.X, digerak.Position.Y))
 
+                            if (Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y).code != ' ') {
+                                DelP (&white, Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y));
+                            }
+                            
+                            Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y) = Elmt(Board, digerak.Position.X, digerak.Position.Y);
+                            Elmt(Board, digerak.Position.X, digerak.Position.Y).code = " ";
+
+                            Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y).Position.X = titikGerak.Position.X;
+                            Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y).Position.Y = titikGerak.Position.Y;
+
+                            Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y).prevPos.X = digerak.Position.X;
+                            Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y).prevPos.Y = digerak.Position.Y;
+                            
+                            InsertLast (&white, *(Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y)));
+                            PushStack(&move, &Elmt(Board, titikGerak.Position.X, titikGerak.Position.Y));
                             AddQueueList(&turn, 'w');
                         }
                         case '2' : {
-                            AddQueueList(&turn, 'w');
+                            AddQueueList(&turn, 'b');
                         }
                         case '3' : {
 
@@ -242,6 +264,7 @@ Int main() {
                         }
                     }
                 }
+                Map(&Board);
             }
         }
     }

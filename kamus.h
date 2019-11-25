@@ -14,12 +14,10 @@
 #include "./ADT/point.h"
 #include "./ADT/listlinier.h"
 #include "./ADT/stack.h"
-#include "./ADT/stacklist.h"
 #include "./ADT/stack.h"
 #include "./ADT/queuelist.h"
 #include "./ADT/queue.h"
 #include "./ADT/matriks.h"
-#include "./ADT/mesinkata.h"
 
 typedef struct {
     char code;
@@ -53,4 +51,5 @@ void New(MATRIKS *M);
  
  boolean cekSkak ();
  boolean cekSkakMat();
+ #endif
  

@@ -19,9 +19,9 @@ typedef int address; /* indeks tabel */
 
 /* *** Definisi Type Queue *** */
 typedef struct {
-    infotype *T; /* tabel penyimpan elemen */
-    address HEAD; /* alamat penghapusan */
-    address TAIL; /* alamat penambahan */
+    infotype *TQ; /* tabel penyimpan elemen */
+    address HEADQ; /* alamat penghapusan */
+    address TAILQ; /* alamat penambahan */
     int MaxElQ; /* maksimum banyaknya elemen queue */
 } Queue;
 
@@ -29,10 +29,10 @@ typedef struct {
 /* Catatan implementasi: T[0] tidak pernah dipakai */
 
 /* Definisi akses dengan Selektor */
-#define Head(Q) (Q).HEAD
-#define Tail(Q) (Q).TAIL
-#define InfoHead(Q) (Q).T[(Q).HEAD]
-#define InfoTail(Q) (Q).T[(Q).TAIL]
+#define HeadQ(Q) (Q).HEADQ
+#define TailQ(Q) (Q).TAILQ
+#define InfoHeadQ(Q) (Q).TQ[(Q).HEADQ]
+#define InfoTailQ(Q) (Q).TQ[(Q).TAILQ]
 #define MaxElQ(Q) (Q).MaxElQ
 
 /* *** Predikat Pemeriksaan Kondisi Queue *** */

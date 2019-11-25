@@ -7,14 +7,14 @@ boolean IsEmptyQueue(Queue Q) {
   /* Kamus Lokal */
 
   /* Algoritma */
-  return ((Head(Q) == Nil) && (Tail(Q) == Nil));
+  return ((HeadQ(Q) == Nil) && (TailQ(Q) == Nil));
 }
 /* Mengirim true jika Q kosong */
 boolean IsFullQueue(Queue Q) {
   /* Kamus Lokal */
 
   /* Algoritma */
-  return (Tail(Q) == MaxElQ(Q));
+  return (TailQ(Q) == MaxElQ(Q));
 }
 /* Mengirim true jika tabel penampung elemen Q sudah penuh yaitu mengandung
 MaxEl elemen */
@@ -22,7 +22,7 @@ int NBElmtQueue(Queue Q) {
   /* Kamus Lokal */
 
   /* Algoritma */
-  return (Tail(Q) - Head(Q) + 1);
+  return (TailQ(Q) - HeadQ(Q) + 1);
 }
 /* Mengirimkan banyaknya elemen queue. Mengirimkan 0 jika Q kosong. */
 
@@ -31,11 +31,11 @@ void CreateEmptyQueue(Queue *Q, int Max) {
   /* Kamus Lokal */
 
   /* Algoritma */
-  (*Q).T = (infotype *) malloc ((Max + 1) * sizeof(infotype));
-  if ((*Q).T != NULL) {
+  (*Q).TQ = (infotype *) malloc ((Max + 1) * sizeof(infotype));
+  if ((*Q).TQ != NULL) {
     MaxElQ(*Q) = Max;
-    Head(*Q) = Nil;
-    Tail(*Q) = Nil;
+    HeadQ(*Q) = Nil;
+    TailQ(*Q) = Nil;
   }
   else {                                                        /* Alokasi gagal */
     MaxElQ(*Q) = Nil;
@@ -53,7 +53,7 @@ void DeAlokasi(Queue *Q) {
 
   /* Algoritma */
   MaxElQ(*Q) = Nil;
-  free((*Q).T);
+  free((*Q).TQ);
 }
 /* Proses : Mengembalikan memori Q
    I.S. Q pernah dialokasi
@@ -65,14 +65,14 @@ void AddQueue(Queue *Q, infotype X) {
 
   /* Algoritma */
   if (IsEmptyQueue(*Q)) {
-    Head(*Q) = 1;
-    Tail(*Q) = 1;
+    HeadQ(*Q) = 1;
+    TailQ(*Q) = 1;
   }
   else {
-    Head(*Q)++;
-    Tail(*Q)++;
+    HeadQ(*Q)++;
+    TailQ(*Q)++;
   }
-  InfoTail(*Q) = X;
+  InfoTailQ(*Q) = X;
 }
 /* Proses : Menambahkan X pada Q dengan aturan FIFO
    I.S. Q mungkin kosong, tabel penampung elemen Q TIDAK penuh
@@ -82,16 +82,16 @@ void DelQueue(Queue *Q, infotype *X) {
   address i;
 
   /* Algoritma */
-  *X = InfoHead(*Q);
-  if (Head(*Q) == Tail(*Q)) {                                  /* Set menjadi queue kosong */
-    Head(*Q) = Nil;
-    Tail(*Q) = Nil;
+  *X = InfoHeadQ(*Q);
+  if (HeadQ(*Q) == TailQ(*Q)) {                                  /* Set menjadi queue kosong */
+    HeadQ(*Q) = Nil;
+    TailQ(*Q) = Nil;
   }
   else {
-    for (i = 1; i <= Tail(*Q); i++) {
-      *((*Q).T+i) = *((*Q).T+i+1);
+    for (i = 1; i <= TailQ(*Q); i++) {
+      *((*Q).TQ+i) = *((*Q).TQ+i+1);
     }
-    Tail(*Q)--;
+    TailQ(*Q)--;
   }
 }
 /* Proses: Menghapus elemen pertama pada Q dengan aturan FIFO
